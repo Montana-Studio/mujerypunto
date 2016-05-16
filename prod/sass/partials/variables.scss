@@ -1,0 +1,26 @@
+//COLOR
+
+$white: #FFF;
+$black: #000;
+$gray: #eeeeee;
+$green-logo: #25d6b8;
+
+$gray_1: #7c7c7c;
+
+$regular_font:'Libre Baskerville', serif;
+$primary_font:'Oswald', sans-serif;
+$second_font:'Open Sans', sans-serif;;
+
+//RESPONSIVE WIDTH
+$mobile:(max-width em(320));
+$mobileLand:(min-width em(480) max-width em(690));
+$tablet:(min-width em(768) max-width em(1023));
+$tabletLand:(min-width em(1024) max-width em(1279));
+$notebook:(min-width em(1280));
+$notebookLand:(min-width em(1281) max-width em(1439));
+$desktop:(min-width em(1440));
+
+$mobileTomobileLand: (min-width em(320) max-width em(640));
+$mobileLandTotablet: (min-width em(480) max-width em(1024));
+$tabletLandTonotebook: (min-width em(1024) max-width em(1440));
+$notebookTodesktop: (min-width em(1280) min-width em(1440));

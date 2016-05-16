@@ -5,12 +5,12 @@ module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('Mujerypunto.json'),
 
-        www: 'app/wp-content/themes/Mujerypunto',
+        www: 'app/wp-content/themes/mujerypunto',  
         dist: 'prod',
         
-        jsout:'js/Mujerypunto.min.js',
-        cssout:'css/Mujerypunto.css',
-        compimg:'img2/**/*.{png,jpg,gif}',
+        jsout:'js/mujerypunto.min.js',
+        cssout:'css/mujerypunto.css',
+        compimg:'img2/**/*.{png,jpg,gif}', 
 
         js:'js/**/*.js',
         scss:'sass/**/*.scss',
@@ -88,7 +88,7 @@ module.exports = function(grunt) {
             },
             compile: {
                 files: {
-                    '<%= www %>/<%= jsout %>': ['<%= js %>']
+                    '<%= www %>/<%= jsout %>': ['<%= dist %>/<%= js %>']
                 }
             }
         },

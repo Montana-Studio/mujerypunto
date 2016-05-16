@@ -1,0 +1,48 @@
+body {
+	background: $white;
+}
+.wrapper {
+	@include span-columns(12);
+	@include omega();
+	@include pad(0);
+	z-index: 10;
+	background: $white;
+	@include media($notebook) {
+		@include outer-container(80%);
+		margin: 0 auto !important;
+		float: none;
+	}
+	.contentAll {
+		@include span-columns(12);
+		@include omega();
+		padding:{top:50px;left:10px;bottom:0;right:10px;}
+		@include media($notebook) {
+			@include pad(0);
+		}
+	}
+	&.move-content {
+		@include transition(all 0.3s ease-in-out);
+		@include transform(translateX(-300px));
+	}
+	&.move-content-out {
+		@include transition(all 0.3s ease-in-out);
+		@include transform(translateX(0px)); 
+	}
+	.wrapper-focus-out {
+		@include span-columns(12);
+		@include transition(all 1s ease-in-out);
+		height: 100%;
+		position: absolute;
+		opacity: 0.2;
+		background: $black;
+		z-index: 11;
+		display: none;
+		&.open-focus-out {
+			display: block;
+			opacity: 0.6;
+		}
+		@include media($notebook) {
+			display: none;
+		}
+	}
+}

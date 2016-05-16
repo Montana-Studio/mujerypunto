@@ -1,0 +1,174 @@
+.header {
+	@include span-columns(12);
+	@include omega();
+	color:$gray_1; 
+	.menu-header {
+		@include span-columns(12);
+		@include pad(10px);
+		@include omega();
+		position: absolute;
+		background: $white;
+		@include media($notebook) {
+			position: relative;
+			padding: {top:40px; bottom:30px;}
+		}
+		.logotipo-mujerypunto {
+			@include span-columns(4);
+			@include media($notebook) {
+				@include outer-container(15%);
+				margin:0 auto !important;
+				float: none;
+			}
+			img {
+				width: 100%;
+				height: auto;
+				display: block;
+			}
+		}
+		.icon-menu {
+			@include span-columns(2);
+			float: right;
+			height: 45px;
+			display: table;
+			text:{align:center;}
+			z-index: 999;
+			position: absolute;
+    		right: 0;
+			i {
+				font:{size:2.5em;}
+				display: table-cell;
+				vertical-align: middle;
+			}
+			@include media($notebook) {
+				display: none;
+			}
+			&.icon-white {
+				color:$white;
+			}
+		}
+	}
+	.navigation-header {
+		@include span-columns(12);
+		display: none;
+		border-top:1px solid $gray;
+		border-bottom:1px solid $gray;
+		padding:12px 0;
+		@include media($notebook) {
+			display: block;
+		}
+		.menu-header {
+			@include span-columns(9);
+			@include pad(0);
+			@include omega();
+			ul {
+				@include span-columns(12);
+				@include pad(0);
+				margin:0;
+				li {
+					list-style:none;
+					display: inline-block;
+					font:{family:$primary_font;weight:700;size:1.5em;}
+					text:{transform:uppercase;}
+					margin:{right:30px;}
+					a {
+    					@include transition(all 0.3s ease-in-out);
+    					&:hover {
+	    					color:$green-logo;
+	    				}
+    				}
+				}
+			}	
+		}
+		.rrss-myp {
+			@include span-columns(3);
+			@include pad(0);
+			float: right;
+			text:{align:right;}
+			ul {
+				@include span-columns(12);
+				@include pad(0);
+				margin:0;
+				li {
+					list-style:none;
+					display: inline-block;
+					font:{size: 1.6em;}
+    				margin:{right: 15px;}
+    				
+    				&:last-child {
+    					border-left: 1px solid $gray;
+    					padding: {left:10px;}
+    				}
+    				a {
+    					@include transition(all 0.3s ease-in-out);
+    					&:hover {
+	    					color:$green-logo;
+	    				}
+    				}
+				}
+			}
+		}
+	}	
+}
+.menu-mobile-open {
+	@include span-columns(9.5);
+	@include omega();
+	@include pad(20px 10px);
+	float: right;
+	background: $white;
+	height: 100%;
+	position: fixed;
+	right: 0;
+	z-index: 1;
+	text:{align:right;}
+	color:$gray_1; 
+	.logotipo-mujerypunto {
+		@include span-columns(4);
+		@include media($notebook) {
+			@include outer-container(15%);
+			margin:0 auto !important;
+			float: none;
+		}
+		img {
+			width: 100%;
+			height: auto;
+			display: block;
+		}
+	}
+	.icon-search-menu {
+		@include span-columns(2);
+		float: right;
+		height: 42px;
+		display: table;
+		text:{align:center;}
+		z-index: 999;
+		position: absolute;
+		right: 0;
+		i {
+			font:{size:2.1em;}
+			display: table-cell;
+			vertical-align: middle;
+		}
+	}
+	.menu-header-mobile {
+		@include span-columns(12);
+		@include pad(0);
+		margin:{top:40px;right:0;}
+		ul {
+			@include span-columns(12);
+			@include pad(0);
+			margin:0;
+			text:{align:left;}
+			li {
+				list-style:none;
+				font:{family:$primary_font;weight:700;size:1.5em;}
+				text:{transform:uppercase;}
+				margin:{bottom:20px;}
+				border-bottom:1px solid $gray;
+				padding:{bottom:10px;}
+			}
+		}
+	}
+	@include media($notebook) {
+		display: none;
+	}
+}

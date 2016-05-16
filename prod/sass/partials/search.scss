@@ -1,0 +1,17 @@
+.search-section {
+	@include span-columns(12);
+	.bg-search-secntion {
+		@include span-columns(12);
+		height: 100%;
+		background: $white;
+		opacity: 0.9;
+		z-index: 999;
+		position: fixed;
+		top: 0;
+		left: 0;
+		display: none;
+	}
+	&.show-search {
+		display: block;
+	} 
+}
