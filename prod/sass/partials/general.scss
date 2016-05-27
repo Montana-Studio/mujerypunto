@@ -1,5 +1,5 @@
 body {
-	background: $white;
+	background: $white; 
 }
 .wrapper {
 	@include span-columns(12);

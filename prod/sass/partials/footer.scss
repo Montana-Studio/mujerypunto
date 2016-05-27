@@ -42,6 +42,11 @@
 			display: block;
 			padding:{top:20px;left:20px;right:20px;}
 			@include media($notebook) {
+				padding:{top:30px;left:0;right:0;} 
+				
+				text:{align:center;}
+			}
+			@include media($desktop) {
 				padding:{top:30px;left:40px;right:40px;}
 				text:{align:center;}
 			}	
