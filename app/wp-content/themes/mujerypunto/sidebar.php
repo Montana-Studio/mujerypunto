@@ -1,15 +1,9 @@
 <!-- sidebar -->
-<aside class="sidebar" role="complementary">
+<aside class="sidebar-content" role="complementary">
 
-	<?php get_template_part('searchform'); ?>
-
-	<div class="sidebar-widget">
-		<?php if(!function_exists('dynamic_sidebar') || !dynamic_sidebar('widget-area-1')) ?>
+	<div class="facebook-sidebar">
+		<div class="fb-page" data-href="https://www.facebook.com/mujerypunto" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"></div>
 	</div>
-
-	<div class="sidebar-widget">
-		<?php if(!function_exists('dynamic_sidebar') || !dynamic_sidebar('widget-area-2')) ?>
-	</div>
-
+	
 </aside>
 <!-- /sidebar -->

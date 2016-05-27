@@ -1,0 +1,129 @@
+.footer {
+	@include span-columns(12);
+	@include omega();
+	.newsletter-footer {
+		@include span-columns(12);
+		@include omega();
+		padding:0 10px;
+		@include media($notebook) {
+			@include outer-container(80%);
+			margin: 0 auto !important;
+			float:initial;
+			padding:{bottom:30px;}
+		}
+		.title-bg {
+			@include media($notebook) {
+				.line-bg {
+					width:100%;
+					height: 58%;
+				}
+				.title-section {
+    				font:{size: 4em;}
+    				margin:0; 
+				}
+			}
+		}
+		.bajada-news {
+			@include span-columns(12);
+			@include omega();
+			text:{align:center;}
+			font:{family:$regular_font;size:1.2em;weight:bold;style:italic;}
+			padding:0 20px;
+			line-height: 20px;
+			@include media($notebook){
+				font:{size: 1.4em;}
+				margin:{top:5px;}
+			}
+		} 
+		form {
+			@include span-columns(12);
+			@include omega();
+			margin:0 auto;
+			display: block;
+			padding:{top:20px;left:20px;right:20px;}
+			@include media($notebook) {
+				padding:{top:30px;left:40px;right:40px;}
+				text:{align:center;}
+			}	
+			.input-form {
+				@include span-columns(12);
+				@include omega();
+				@include media($notebook) {
+					@include span-columns(4);
+					float: none;
+					display: inline-block; 
+					margin:{right:10px;}
+				}
+				input {
+					@include span-columns(12);
+					@include omega();
+					border:1px solid $gray_1;
+					color:$black;
+					font:{weight:bold;}
+					padding:10px 5px;
+					margin:{bottom:10px;}
+					outline: none;
+					@include placeholder {
+						font:{style:italic;}
+						color:$gray_1;
+					}
+					@include media($notebook) {
+						font:{size: 1.2em;}
+						padding: 13px 20px;
+					}
+				}
+				input[type="submit"] {
+					@include span-columns(12);
+					@include omega();
+					background:$black;
+					color:$white;
+					text:{align:center;transform:uppercase;weight:bold;} 
+				}
+			}
+		}
+	}
+	.share-page {
+		@include span-columns(12);
+		@include omega();
+		padding:{top:20px;bottom:15px;}
+		background:#282828;
+		@include media($notebook) {
+			padding:40px 0;
+		}	
+		.content-sharepage {
+			@include outer-container(80%);
+			ul {
+				@include span-columns(12);
+				margin:0;
+				padding:0;
+				@include media($notebook) {
+					text:{align:center;}
+				}
+				li {
+					@include span-columns(6);
+					list-style: none;
+					margin:{bottom:12px;right:0;}
+					@include media($notebook) {
+						width:auto;
+						display: inline-block;
+						float: initial;
+						padding:0 15px;
+					}
+					a {
+						color:$white;
+						font:{size: 0.9em;weight: bold;}
+						text:{transform: uppercase;}
+						letter-spacing: 1px;
+						@include media($notebook) {
+							font:{size: 1.1em}
+						}	
+						i {
+							font:{size: 1.6em;}
+							margin:{right:5px;}
+						}
+					}
+				}
+			}
+		}
+	}
+}

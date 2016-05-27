@@ -1,0 +1,64 @@
+.section-two {
+	@include span-columns(12);
+	@include omega();
+	@include pad(0); 
+	.post-sect-two {
+		@include span-columns(12);
+		@include omega();
+		margin:{bottom:10px;}
+		@include media($notebook) {
+			@include span-columns(4);
+			margin:{bottom:15px;}
+		}
+		.imagen-post {
+			@include span-columns(12);
+			@include omega();
+			height: 350px;
+			background-position:center;
+			background-size:cover; 
+			@include media($notebook) {
+				height: 150px;
+			}
+		}
+		.content-post {
+			@include span-columns(12);
+			@include omega();
+			padding: {top:10px; bottom:0px;}
+			@include media($notebook) {
+				padding: {top:10px;}
+			}	
+			.post-inside {
+				@include span-columns(12);
+				@include omega();
+				@include media($notebook) {
+					display: table-cell;
+					vertical-align: middle;
+					float: none;
+					.category-post {
+						display: none;
+					}	
+					.title-post {
+						margin:{top:0;}
+					}
+					.date-post {
+						display: none;
+					}
+				}	
+				.category-post {
+					margin:{bottom:4px;}
+				}
+				.title-post {
+					font:{size: 1.4em;}
+					line-height: 23px;
+					margin:{bottom: 2px;}
+				}			
+				.btn-read-green {
+					margin:{top:0;}
+					a {
+						font:{size:1em;}
+					}
+				}
+			}
+		}
+	} 
+}

@@ -1,0 +1,121 @@
+.section-five {
+	@include span-columns(12);
+	@include omega();
+	@include pad(0); 
+	.post-sect-five {
+		@include span-columns(12);
+		@include omega();
+		margin:{bottom:10px;}
+		@include media($notebook) {
+			@include span-columns(6);
+			@include omega();
+		}
+		.imagen-post {
+			@include span-columns(12);
+			@include omega();
+			height: 350px;
+			background-position:center;
+			background-size:cover; 
+			@include media($notebook) {
+				@include span-columns(4);
+				@include omega();
+				height: 120px;
+			}
+			@include media($desktop) {
+				@include span-columns(4);
+				@include omega();
+				height: 150px;
+			}
+		}
+		.content-post {
+			@include span-columns(12);
+			@include omega();
+			padding: {top:10px; bottom:0px;}
+			@include media($notebook) {
+				@include span-columns(8);
+				@include omega();
+				height: 120px;
+				display: table;
+			}
+			@include media($desktop) {
+				@include span-columns(8);
+				@include omega();
+				height: 150px;
+				padding: {top:10px;}
+				display: table;
+			}	
+			.post-inside {
+				@include span-columns(12);
+				@include omega();
+				@include media($notebook) {
+					display: table-cell;
+					vertical-align: middle;
+					float: none;
+					padding:{left:10px;}
+				}	
+				.date-post {
+					display: none;
+				}
+				.category-post {
+					display: none;
+				}
+				.title-post {
+					font-size: 1.6em;
+   					line-height: 24px;
+					margin:{bottom: 2px;}
+					@include media($notebook) {
+						font-size: 1.3em;
+						line-height: 21px;
+					}
+					@include media($desktop) {
+						font-size: 1.6em;
+						line-height: 24px;
+					}
+				}			
+				.btn-read-green {
+					margin:{top:0;}
+					a {
+						font:{size:1em;}
+					}
+				}
+			}
+		}
+		&:first-child {
+			@include media($notebook) {
+			@include span-columns(6);
+			margin:{right:10px;}
+				.imagen-post {
+					@include span-columns(12);
+					@include omega();
+					height: 250px;
+				}
+				.content-post {
+					@include span-columns(12);
+					@include omega();
+					.post-inside {
+						@include span-columns(12);
+						@include omega();
+						padding:10px 0;
+						.title-post {
+							font-size: 2.3em;
+							line-height: 30px;
+						}
+						.date-post {
+							display: block;
+						}
+						.category-post {
+							display: block;
+						}	
+					}
+				}	
+			}
+			@include media($desktop) {
+				.imagen-post {
+					@include span-columns(12);
+					@include omega();
+					height: 300px;
+				}
+			}	
+		}
+	}  
+}

@@ -1,0 +1,28 @@
+.sidebar {
+	@include span-columns(12);
+	@include omega();
+	margin:{top:20px;}
+	@include media($notebook) {
+		@include span-columns(4);
+		@include omega();
+		float:right;
+	}
+	@include media($desktop) {
+		@include span-columns(3);
+		@include omega();
+		float:right;
+	}
+	.sidebar-content {
+		@include span-columns(12);
+		@include omega();
+		.facebook-sidebar {
+			@include span-columns(12);
+			@include omega();
+			.fb-page {
+				@include span-columns(12);
+				@include omega();
+				text-align: center;
+			}
+		}	
+	}
+}

@@ -1,12 +1,32 @@
 			<!-- footer -->
 			<footer class="footer" role="contentinfo">
 
-				<!-- copyright -->
-				<p class="copyright">
-					&copy; <?php echo date('Y'); ?> Copyright <?php bloginfo('name'); ?>. <?php _e('Powered by', 'html5blank'); ?>
-					<a href="//wordpress.org" title="WordPress">WordPress</a> &amp; <a href="//html5blank.com" title="HTML5 Blank">HTML5 Blank</a>.
-				</p>
-				<!-- /copyright -->
+				<div class="newsletter-footer">
+					<div class="title-bg"><div class="line-bg"></div><h2 class="title-section">Newsletter</h2></div>
+					<div class="bajada-news">Nos gustaría compartir las últimas noticias de Mujer & Punto</div>
+					<form action="">
+						<div class="input-form">
+							<input type="text" name="name" placeholder="Nombre">
+						</div>
+						<div class="input-form">
+							<input type="email" name="correo" placeholder="Correo electrónico">
+						</div>
+						<div class="input-form">
+							<input type="submit" value="Suscribir">
+						</div> 
+					</form>
+				</div>
+				<div class="share-page">
+					<div class="content-sharepage">
+						<ul>
+							<li><a href="#"><i class="fa fa-facebook"></i> Facebook</a></li>
+							<li><a href="#"><i class="fa fa-twitter"></i> Twitter</a></li>
+							<li><a href="#"><i class="fa fa-google-plus"></i> Google Plus</a></li>
+							<li><a href="#"><i class="fa fa-instagram"></i> Instagram</a></li>
+							<li><a href="#"><i class="fa fa-youtube-play"></i> Youtube</a></li>
+						</ul>
+					</div>
+				</div>
 
 			</footer>
 			<!-- /footer -->

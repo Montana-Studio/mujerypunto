@@ -2,6 +2,13 @@
 	@include span-columns(12);
 	@include omega();
 	color:$gray_1; 
+	height:75px;
+	@include media($notebook) {
+		@include outer-container(80%);
+		margin: 0 auto !important;
+		float:initial;
+		height: initial;
+	}
 	.menu-header {
 		@include span-columns(12);
 		@include pad(10px);
@@ -67,9 +74,12 @@
 				li {
 					list-style:none;
 					display: inline-block;
-					font:{family:$primary_font;weight:700;size:1.5em;}
+					font:{family:$primary_font;weight:700;size:1.1em;}
 					text:{transform:uppercase;}
 					margin:{right:30px;}
+					@include media($desktop) {
+						font-size: 1.5em;
+					}
 					a {
     					@include transition(all 0.3s ease-in-out);
     					&:hover {

@@ -101,6 +101,9 @@ function html5blank_header_scripts()
         wp_register_script('jquerymin', get_template_directory_uri() . '/js/jquery.min.js', array('jquery'), '1.0.0'); // Custom scripts
         wp_enqueue_script('jquerymin'); // Enqueue it! 
 
+        wp_register_script('sliderhome', get_template_directory_uri() . '/js/swiper.min.js', array('jquery'), '1.0.0'); // Custom scripts Slider Home  
+        wp_enqueue_script('sliderhome'); // Enqueue it! 
+
         wp_register_script('mujerypuntojs', get_template_directory_uri() . '/js/mujerypunto.min.js', array('jquery'), '1.0.0'); // Conditional script(s)
         wp_enqueue_script('mujerypuntojs'); // Enqueue it!  
     }
@@ -113,7 +116,7 @@ function html5blank_conditional_scripts()
         wp_register_script('mujerypuntojs', get_template_directory_uri() . '/js/mujerypunto.min.js', array('jquery'), '1.0.0'); // Conditional script(s)
         wp_enqueue_script('mujerypuntojs'); // Enqueue it! 
     }
-}
+} 
 
 // Load HTML5 Blank styles
 function html5blank_styles()
@@ -124,11 +127,16 @@ function html5blank_styles()
     wp_register_style('html5blank', get_template_directory_uri() . '/style.css', array(), '1.0', 'all');
     wp_enqueue_style('html5blank'); // Enqueue it!
 
+    wp_register_style('fontawesome', get_template_directory_uri() . '/css/font-awesome.min.css', array(), '1.0', 'all');  
+    wp_enqueue_style('fontawesome'); // Enqueue it!  
+
+    wp_register_style('sliderhome', get_template_directory_uri() . '/css/swiper.min.css', array(), '1.0', 'all');  
+    wp_enqueue_style('sliderhome'); // Enqueue it!  
+
     wp_register_style('mujerypuntocss', get_template_directory_uri() . '/css/mujerypunto.css', array(), '1.0', 'all');
     wp_enqueue_style('mujerypuntocss'); // Enqueue it!  
 
-    wp_register_style('fontawesome', get_template_directory_uri() . '/css/font-awesome.min.css', array(), '1.0', 'all');  
-    wp_enqueue_style('fontawesome'); // Enqueue it!  
+    
 }
 
 // Register HTML5 Blank Navigation

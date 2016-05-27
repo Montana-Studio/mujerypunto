@@ -1,0 +1,69 @@
+.section-four {
+	@include span-columns(12);
+	@include omega();
+	@include pad(0); 
+	.post-sect-four {
+		@include span-columns(12);
+		@include omega();
+		margin:{bottom:10px;}
+		.imagen-post {
+			@include span-columns(12);
+			@include omega();
+			height: 350px;
+			background-position:center;
+			background-size:cover; 
+			@include media($notebook) {
+				@include span-columns(4);
+				@include omega();
+				height: 200px;
+			}
+			@include media($desktop) {
+				@include span-columns(3);
+				@include omega();
+				height: 200px;
+			}
+		}
+		.content-post {
+			@include span-columns(12);
+			@include omega();
+			padding: {top:10px; bottom:0px;}
+			@include media($notebook) {
+				@include span-columns(8);
+				@include omega();
+				height: 200px;
+				padding: {top:10px;}
+				display: table;
+			}
+			@include media($desktop) {
+				@include span-columns(9);
+				@include omega();
+				height: 200px;
+				display: table;
+			}	
+			.post-inside {
+				@include span-columns(12);
+				@include omega();
+				@include media($notebook) {
+					display: table-cell;
+					vertical-align: middle;
+					float: none;
+					padding:{left:20px;}
+				}	
+				.category-post {
+					margin:{bottom:4px;}
+				}
+				.title-post {
+					font-size: 2.1em;
+   					line-height: 32px;
+					margin:{bottom: 2px;}
+				}			
+				.btn-read-green {
+					margin:{top:0;}
+					a {
+						font:{size:1em;}
+					}
+				}
+			}
+		}
+	}  
+}
