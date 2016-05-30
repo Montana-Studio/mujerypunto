@@ -24,6 +24,15 @@
 
 	</head>
 	<body <?php body_class(); ?>>
+	<div id="fb-root"></div>
+	<script>(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.6&appId=828462330630430";
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));
+	</script>
 
 	<div id="fb-root"></div>
 	<script>(function(d, s, id) {
@@ -37,8 +46,10 @@
 
 		<div class="menu-mobile-open">
 			<div class="logotipo-mujerypunto">
+				<a href="<?php echo get_site_url(); ?>">
 				<img src="<?php echo get_template_directory_uri(); ?>/img/myp_logotipo.png" alt="Logo mujer y punto" class="logo-mujer-y-punto">
-			</div>
+				</a>
+			</div> 
 			<div class="icon-search-menu">
 				<i class="fa fa-search"></i>
 			</div>
@@ -53,7 +64,9 @@
 
 					<div class="menu-header">
 						<div class="logotipo-mujerypunto">
-							<img src="<?php echo get_template_directory_uri(); ?>/img/myp_logotipo.png" alt="Logo mujer y punto" class="logo-mujer-y-punto">
+							<a href="<?php echo get_site_url(); ?>">
+								<img src="<?php echo get_template_directory_uri(); ?>/img/myp_logotipo.png" alt="Logo mujer y punto" class="logo-mujer-y-punto">
+							</a>
 						</div>
 						<div class="icon-menu">
 							<i class="fa fa-bars"></i>

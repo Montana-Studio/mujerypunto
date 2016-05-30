@@ -6,6 +6,7 @@
 		@include span-columns(4);
 		@include omega();
 		float:right;
+		margin:{top:40px;}
 	}
 	@include media($desktop) {
 		@include span-columns(3);
@@ -17,12 +18,106 @@
 		@include omega();
 		.facebook-sidebar {
 			@include span-columns(12);
-			@include omega();
+			margin:{bottom:40px;right:0;}
 			.fb-page {
 				@include span-columns(12);
 				@include omega();
 				text-align: center;
 			}
+		}
+		.title-sidebar {
+			text:{align:center}; 
+			font:{family:$regular_font;size: 1.8em;style: italic;}
+    		margin: {top:-15px;left:auto;bottom:0;right:auto;}
+    		margin-top: -15px !important;
+    		position: initial;
+    		background: $white;
+    		display: table;
+    		padding: 0 10px;
 		}	
+		.box-sidebar {
+			@include span-columns(12);
+			@include omega();
+			border:1px solid $gray_3;
+			padding: 0 20px;
+			margin:{bottom:35px;}
+			.content-sidebar {
+				@include span-columns(12);
+				@include omega();
+				.post-sidebar {
+					@include span-columns(12);
+					@include omega();
+					border-bottom:1px solid $gray_3;
+					margin:{top:10px;}
+					padding:{bottom:5px;}
+					.imagen-post {
+						@include span-columns(4);
+						@include omega();
+						height: 80px;
+						background-position:center;
+						background-size:cover; 
+					}
+					.content-post {
+						@include span-columns(8);
+						@include omega();
+						padding:{left:5px;}
+						.title-post {
+							font:{size: 1.2em;}
+							line-height: 18px;
+						}
+						.btn-read-green {
+							margin:{top:4px;}
+						}
+					}
+					&:last-child {
+						border:0;
+					}
+				}
+			}
+			&.imperdibles-sidebar {
+				.content-sidebar {
+					.post-sidebar {
+						.imagen-post {
+							@include span-columns(12);
+							@include omega();
+							height: 150px;
+						}	
+						.content-post {
+							@include span-columns(12);
+							@include omega();
+							.title-post {
+								font:{size: 1.5em;}
+								line-height: 24px;
+							}
+						}		
+					}			
+				}	
+			}
+			&.instagram {
+				.list-instagram {
+					@include span-columns(12);
+					@include omega();
+					margin:30px 0;
+					ul {
+						@include span-columns(12);
+						margin:0;
+						padding:0;
+						text:{align:center;}
+						li {
+							@include span-columns(3.8);
+							margin:{right:5px !important;bottom:5px;}
+							float: none;
+    						display: inline-block;
+							.image-instagram {
+								@include span-columns(12);
+								@include omega();
+								height: 90px;
+								background:$gray_3;
+							}
+						}
+					}
+				}
+			}
+		}
 	}
 }

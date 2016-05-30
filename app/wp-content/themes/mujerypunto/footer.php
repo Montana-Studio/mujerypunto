@@ -27,6 +27,52 @@
 						</ul>
 					</div>
 				</div>
+				<div class="content-footer">
+					<div class="contenedor-footer">
+						<ul>
+							<li>
+								<div class="footer-logobox">
+									<a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/myp_logo.png" alt="Logo mujer y punto"></a>
+								</div>
+								<div class="footer-tags">
+									<h3><i class="fa fa-circle"></i> M&P</h3>
+									<ul class="list-pages"> 
+										<li><a href="#">Sobre Mujer & Punto</a></li>
+										<li><a href="#">Contacto Editorial</a></li>
+										<li><a href="#">Contacto Publicitario</a></li>
+									</ul>
+								</div>
+							</li>
+							<li>
+								<div class="footer-tags">
+									<h3><i class="fa fa-tags"></i> TAGS</h3>
+									<ul class="list-pages"> 
+										<li><a href="#">Sobre Mujer & Punto</a></li>
+										<li><a href="#">Contacto Editorial</a></li>
+										<li><a href="#">Contacto Publicitario</a></li>
+									</ul>
+								</div>
+							</li>
+							<li>
+								<div class="footer-tags">
+									<h3><i class="fa fa-flag-o"></i> CATEGORIAS</h3>
+									<ul class="list-pages"> 
+										<li><a href="#">Sobre Mujer & Punto</a></li>
+										<li><a href="#">Contacto Editorial</a></li>
+										<li><a href="#">Contacto Publicitario</a></li>
+									</ul>
+								</div>
+							</li>
+							<li>
+								<div class="footer-bottom">
+									<div class="parrafo-footer">
+										Copyrights © 2016. DERECHOS RESERVADOS
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
 
 			</footer>
 			<!-- /footer -->

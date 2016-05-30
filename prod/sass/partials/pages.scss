@@ -1,0 +1,58 @@
+.header-page {
+	@include span-columns(12);
+	@include omega();
+	padding:10px 0;
+	@include media($notebook) {
+		padding:30px 0;
+	}
+	.title-bg {
+		margin:{bottom:0;}
+		.title-section {
+			margin:{bottom:0;}
+		}
+	}
+	.categoria-title {
+		text:{align:center;transform:uppercase;}
+		font:{family:$second_font;weight:bold;}
+		color:$green_logo;
+	}
+}
+.content-page {
+	@include media($notebook) {
+		margin:{bottom:30px;}
+	}
+	.post-grid {
+		@include span-columns(12);
+		margin: {bottom:10px;right:8px !important;left:8px;}
+		display: inline-block; 
+		@include media($notebook) {
+			@include span-columns(5.8);
+			display: inline-block;
+		}
+		.imagen-post {
+			background-position:center;
+			background-size:cover;
+			height: 300px;
+			@include media($desktop) {
+				height: 400px;
+			}	
+		}
+		.date-post {
+			margin:{top:10px;}
+		}
+		.title-post {
+			font:{size: 1.5em;}
+    		line-height: 23px;
+    		@include media($desktop) {
+    			font:{size: 2em;}
+    			line-height: 31px;
+    		}
+		}
+		.btn-read-green {
+			margin:{top:5px;}
+			a {
+				font:{size:0.9em;}
+			}
+		}
+	}
+}

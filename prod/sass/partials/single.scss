@@ -1,0 +1,306 @@
+.single-post {
+	@include span-columns(12);
+	@include omega();
+	article {
+		text:{align:center;}
+		.category-post {
+			margin:{bottom:10px;}
+			@include media($notebook) {
+				margin:{bottom:20px;}
+			}
+		}
+		.imagen-post {
+			@include span-columns(12);
+			@include omega();
+			height: 300px;
+			background-position:center;
+			background-size:cover; 
+			@include media($notebook) {
+				height:400px;
+			}
+			@include media($desktop) {
+				height:500px;
+			}
+		}
+		.date-post {
+			margin: {top:10px; bottom: 0px;}
+			@include media($notebook) {
+				margin: {top:20px;}
+			}	
+		}
+		.title-post {
+			@include media($notebook) {
+				margin: {top:10px; bottom: 10px;}
+				font:{size: 2.3em;}
+				padding: 0 40px;
+				line-height: 32px;
+			}
+		}
+		.tag-post {
+			@include span-columns(12);
+			@include omega();
+			font:{family:$primary_font;size:1.2em;weight:400;}
+			color:$gray_1;
+			text:{transform:uppercase;}
+			margin:10px 0;
+			a {
+				color:$green-logo;
+			}
+		}	
+		.share-single {
+			@include span-columns(12);
+			@include omega();
+			@include media($desktop) {
+				@include outer-container(70%);
+				float: initial;
+				margin: 0 auto !important;
+			}
+			ul {
+				@include span-columns(12);
+				margin:0;
+				padding:0;
+				text:{align:center;}
+				li {
+					@include span-columns(5.8);
+					float: none;
+					display: inline-block;
+					list-style: none;
+					@include media($notebook) {
+						@include span-columns(3.8);
+						float: none;
+						display: inline-block;
+					}	
+					margin:{right:5px !important;bottom:5px;}
+					.btn-share-single {
+						@include span-columns(12);
+						@include omega();
+						border: 1px solid $green-logo;
+						text:{align:center;}
+						padding:10px 0; 
+						a {
+							@include span-columns(12);
+							@include omega();
+							height: 100%;
+							color:$green-logo;
+							font:{family:$primary_font;size:1.2em;weight:400;}
+							text:{transform:uppercase;}
+							i {
+								margin:{right:5px;}
+								font:{size:1.2em;}
+							}
+						}
+						&:hover {
+							@include transition(all 0.3s ease-in-out);
+							background:$green-logo;
+							a { 
+								color:$white;
+							}	
+						}
+					}
+					&.whatsapp {
+						@include media($notebook) {
+							display: none;
+						}	
+					}
+				}
+			}
+		}
+		.content-post {
+			@include span-columns(12);
+			@include omega();
+			font:{family:$second_font;size:14px;}
+			line-height: 23px;
+			text:{align:left;}
+			color:$gray_2;
+			h2 {
+				font:{family:$regular_font;}
+				line-height: 27px;
+			}
+		}
+		.comments-facebook {
+			@include span-columns(12);
+			@include omega();
+			text:{align:left;}
+			h3 {
+				font:{family:$regular_font;weight:800;style:italic;}
+				color:$green_logo;
+			}
+			.fb-comments {
+				@include span-columns(12);
+				@include omega();
+			}
+		}
+		.title-bg {
+			h2 {
+				font:{size:1.1em;}
+				margin: 16px 0;
+				@include media($notebook) {
+					font:{size:1.5em;} 
+					margin: 13px 0;
+				}
+			}
+			.line-bg {
+				@include media($notebook) {
+					width:100%;
+				}	
+			}	
+		}
+		.nav-post {
+			@include span-columns(12);
+			border-bottom:1px solid $black;
+			margin:{bottom:30px;right:0;}
+			.nav-SinglePost {
+				@include span-columns(12);
+				@include omega();
+				padding:20px 0;
+				@include media($notebook) {
+					@include span-columns(6);
+					@include omega();
+				}
+				@include media($desktop) {
+					padding:30px 0;
+				}
+				.arrow-nav {
+					@include span-columns(1.5);
+					@include omega();
+					font:{size:3em;}
+					a {
+						color:$green-logo;
+					}
+					@include media($notebook) {
+						@include span-columns(2);
+					}
+				}
+				.contentPost {
+					@include span-columns(10.5);
+					@include omega();
+					text:{align:left;}
+					@include media($notebook) {
+						@include span-columns(10);
+					}
+					.title-post {
+						font:{size:1.3em;weight:bold;}
+						text:{align:left;}
+						margin: 0;
+    					line-height: 22px;
+    					color:$black;
+    					@include media($notebook) {
+    						padding: 0;
+    					}
+    					@include media($desktop) {
+    						font:{size: 1.8em;}
+    						line-height: 29px;
+    					}	
+					}
+					.btn-read-green {
+						font:{size: 1.2em;}
+						margin:0; 
+					}
+				}
+				&.next-post {
+					@include media($notebook) {
+						float: right;
+					}
+					.contentPost {
+						text:{align:right;}
+						.title-post {
+							text:{align:right;}
+						}	
+						.btn-read-green {
+							text:{align:right;}
+						}	
+					}
+				}
+			}
+		}
+		.post-relacionados {
+			@include span-columns(12);
+			@include omega();
+			border:0;
+			.post-related {
+				@include span-columns(12);
+				@include omega();
+				border:0;
+				ul {
+					@include span-columns(12);
+					margin:0;
+					padding: 0;
+					@include media($notebook) {
+						@include span-columns(12);
+						margin:0;
+						padding: 0;
+					}
+					li {
+						@include span-columns(12);
+						margin:{right:0px;bottom:10px;}
+						@include media($notebook) {
+							@include span-columns(4);
+							margin:{right:10px;bottom:10px;}
+						}
+						.imagen-post {
+							@include span-columns(3);
+							@include omega();
+							height: 100px;
+							@include media($notebook) {
+								@include span-columns(12);
+								@include omega();
+								height: 200px;
+							}
+						}
+						.content-post {
+							@include span-columns(9);
+							@include omega();
+							height: 100px;
+							padding:10px;
+							@include media($notebook) {
+								@include span-columns(12);
+								@include omega();
+								height: initial;
+								padding:0;
+							}
+							.title-post {
+								font-size: 1em;
+								line-height: 19px;
+								margin:{bottom:0;}
+								@include media($notebook) {
+									padding:0;
+								}
+								@include media($desktop) {
+									font:{size: 1.4em;}
+    								line-height: 27px;
+								}
+							}
+							.btn-read-green {
+								margin:0;
+								i {
+									font:{size:12px;}
+								}
+							}
+							.social-share {
+								display: inline-block;
+								margin:{left:5px;}
+								ul {
+									margin:0;
+									padding:{top:5px;left:0;right:0;}
+									li {
+										list-style: none;
+										display: inline-block;
+										margin:0 5px;
+										width: auto !important;
+										a {
+											color: $green-logo;
+											font:{size:1.2em;}
+											i {
+												font:{size: 14px !important;}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

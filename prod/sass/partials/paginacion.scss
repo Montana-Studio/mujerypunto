@@ -1,0 +1,14 @@
+.paginacion-sect {
+	@include span-columns(12);
+	@include omega();
+	text:{align:center;transform:uppercase;}
+	font:{family:$second_font;size:1.2em;weight:bold;}
+	color:$gray_1;
+	margin:20px 0;
+	.page-numbers {
+		padding: 0 5px;
+		&.current {
+			color:$green_logo;
+		}
+	}
+}
