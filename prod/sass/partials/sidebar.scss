@@ -112,7 +112,8 @@
 								@include span-columns(12);
 								@include omega();
 								height: 90px;
-								background:$gray_3;
+								background-position:center;
+								background-size:120%;
 							}
 						}
 					}

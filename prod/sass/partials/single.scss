@@ -84,6 +84,8 @@
 							color:$green-logo;
 							font:{family:$primary_font;size:1.2em;weight:400;}
 							text:{transform:uppercase;}
+							background-size:cover;
+							background-position:center;
 							i {
 								margin:{right:5px;}
 								font:{size:1.2em;}
@@ -116,14 +118,78 @@
 				font:{family:$regular_font;}
 				line-height: 27px;
 			}
+			.swiper-gallery{
+                @include span-columns(12);
+                position: relative;
+                overflow: hidden;
+                margin:{bottom:20px;}
+                .title-section{
+                    @include span-columns(12);
+                    @include shift(0);
+                }
+                .swiper-wrapper{
+                    .swiper-slide{
+                       text:{align:center;}
+                       	.item-imagen-post {
+	                       	height: 300px;
+	                       	background-position:center;
+	                       	background-size:cover;
+	                       	@include media($notebook) {
+	                       		height: 200px;
+	                       	}
+	                       	@include media($desktop) {
+	                       		height: 350px;
+	                       	}
+	                    }
+                    }
+                }
+                .swiper-pagination{
+                    span{
+                        background:{color:$black;}
+                    }
+                } 
+                .arrows{
+                    position: absolute;
+                    top:50%;
+                    z-index: 10;
+                    width:30px;
+                    cursor: pointer; 
+                    i{
+                        color:$green_logo;
+                        font:{size:em(25);}
+                    }
+                    &:hover{
+                        i{
+                            color:$green_logo;
+                        }
+                    }
+                    &.next-gallery{
+                        right:0;
+                    }
+                    &.prev-gallery{
+                        left:0;
+                    }
+                    &.swiper-button-disabled{
+                        i{
+                            color:$green_logo;
+                            opacity: 0.2;
+                            cursor:default;
+                        }
+                    }
+                }
+            }
+		}
+		.title-insidepost {
+			font:{family:$regular_font;weight:800;style:italic;size:1.2em;}
+			color:$green_logo;
+			margin:{bottom: 10px;}
 		}
 		.comments-facebook {
 			@include span-columns(12);
 			@include omega();
 			text:{align:left;}
 			h3 {
-				font:{family:$regular_font;weight:800;style:italic;}
-				color:$green_logo;
+				margin:0;
 			}
 			.fb-comments {
 				@include span-columns(12);

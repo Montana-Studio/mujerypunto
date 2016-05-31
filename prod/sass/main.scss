@@ -1,5 +1,6 @@
 @import '../../bower_components/bourbon/app/assets/stylesheets/bourbon';
 @import '../../bower_components/neat/app/assets/stylesheets/neat';
+@import '../../bower_components/font-awesome/scss/font-awesome';
 
 //FONTS
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,700,600italic,700italic,800,800italic');
@@ -20,6 +21,7 @@
 @import 'partials/sidebar';      
 @import 'partials/single';      
 @import 'partials/pages';      
+@import 'partials/tags';      
 @import 'partials/paginacion';      
 @import 'partials/footer';      
 

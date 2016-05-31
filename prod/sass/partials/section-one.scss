@@ -10,15 +10,8 @@
 			@include span-columns(4);
 			margin:{bottom:15px;}
 		}
-		.imagen-post {
-			@include span-columns(12);
-			@include omega();
-			height: 350px;
-			background-position:center;
-			background-size:cover; 
-			@include media($notebook) {
-				height: 150px;
-			}
+		.imagen-contentpost {
+			height: 150px;
 		}
 		.content-post {
 			@include span-columns(12);
@@ -64,11 +57,19 @@
 			@include media($notebook) {
 				@include span-columns(12);
 				@include omega();
-				.imagen-post {
+				.imagen-contentpost {
 					@include span-columns(6);
 					@include omega();
-					height: 250px;
-				}
+					height: 350px;
+					@include media($notebook) {
+						height: 250px;
+					}
+					.imagen-post {
+						@include span-columns(12);
+						@include omega();
+						height: inherit;
+					}
+				}	
 				.content-post {
 					@include span-columns(5);
 					@include omega();

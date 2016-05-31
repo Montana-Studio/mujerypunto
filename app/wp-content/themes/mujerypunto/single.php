@@ -55,7 +55,7 @@
 				</div>
 
 				<div class="comments-facebook">
-					<h3>Comentarios</h3>
+					<h3 class="title-insidepost">Comentarios</h3>
 					<div class="fb-comments" data-href="http://www.mujerypunto.cl" data-width="100%" data-numposts="5"></div>
 				</div>
 
@@ -111,8 +111,12 @@
 										$output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
 										$first_img = $matches [1] [0];
 									?>
+									
+								<div class="imagen-contentpost">
 									<div class="imagen-post" style="background-image:url('<?php global $post; $thumbID = get_post_thumbnail_id( $post->ID ); if($thumbID){$imgDestacada = wp_get_attachment_url( $thumbID ); echo $imgDestacada; }else{ echo $first_img;}?>')">
-									</div>
+										<div class="bg-contentpost"></div>
+									</div>	
+								</div> 
 
 									<div class="content-post">
 										<div class="post-inside">

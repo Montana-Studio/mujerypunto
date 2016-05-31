@@ -6,12 +6,8 @@
 		@include span-columns(12);
 		@include omega();
 		margin:{bottom:10px;}
-		.imagen-post {
-			@include span-columns(12);
-			@include omega();
+		.imagen-contentpost {
 			height: 350px;
-			background-position:center;
-			background-size:cover; 
 			@include media($notebook) {
 				@include span-columns(4);
 				@include omega();
@@ -22,6 +18,12 @@
 				@include omega();
 				height: 200px;
 			}
+			.imagen-post {
+				@include span-columns(12);
+				@include omega();
+				background-position:center;
+				background-size:cover; 
+			}	
 		}
 		.content-post {
 			@include span-columns(12);

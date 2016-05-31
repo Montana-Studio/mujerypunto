@@ -9,7 +9,13 @@
 	</div>
 
 	<div class="facebook-sidebar">
-		<div class="fb-page" data-href="https://www.facebook.com/mujerypunto" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"></div>
+		<?php 
+			if(is_page('belleza')){
+				echo 'belleza';
+			}else {
+				echo '<div class="fb-page" data-href="https://www.facebook.com/mujerypunto" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"></div>';
+			}
+		?> 	 
 	</div>
 
 	<div class="box-sidebar twitter">
@@ -20,6 +26,15 @@
 		</div>
 	</div>
 
+	<div class="box-sidebar instagram">
+		<div class="title-sidebar"><i class="fa fa-instagram"></i> Instagram</div>
+		<div class="list-instagram ">
+			<ul>
+				<?php get_template_part('instagram'); ?> 
+			</ul>
+		</div>	 
+	</div>
+
 	<div class="box-sidebar imperdibles-sidebar">
 		<div class="title-sidebar"><i class="fa fa-star-o"></i> Imperdibles M&P</div>
 		<div class="content-sidebar">
@@ -27,7 +42,5 @@
     	</div>
 	</div>
 
-	
-	
 </aside>
 <!-- /sidebar -->

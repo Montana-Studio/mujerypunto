@@ -23,9 +23,10 @@
 	}
 	.post-grid {
 		@include span-columns(12);
-		margin: {bottom:10px;right:8px !important;left:8px;}
+		margin: {bottom:10px;right:0 !important;left:0;}
 		display: inline-block; 
 		@include media($notebook) {
+			margin: {bottom:10px;right:8px !important;left:8px;}
 			@include span-columns(5.8);
 			display: inline-block;
 		}

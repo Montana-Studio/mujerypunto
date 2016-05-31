@@ -83,6 +83,10 @@
 					background:$black;
 					color:$white;
 					text:{align:center;transform:uppercase;weight:bold;} 
+					&:hover {
+						@include transition(all 0.5s ease-in-out);
+						background:$gray_2;
+					}
 				}
 			}
 		}
@@ -125,6 +129,16 @@
 						i {
 							font:{size: 1.6em;}
 							margin:{right:5px;}
+						}
+					}
+					&:hover {
+						a {
+							@include transition(all 0.3s ease-in-out);
+							color:$green_logo;
+						}
+						i {
+							@include transition(all 0.3s ease-in-out);
+							color:$green_logo;
 						}
 					}
 				}
@@ -172,6 +186,9 @@
 						@include span-columns(12);
 						@include omega();
 						padding:10px 20px;
+						@include media($notebook) {
+							padding:{top:25px !important;}
+						}
 					}
 					h3 {
 						font:{family:$regular_font;size:1.2em;}
@@ -197,6 +214,13 @@
 							}
 							a {
 								color:$white;
+								&:hover {
+									@include transition(all 0.4s ease-in-out);
+									color:$green_logo;
+								}
+							}
+							&:first-letter  {
+								text:{trasnform:uppercase;}
 							}
 						}
 					}

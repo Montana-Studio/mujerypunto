@@ -10,12 +10,8 @@
 			@include span-columns(6);
 			@include omega();
 		}
-		.imagen-post {
-			@include span-columns(12);
-			@include omega();
+		.imagen-contentpost {
 			height: 350px;
-			background-position:center;
-			background-size:cover; 
 			@include media($notebook) {
 				@include span-columns(4);
 				@include omega();
@@ -26,7 +22,13 @@
 				@include omega();
 				height: 150px;
 			}
-		}
+			.imagen-post {
+				@include span-columns(12);
+				@include omega();
+				background-position:center;
+				background-size:cover; 
+			}	
+		}	
 		.content-post {
 			@include span-columns(12);
 			@include omega();
@@ -84,11 +86,15 @@
 			@include media($notebook) {
 			@include span-columns(6);
 			margin:{right:10px;}
-				.imagen-post {
+				.imagen-contentpost {
 					@include span-columns(12);
 					@include omega();
 					height: 250px;
-				}
+					.imagen-post {
+						@include span-columns(12);
+						@include omega();
+					}	
+				}	
 				.content-post {
 					@include span-columns(12);
 					@include omega();
@@ -110,10 +116,12 @@
 				}	
 			}
 			@include media($desktop) {
-				.imagen-post {
-					@include span-columns(12);
-					@include omega();
+				.imagen-contentpost {
 					height: 300px;
+					.imagen-post {
+						@include span-columns(12);
+						@include omega();
+					}	
 				}
 			}	
 		}

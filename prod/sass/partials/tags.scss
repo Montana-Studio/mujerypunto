@@ -1,0 +1,61 @@
+.tags-content {
+	@include span-columns(12);
+	@include omega();
+	@include media($notebook) {
+		@include span-columns(4);
+		margin:{bottom:10px;right:10px;}
+	}
+	article {
+		@include span-columns(12);
+		@include omega();
+		.imagen-post {
+			@include span-columns(12);
+			@include omega();
+			height: 250px;
+			@include media($notebook) {
+				height: 150px;
+			}
+			@include media($desktop) {
+				height: 250px;
+			}
+		}
+		.content-post {
+			@include span-columns(12);
+			@include omega();
+			margin:{top:10px;}
+			.post-inside {
+				.category-post {
+					@include media($notebook) {
+						font:{size:0.8em;}
+					}
+					@include media($desktop) {
+						font:{size:1.2em;}
+					}
+				}
+				.date-post {
+					margin:{top:5px;}
+					@include media($desktop) {
+						margin:{top:5px;}
+					}
+				}
+				.title-post {
+					@include media($notebook) {
+						font-size: 1.4em;
+	    				line-height: 22px;
+					}
+					@include media($desktop) {
+						font-size: 2em;
+	    				line-height: 28px;
+					}
+				
+				}
+				.btn-read-green {
+					margin:{top:5px;}
+					a {
+						font:{size: 1em;}
+					}
+				}	
+			}
+		}
+	}
+}

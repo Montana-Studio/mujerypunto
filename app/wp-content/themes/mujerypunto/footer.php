@@ -19,11 +19,11 @@
 				<div class="share-page">
 					<div class="content-sharepage">
 						<ul>
-							<li><a href="#"><i class="fa fa-facebook"></i> Facebook</a></li>
-							<li><a href="#"><i class="fa fa-twitter"></i> Twitter</a></li>
-							<li><a href="#"><i class="fa fa-google-plus"></i> Google Plus</a></li>
-							<li><a href="#"><i class="fa fa-instagram"></i> Instagram</a></li>
-							<li><a href="#"><i class="fa fa-youtube-play"></i> Youtube</a></li>
+							<li><a target="_blank" href="https://www.facebook.com/mujerypunto"><i class="fa fa-facebook"></i> Facebook</a></li>
+							<li><a target="_blank" href="https://twitter.com/mujerypunto"><i class="fa fa-twitter"></i> Twitter</a></li>
+							<li><a target="_blank" href="https://plus.google.com/+mujerypunto/videos"></i> Google Plus</a></li>
+							<li><a target="_blank" href="https://www.instagram.com/mujerypunto/"><i class="fa fa-instagram"></i> Instagram</a></li>
+							<li><a target="_blank" href="https://www.youtube.com/channel/UC5BJDXtQyzTZzkOXfTzPgrQ"><i class="fa fa-youtube-play"></i> Youtube</a></li>
 						</ul>
 					</div>
 				</div>
@@ -46,10 +46,18 @@
 							<li>
 								<div class="footer-tags">
 									<h3><i class="fa fa-tags"></i> TAGS</h3>
-									<ul class="list-pages"> 
-										<li><a href="#">Sobre Mujer & Punto</a></li>
-										<li><a href="#">Contacto Editorial</a></li>
-										<li><a href="#">Contacto Publicitario</a></li>
+									<ul class="list-pages tags-list"> 
+										<?php 
+											$tags = get_tags();
+											$count=0;
+											if ($tags) {
+												foreach ($tags as $tag) {
+													$count++;
+													echo '<li>#<a href="' . get_tag_link( $tag->term_id ) . '" title="' . sprintf( __( "View all posts in %s" ), $tag->name ) . '" ' . '>' . $tag->name.'</a> </li> ';
+													if( $count >10 ) break;
+												}
+											}
+										?>
 									</ul>
 								</div>
 							</li>
@@ -57,9 +65,7 @@
 								<div class="footer-tags">
 									<h3><i class="fa fa-flag-o"></i> CATEGORIAS</h3>
 									<ul class="list-pages"> 
-										<li><a href="#">Sobre Mujer & Punto</a></li>
-										<li><a href="#">Contacto Editorial</a></li>
-										<li><a href="#">Contacto Publicitario</a></li>
+										<?php wp_list_categories('orderby=name&title_li'); ?>
 									</ul>
 								</div>
 							</li>
@@ -81,7 +87,37 @@
 		<!-- /wrapper -->
 
 		<?php wp_footer(); ?>
+		<script> 
+		    var gallerySliders = new Swiper('.swiper-gallery', {
+		        nextButton: '.next-gallery',
+		        prevButton: '.prev-gallery',
+		        slidesPerView: 3,
+		        spaceBetween:0,
+		       	breakpoints: {
+				640: {
+				  slidesPerView: 1,
+				  spaceBetweenSlides:0
+				}
+				}
+		    });
+		    
+			mySwiper = new Swiper('.swiper-container', {
+				pagination: '.swiper-pagination',
+				paginationType: 'bullets',
+				paginationClickable: true,
+				autoplay: 4000,
+				loop: true,
+				slidesPerView: 3,
+				spaceBetween:0,
+				breakpoints: {
+				640: {
+				  slidesPerView: 1,
+				  spaceBetweenSlides:0
+				}
+				}
 
+			}); 
+		</script>
 		<!-- analytics -->
 		<script>
 		(function(f,i,r,e,s,h,l){i['GoogleAnalyticsObject']=s;f[s]=f[s]||function(){

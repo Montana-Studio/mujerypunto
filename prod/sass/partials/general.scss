@@ -68,6 +68,28 @@ body {
 		}
 	}
 }
+.imagen-post {
+	background-position:center;
+	background-size:cover;
+}
+.imagen-contentpost {
+	@include span-columns(12);
+	@include omega();
+	overflow:hidden;
+	.imagen-post {
+		@include span-columns(12);
+		@include omega();
+		height: inherit;
+		background-size:cover; 
+		background-position:center;
+		@include transition(all 1s ease);
+		&:hover {
+			@include transform(scale(1.2));
+			-ms-filter: "progid:DXImageTransform.Microsoft.Matrix(M11=1.5, M12=0, M21=0, M22=1.5, SizingMethod='auto expand')"; /* IE8 */
+			filter: progid:DXImageTransform.Microsoft.Matrix(M11=1.5, M12=0, M21=0, M22=1.5, SizingMethod='auto expand'); /* IE6 and 7 */ 
+		}
+	}	
+}
 .category-post {
 	@include span-columns(12);
 	@include omega();
@@ -107,6 +129,11 @@ body {
 			a {
 				color: $green-logo;
 				font:{size:1.2em;}
+			}
+			&.whatsapp {
+				@include media($notebook) {
+					display: none;
+				}
 			}
 		}
 	}
