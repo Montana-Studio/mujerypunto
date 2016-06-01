@@ -46,8 +46,12 @@
 					}	
 					.title-post {
 						margin:{top:0;}
-						font-size: 1.3em;
+						font:{size: 1.3em;}
     					line-height: 32px;
+    					@include media($notebook) {
+							font:{size: 1em;}
+							line-height: 24px; 
+    					}
 					}
 					.date-post {
 						display: none;

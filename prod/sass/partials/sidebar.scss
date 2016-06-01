@@ -39,7 +39,7 @@
 			@include span-columns(12);
 			@include omega();
 			border:1px solid $gray_3;
-			padding: 0 20px;
+			padding: {top:0; bottom:10px;left:20px;right:20px;}
 			margin:{bottom:35px;}
 			.content-sidebar {
 				@include span-columns(12);
@@ -50,7 +50,7 @@
 					@include omega();
 					border-bottom:1px solid $gray_3;
 					margin:{top:10px;}
-					padding:{bottom:5px;}
+					padding:{bottom:10px;}
 					.imagen-contentpost { 
 						@include span-columns(4);
 						@include omega();
@@ -68,21 +68,23 @@
 							}
 						}
 					}
-					.imagen-post {
-						
-					}
 					.content-post {
 						@include span-columns(8);
 						@include omega();
 						padding:{left:5px;}
-						.title-post {
-							font:{size: 0.8em;}
-							line-height: 18px;
+						.post-inside {
+							padding: {top:4px;}
+							.title-post {
+								color:$gray_1;
+								font:{size: 0.8em;}
+								line-height: 18px;
+							}
+							.btn-read-green {
+								margin:{top:4px;}
+								font:{size:0.8em;}
+							}	
 						}
-						.btn-read-green {
-							margin:{top:4px;}
-							font:{size:0.8em;}
-						}
+						
 					}
 					&:last-child {
 						border:0;

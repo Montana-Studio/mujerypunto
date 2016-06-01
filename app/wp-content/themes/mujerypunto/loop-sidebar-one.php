@@ -19,7 +19,10 @@
 
 		<div class="content-post">
 			<div class="post-inside">
-				<h2 class="title-post"><?php the_title(); ?></h2>
+				<h2 class="title-post"><?php $thetitle = $post->post_title; $getlength = strlen($thetitle); $thelength = 45;
+						echo substr($thetitle, 0, $thelength);
+						if ($getlength > $thelength) echo "...";
+						?></h2>
 				<div class="btn-read-green"><a href="<?php the_permalink(); ?>">Seguir Leyendo</a></div>
 				<div class="social-share">
 					<ul>
