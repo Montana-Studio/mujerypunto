@@ -74,12 +74,15 @@
 									margin:{top:5px;bottom:10px;}
 									color:$white;
 									font:{size:1.5em;}
+									line-height: 38px;
 									font:{family:$regular_font;}
 									@include media($notebook) {
 										font:{size:1.2em;}
+										line-height: 32px;
 									}
 									@include media($desktop) {
-										font:{size:2em;}
+										font-size: 1.4em;
+    									line-height: 37px;
 									}
 								}
 								.date {
@@ -89,6 +92,7 @@
 									font:{family:$regular_font;style:italic;size:0.7em;}
 								}	
 								.btn-read-more {
+									font:{family:$second_font;}
 									@include media($notebook) {
 										margin:{top:0;}
 									}

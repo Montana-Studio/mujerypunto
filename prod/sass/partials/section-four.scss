@@ -55,15 +55,13 @@
 					margin:{bottom:4px;}
 				}
 				.title-post {
-					font-size: 2.1em;
-   					line-height: 32px;
-					margin:{bottom: 2px;}
+					margin:{bottom:8px;}
+					@include media($desktop) {
+						font-size: 1.2em;
+					} 
 				}			
 				.btn-read-green {
 					margin:{top:0;}
-					a {
-						font:{size:1em;}
-					}
 				}
 			}
 		}

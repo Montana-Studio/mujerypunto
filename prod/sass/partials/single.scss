@@ -31,7 +31,7 @@
 		.title-post {
 			@include media($notebook) {
 				margin: {top:10px; bottom: 10px;}
-				font:{size: 2.3em;}
+				font:{size:1.6em;}
 				padding: 0 40px;
 				line-height: 32px;
 			}
@@ -39,10 +39,13 @@
 		.tag-post {
 			@include span-columns(12);
 			@include omega();
-			font:{family:$primary_font;size:1.2em;weight:400;}
+			font:{family:$primary_font;size:0.7em;weight:400;}
 			color:$gray_1;
 			text:{transform:uppercase;}
 			margin:10px 0;
+			@include media($notebook) {
+				margin:{top: 0;bottom: 15px;}
+			}
 			a {
 				color:$green-logo;
 			}
@@ -82,7 +85,7 @@
 							@include omega();
 							height: 100%;
 							color:$green-logo;
-							font:{family:$primary_font;size:1.2em;weight:400;}
+							font:{family:$primary_font;size:0.8em;weight:400;}
 							text:{transform:uppercase;}
 							background-size:cover;
 							background-position:center;
@@ -114,6 +117,10 @@
 			line-height: 23px;
 			text:{align:left;}
 			color:$gray_2;
+			padding:0 10px;
+			@include media($notebook) {
+				padding:0;
+			}
 			h2 {
 				font:{family:$regular_font;}
 				line-height: 27px;
@@ -245,7 +252,7 @@
 						@include span-columns(10);
 					}
 					.title-post {
-						font:{size:1.3em;weight:bold;}
+						font:{size:1em;weight:bold;}
 						text:{align:left;}
 						margin: 0;
     					line-height: 22px;
@@ -254,13 +261,13 @@
     						padding: 0;
     					}
     					@include media($desktop) {
-    						font:{size: 1.8em;}
-    						line-height: 29px;
+    						font:{size: 1.2em;}
+    						line-height: 30px;
     					}	
 					}
 					.btn-read-green {
-						font:{size: 1.2em;}
-						margin:0; 
+						font:{size: 1em;}
+						margin:{top:5px;bottom:0;}  
 					}
 				}
 				&.next-post {
@@ -303,18 +310,26 @@
 							@include span-columns(4);
 							margin:{right:10px;bottom:10px;}
 						}
-						.imagen-post {
-							@include span-columns(3);
+						.imagen-contentpost {
+							@include span-columns(3.8);
 							@include omega();
-							height: 100px;
 							@include media($notebook) {
 								@include span-columns(12);
 								@include omega();
-								height: 200px;
 							}
+							.imagen-post {
+								@include span-columns(12);
+								@include omega();
+								height: 100px;
+								@include media($notebook) {
+									@include span-columns(12);
+									@include omega();
+									height: 200px;
+								}
+							}	
 						}
 						.content-post {
-							@include span-columns(9);
+							@include span-columns(8);
 							@include omega();
 							height: 100px;
 							padding:10px;

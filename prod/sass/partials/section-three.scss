@@ -46,6 +46,8 @@
 					}	
 					.title-post {
 						margin:{top:0;}
+						font-size: 1.3em;
+    					line-height: 32px;
 					}
 					.date-post {
 						display: none;
@@ -55,19 +57,10 @@
 					margin:{bottom:4px;}
 				}
 				.title-post {
-					font-size: 1.4em;
-					line-height: 23px;
-					margin:{bottom: 2px;}
-					@include media($desktop) {
-						font-size: 2.1em;
-						line-height: 32px;
-					}
+					margin:{bottom: 8px;}
 				}			
 				.btn-read-green {
 					margin:{top:0;}
-					a {
-						font:{size:1em;}
-					}
 				}
 			}
 		}

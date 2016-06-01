@@ -26,33 +26,18 @@
 			.post-inside {
 				.category-post {
 					@include media($notebook) {
-						font:{size:0.8em;}
-					}
-					@include media($desktop) {
-						font:{size:1.2em;}
+						font-size: 0.6em;
 					}
 				}
 				.date-post {
 					margin:{top:5px;}
-					@include media($desktop) {
-						margin:{top:5px;}
-					}
 				}
 				.title-post {
-					@include media($notebook) {
-						font-size: 1.4em;
-	    				line-height: 22px;
-					}
-					@include media($desktop) {
-						font-size: 2em;
-	    				line-height: 28px;
-					}
-				
 				}
 				.btn-read-green {
 					margin:{top:5px;}
 					a {
-						font:{size: 1em;}
+						font:{size: 0.7em;}
 					}
 				}	
 			}

@@ -1,5 +1,11 @@
 body {
+	@include span-columns(12);
+	margin:0;
 	background: $white; 
+	a {
+		color:#444;
+		text-decoration:none;
+	}
 }
 .wrapper {
 	@include span-columns(12);
@@ -8,6 +14,7 @@ body {
 	z-index: 10;
 	background: $white;
 	max-width: initial;
+	position: relative;
 	.contentAll {
 		@include span-columns(12);
 		@include omega();
@@ -76,24 +83,30 @@ body {
 	@include span-columns(12);
 	@include omega();
 	overflow:hidden;
-	.imagen-post {
+	a {
 		@include span-columns(12);
 		@include omega();
-		height: inherit;
-		background-size:cover; 
-		background-position:center;
-		@include transition(all 1s ease);
-		&:hover {
-			@include transform(scale(1.2));
-			-ms-filter: "progid:DXImageTransform.Microsoft.Matrix(M11=1.5, M12=0, M21=0, M22=1.5, SizingMethod='auto expand')"; /* IE8 */
-			filter: progid:DXImageTransform.Microsoft.Matrix(M11=1.5, M12=0, M21=0, M22=1.5, SizingMethod='auto expand'); /* IE6 and 7 */ 
+		height: inherit; 
+		cursor: pointer;
+		.imagen-post {
+			@include span-columns(12);
+			@include omega();
+			height: inherit;
+			background-size:cover; 
+			background-position:center;
+			@include transition(all 1s ease);
+			&:hover {
+				@include transform(scale(1.2));
+				-ms-filter: "progid:DXImageTransform.Microsoft.Matrix(M11=1.5, M12=0, M21=0, M22=1.5, SizingMethod='auto expand')"; /* IE8 */
+				filter: progid:DXImageTransform.Microsoft.Matrix(M11=1.5, M12=0, M21=0, M22=1.5, SizingMethod='auto expand'); /* IE6 and 7 */ 
+			}
 		}
-	}	
+	}
 }
 .category-post {
 	@include span-columns(12);
 	@include omega();
-	font:{family:$primary_font;weight:bold;size:1.2em;}
+	font:{family:$primary_font;weight:bold;size:0.8em;}
 	display: inline-block;
 	text:{transform:uppercase;}
 	color:$green-logo;
@@ -103,18 +116,19 @@ body {
 	@include omega();
 	margin:{top:5px;bottom:0px;}
 	color:$black;
-	font:{size:1.7em;}
-	line-height: 28px;
+	font:{size:1.2em;}
+	line-height: 26px;
 	font:{family:$regular_font;}
 	@include media($notebook) {
-		font:{size:2em;}
+		font:{size: 0.9em;}
+   		line-height: 21px;
 	}
 }
 .date-post {
 	@include span-columns(12);
 	@include omega();
 	color:$gray_1; 
-	font:{family:$regular_font;style:italic;size:1em;}
+	font:{family:$regular_font;style:italic;size:0.7em;}
 }
 .social-share {
 	display: inline-block;
@@ -128,7 +142,7 @@ body {
 			margin:0 5px;
 			a {
 				color: $green-logo;
-				font:{size:1.2em;}
+				font:{size:1em;}
 			}
 			&.whatsapp {
 				@include media($notebook) {
@@ -162,7 +176,7 @@ body {
 		}
 	}
 	.title-section {
-		font:{family:$regular_font;size: 2em;style: italic;}
+		font:{family:$regular_font;size: 1.4em;style: italic;}
 		position: relative;
 		z-index: 10;
 		background:$white;
@@ -176,7 +190,7 @@ body {
     display: inline-block;
     padding: {top:15px;right: 38px;bottom:5px;left:38px;}
     margin:{top:20px;right:0;bottom:5px;left:0;} 
-    text:{transform: uppercase;decoration: none;align:center;}
+    text:{transform: uppercase;decoration: none;align:center;family:$second_font;}
     outline: none;  
     display: inline-block;
     position: relative;
@@ -212,7 +226,7 @@ body {
     display: inline-block;
     position: relative;
     a {
-    	font:{weight:bold;size: 0.75em;}
+    	font:{weight:bold;size: 0.75em;family:$second_font;}
     	color:$green-logo;
     }
     &:before {

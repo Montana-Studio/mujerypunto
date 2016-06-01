@@ -18,8 +18,8 @@
 					height: 58%;
 				}
 				.title-section {
-    				font:{size: 4em;}
-    				margin:0; 
+    				font:{size:2em;}
+    				margin-top: 7px;
 				}
 			}
 		}
@@ -27,11 +27,11 @@
 			@include span-columns(12);
 			@include omega();
 			text:{align:center;}
-			font:{family:$regular_font;size:1.2em;weight:bold;style:italic;}
+			font:{family:$regular_font;size:1em;weight:bold;style:italic;}
 			padding:0 20px;
-			line-height: 20px;
+			line-height: 23px;
 			@include media($notebook){
-				font:{size: 1.4em;}
+				font:{size: 1em;}
 				margin:{top:5px;}
 			}
 		} 
@@ -73,7 +73,7 @@
 						color:$gray_1;
 					}
 					@include media($notebook) {
-						font:{size: 1.2em;}
+						font:{size:0.8em;}
 						padding: 13px 20px;
 					}
 				}
@@ -120,11 +120,11 @@
 					}
 					a {
 						color:$white;
-						font:{size: 0.9em;weight: bold;}
+						font:{size: 0.7em;weight: bold;family:$second_font;}
 						text:{transform: uppercase;}
 						letter-spacing: 1px;
 						@include media($notebook) {
-							font:{size: 1.1em}
+							font:{size: 0.8em}
 						}	
 						i {
 							font:{size: 1.6em;}
@@ -191,12 +191,9 @@
 						}
 					}
 					h3 {
-						font:{family:$regular_font;size:1.2em;}
+						font:{family:$regular_font;size:0.9em;}
 						color:$white;
 						margin:{top:0;bottom:5px;}
-						@include media($desktop) {
-							font:{size: 1.4em;}
-						}
 					}
 					.list-pages {
 						@include span-columns(12);
@@ -206,12 +203,9 @@
 							display: inline-block;
 							list-style: none;
 							color:$white;
-							font:{family:$regular_font;size:1em;style:italic;}
+							font:{family:$regular_font;size:0.8em;style:italic;}
 							margin:{bottom:2px;right:8px;top:2px;}
 							width:auto;
-							@include media($desktop) {
-								font:{size: 1.3em;}
-							}
 							a {
 								color:$white;
 								&:hover {
@@ -230,7 +224,7 @@
 						text:{align:center;}
 						padding:10px 0;
 						.parrafo-footer {
-							font:{family:$second_font;size:1em;style:italic;}
+							font:{family:$second_font;size:0.6em;style:italic;}
 							color:$white;
 						}
 					}

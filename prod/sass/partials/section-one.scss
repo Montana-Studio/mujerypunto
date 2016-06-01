@@ -41,14 +41,14 @@
 					margin:{bottom:4px;}
 				}
 				.title-post {
-					font:{size: 1.4em;}
-					line-height: 23px;
-					margin:{bottom: 2px;}
+					margin:{bottom:8px;}
 				}			
 				.btn-read-green {
 					margin:{top:0;}
 					a {
-						font:{size:1em;}
+						@include media($notebook) {
+							font-size: 0.65em;
+						}	
 					}
 				}
 			}
@@ -63,6 +63,9 @@
 					height: 350px;
 					@include media($notebook) {
 						height: 250px;
+					}
+					@include media($desktop) {
+						height: 350px;
 					}
 					.imagen-post {
 						@include span-columns(12);
@@ -80,13 +83,18 @@
 						vertical-align: middle;
 						padding:10px;
 						.category-post {
-							font:{size:1em;}
 							display: block;
 						}
 						.title-post {
-							font-size: 1.9em;
-							line-height: 27px;
 							margin:{bottom: 10px;}
+							@include media($notebook) {
+								font:{size: 1.2em;}
+    							line-height: 27px;
+							}
+							@include media($desktop) {
+								font-size: 1.6em;
+    							line-height: 33px;
+							}
 						}
 						.date-post {
 							display: block;

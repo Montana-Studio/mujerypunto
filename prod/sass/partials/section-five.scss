@@ -62,23 +62,10 @@
 					display: none;
 				}
 				.title-post {
-					font-size: 1.6em;
-   					line-height: 24px;
 					margin:{bottom: 2px;}
-					@include media($notebook) {
-						font-size: 1.3em;
-						line-height: 21px;
-					}
-					@include media($desktop) {
-						font-size: 1.6em;
-						line-height: 24px;
-					}
 				}			
 				.btn-read-green {
 					margin:{top:0;}
-					a {
-						font:{size:1em;}
-					}
 				}
 			}
 		}
@@ -103,8 +90,10 @@
 						@include omega();
 						padding:10px 0;
 						.title-post {
-							font-size: 2.3em;
-							line-height: 30px;
+							@include media($notebook) {
+								font-size: 1.2em;
+    							line-height: 26px;
+							}
 						}
 						.date-post {
 							display: block;

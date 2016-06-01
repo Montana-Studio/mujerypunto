@@ -13,7 +13,7 @@
 	}
 	.categoria-title {
 		text:{align:center;transform:uppercase;}
-		font:{family:$second_font;weight:bold;}
+		font:{family:$second_font;weight:bold;size: 0.8em;}
 		color:$green_logo;
 	}
 }
@@ -42,17 +42,21 @@
 			margin:{top:10px;}
 		}
 		.title-post {
-			font:{size: 1.5em;}
-    		line-height: 23px;
+			font:{size: 1.2em;}
+    		line-height: 27px;
+    		@include media($notebook) {
+    			font-size: 1em;
+    			line-height: 23px;
+    		}
     		@include media($desktop) {
-    			font:{size: 2em;}
+    			font:{size:1.3em;}
     			line-height: 31px;
     		}
 		}
 		.btn-read-green {
 			margin:{top:5px;}
 			a {
-				font:{size:0.9em;}
+				font:{size:0.7em;}
 			}
 		}
 	}

@@ -27,13 +27,13 @@
 		}
 		.title-sidebar {
 			text:{align:center}; 
-			font:{family:$regular_font;size: 1.8em;style: italic;}
-    		margin: {top:-15px;left:auto;bottom:0;right:auto;}
-    		margin-top: -15px !important;
+			font:{family:$regular_font;size: 1.2em;style: italic;}
+    		margin: {top:-11px!important;left:auto;bottom:0;right:auto;}
     		position: initial;
     		background: $white;
     		display: table;
     		padding: 0 10px;
+    		color:$gray_1;
 		}	
 		.box-sidebar {
 			@include span-columns(12);
@@ -44,29 +44,44 @@
 			.content-sidebar {
 				@include span-columns(12);
 				@include omega();
+				overflow: hidden;
 				.post-sidebar {
 					@include span-columns(12);
 					@include omega();
 					border-bottom:1px solid $gray_3;
 					margin:{top:10px;}
 					padding:{bottom:5px;}
-					.imagen-post {
+					.imagen-contentpost { 
 						@include span-columns(4);
 						@include omega();
 						height: 80px;
-						background-position:center;
-						background-size:cover; 
+						a {
+							.imagen-post {
+								background-position:center;
+								background-size:cover; 
+								@include transition(all 1s ease);
+								&:hover {
+									@include transform(scale(1.2));
+									-ms-filter: "progid:DXImageTransform.Microsoft.Matrix(M11=1.5, M12=0, M21=0, M22=1.5, SizingMethod='auto expand')"; /* IE8 */
+									filter: progid:DXImageTransform.Microsoft.Matrix(M11=1.5, M12=0, M21=0, M22=1.5, SizingMethod='auto expand'); /* IE6 and 7 */ 
+								}	
+							}
+						}
+					}
+					.imagen-post {
+						
 					}
 					.content-post {
 						@include span-columns(8);
 						@include omega();
 						padding:{left:5px;}
 						.title-post {
-							font:{size: 1.2em;}
+							font:{size: 0.8em;}
 							line-height: 18px;
 						}
 						.btn-read-green {
 							margin:{top:4px;}
+							font:{size:0.8em;}
 						}
 					}
 					&:last-child {
@@ -77,18 +92,26 @@
 			&.imperdibles-sidebar {
 				.content-sidebar {
 					.post-sidebar {
-						.imagen-post {
+						.imagen-contentpost { 
 							@include span-columns(12);
 							@include omega();
 							height: 150px;
-						}	
+							a {
+								.imagen-post {
+									background-position:center;
+									background-size:cover; 
+									@include transition(all 1s ease);
+									&:hover {
+										@include transform(scale(1.2));
+										-ms-filter: "progid:DXImageTransform.Microsoft.Matrix(M11=1.5, M12=0, M21=0, M22=1.5, SizingMethod='auto expand')"; /* IE8 */
+										filter: progid:DXImageTransform.Microsoft.Matrix(M11=1.5, M12=0, M21=0, M22=1.5, SizingMethod='auto expand'); /* IE6 and 7 */ 
+									}	
+								}
+							}
+						}
 						.content-post {
 							@include span-columns(12);
 							@include omega();
-							.title-post {
-								font:{size: 1.5em;}
-								line-height: 24px;
-							}
 						}		
 					}			
 				}	

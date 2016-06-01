@@ -30,14 +30,14 @@
 				outline: none;
 				color:$black;
 				background:none;
-				font:{size:1.6em;family:$regular_font;}
+				font:{size:1em;family:$regular_font;}
 				padding: 10px 0;
 				@include placeholder {
 					color:$gray_2;
 					font:{style:italic;}
 				}
 				@include media($notebook) {
-					font:{size:2.3em;}
+					font:{size:1.2em;}
 				}
 			}
 		}
