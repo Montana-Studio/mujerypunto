@@ -5,6 +5,12 @@
 		@include span-columns(12);
 		@include omega();
 		padding:0 10px;
+		@include media($tabletLand) {
+			@include outer-container(80%);
+			margin: 0 auto !important;
+			float:initial;
+			padding:{bottom:30px;}
+		}
 		@include media($notebook) {
 			@include outer-container(80%);
 			margin: 0 auto !important;
@@ -12,6 +18,16 @@
 			padding:{bottom:30px;}
 		}
 		.title-bg {
+			@include media($tabletLand) {
+				.line-bg {
+					width:100%;
+					height: 58%;
+				}
+				.title-section {
+    				font:{size:2em;}
+    				margin-top: 7px;
+				}
+			}
 			@include media($notebook) {
 				.line-bg {
 					width:100%;
@@ -30,6 +46,10 @@
 			font:{family:$regular_font;size:1em;weight:bold;style:italic;}
 			padding:0 20px;
 			line-height: 23px;
+			@include media($tabletLand){
+				font:{size: 1em;}
+				margin:{top:5px;}
+			}
 			@include media($notebook){
 				font:{size: 1em;}
 				margin:{top:5px;}
@@ -41,6 +61,11 @@
 			margin:0 auto;
 			display: block;
 			padding:{top:20px;left:20px;right:20px;}
+			@include media($tabletLand) {
+				padding:{top:30px;left:0;right:0;} 
+				
+				text:{align:center;}
+			}
 			@include media($notebook) {
 				padding:{top:30px;left:0;right:0;} 
 				
@@ -53,6 +78,12 @@
 			.input-form {
 				@include span-columns(12);
 				@include omega();
+				@include media($tabletLand) {
+					@include span-columns(4);
+					float: none;
+					display: inline-block; 
+					margin:{right:10px;}
+				}
 				@include media($notebook) {
 					@include span-columns(4);
 					float: none;
@@ -96,6 +127,9 @@
 		@include omega();
 		padding:{top:20px;bottom:15px;}
 		background:$gray_2;
+		@include media($tabletLand) {
+			padding:40px 0;
+		}
 		@include media($notebook) {
 			padding:40px 0;
 		}	
@@ -105,6 +139,9 @@
 				@include span-columns(12);
 				margin:0;
 				padding:0;
+				@include media($tabletLand) {
+					text:{align:center;}
+				}
 				@include media($notebook) {
 					text:{align:center;}
 				}
@@ -112,6 +149,12 @@
 					@include span-columns(6);
 					list-style: none;
 					margin:{bottom:12px;right:0;}
+					@include media($tabletLand) {
+						width:auto;
+						display: inline-block;
+						float: initial;
+						padding:0 15px;
+					}
 					@include media($notebook) {
 						width:auto;
 						display: inline-block;
@@ -123,6 +166,9 @@
 						font:{size: 0.7em;weight: bold;family:$second_font;}
 						text:{transform: uppercase;}
 						letter-spacing: 1px;
+						@include media($tabletLand) {
+							font:{size: 0.6em}
+						}
 						@include media($notebook) {
 							font:{size: 0.8em}
 						}	
@@ -153,6 +199,11 @@
 			@include span-columns(12);
 			@include omega();
 			padding:{top:10px;left:10px;bottom:10px;right:0px;}
+			@include media($tabletLand) {
+				@include outer-container(80%);
+				float: none;
+				margin:0 auto !important;
+			}
 			@include media($notebook) {
 				@include outer-container(80%);
 				float: none;
@@ -165,6 +216,10 @@
 				li {
 					@include span-columns(12);
 					@include omega();
+					@include media($tabletLand) {
+						@include span-columns(4);
+						@include omega();
+					}
 					@include media($notebook) {
 						@include span-columns(4);
 						@include omega();
@@ -175,6 +230,9 @@
 						a {
 							@include span-columns(12);
 							@include omega();
+							@include media($tabletLand) {
+								margin:{top: 20px;}
+							}
 							img {
 								width:100%;
 								height: auto;
@@ -186,6 +244,9 @@
 						@include span-columns(12);
 						@include omega();
 						padding:10px 20px;
+						@include media($tabletLand) {
+							padding:{top:25px !important;}
+						}
 						@include media($notebook) {
 							padding:{top:25px !important;}
 						}
@@ -236,6 +297,10 @@
 						}
 					}
 					&:last-child {
+						@include media($tabletLand) {
+							@include span-columns(12);
+							@include omega();
+						}
 						@include media($notebook) {
 							@include span-columns(12);
 							@include omega();

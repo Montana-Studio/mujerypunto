@@ -20,6 +20,12 @@ body {
 		@include omega();
 		max-width: 1280px;
 		padding:{top:10px;left:10px;bottom:0;right:10px;}
+		@include media($tabletLand) {
+			@include pad(0);
+			@include outer-container(93%); 
+			margin: 0 auto !important;
+			float: none;
+		}
 		@include media($notebook) {
 			@include pad(0);
 			@include outer-container(80%);
@@ -30,6 +36,11 @@ body {
 			@include span-columns(12);
 			@include omega();
 			margin:{top:10px;}
+			@include media($tabletLand) { 
+				@include span-columns(8);
+				@include omega();
+				margin:{top:20px;}
+			}
 			@include media($notebook) {
 				@include span-columns(8);
 				@include omega();
@@ -110,6 +121,10 @@ body {
 	display: inline-block;
 	text:{transform:uppercase;}
 	color:$green-logo;
+	@include media($tabletLand) {
+		font-size: 0.6em;
+    	line-height: 19px;
+	}
 }
 .title-post {
 	@include span-columns(12);
@@ -119,6 +134,10 @@ body {
 	font:{size:1.2em;}
 	line-height: 26px;
 	font:{family:$regular_font;}
+	@include media($tabletLand) {
+		font-size: 0.8em;
+    	line-height: 19px;
+	}
 	@include media($notebook) {
 		font:{size: 0.9em;}
    		line-height: 21px;
@@ -142,9 +161,15 @@ body {
 			margin:0 5px;
 			a {
 				color: $green-logo;
+				@include media($tabletLand) {
+					font:{size:0.9em;}
+				}
 				font:{size:1em;}
 			}
 			&.whatsapp {
+				@include media($tabletLand) {
+					display: none;
+				}
 				@include media($notebook) {
 					display: none;
 				}
@@ -158,6 +183,10 @@ body {
 	text:{align:center;}
 	position: relative;
 	height:50px;
+	@include media($tabletLand){
+		height:40px;
+		margin:{bottom:10px;}
+	}
 	@include media($notebook){
 		margin:{bottom:10px;}
 	}	
@@ -168,6 +197,12 @@ body {
 		border-bottom:1px solid $black;
 		position: absolute;
 		z-index: 1;
+		@include media($tabletLand){
+			width: 40%;
+			left: 0;
+			right: 0;
+			margin: 0 auto;
+		}
 		@include media($notebook){
 			width: 30%;
 			left: 0;
@@ -184,6 +219,9 @@ body {
 		display: inline-block;
 		padding: 0 15px;
    		margin: 10px 0;
+   		@include media($tabletLand){
+			font:{size: 1.2em;} 
+		}
 	}
 }
 .btn-read-more {
@@ -197,6 +235,9 @@ body {
     a {
     	font:{weight:bold;size: 0.75em;}
     	color:$white;
+    	@include media($tabletLand){
+			font:{size: 0.65em;} 
+		}
     }
     &:before {
     	content: '';
@@ -228,6 +269,9 @@ body {
     a {
     	font:{weight:bold;size: 0.75em;family:$second_font;}
     	color:$green-logo;
+    	@include media($tabletLand){
+			font:{size: 0.65em;} 
+		}
     }
     &:before {
     	content: '';

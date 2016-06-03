@@ -20,7 +20,7 @@
 		<div class="content-post">
 			<div class="post-inside">
 				<span class="date-post"><?php the_time('l, j F Y'); ?></span>
-				<h2 class="title-post"><?php the_title(); ?></h2>
+				<a href="<?php the_permalink(); ?>"><h2 class="title-post"><?php the_title(); ?></h2></a> 
 				<div class="btn-read-green"><a href="<?php the_permalink(); ?>">Seguir Leyendo</a></div>
 				<div class="social-share">
 					<ul>

@@ -17,6 +17,9 @@ $( document ).ready(function() {
 		$('.wrapper').toggleClass('move-content move-content-out');
 	}); 
 
+	$('#sect-search-close').click(function() {
+		$('.search-section').toggleClass('show-search');   
+	});
 
 	$('.swiper-gallery').prepend('<div class="title-insidepost">Galería de imágenes</div>');
 

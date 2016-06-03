@@ -21,6 +21,11 @@
 				@include media($notebook) {
 					@include outer-container(80%);
 				}
+				.cerrar-search {
+					cursor: pointer;
+					float: right;
+					font:{style:italic;}
+				}
 			}
 			.search-input {
 				@include span-columns(12);

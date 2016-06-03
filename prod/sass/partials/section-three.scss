@@ -6,6 +6,11 @@
 		@include span-columns(12);
 		@include omega();
 		margin:{bottom:10px;}
+		@include media($tabletLand) {
+			@include span-columns(6);
+			margin:{bottom:15px;right:7px;}
+			float: inherit;
+		}
 		@include media($notebook) {
 			@include span-columns(6);
 			margin:{bottom:15px;right:7px;}
@@ -20,6 +25,9 @@
 			height: 350px;
 			background-position:center;
 			background-size:cover; 
+			@include media($tabletLand) {
+				height: 250px;
+			}
 			@include media($notebook) {
 				height: 250px;
 			}
@@ -31,12 +39,31 @@
 			@include span-columns(12);
 			@include omega();
 			padding: {top:10px; bottom:0px;}
+			@include media($tabletLand) {
+				padding: {top:10px;}
+			}
 			@include media($notebook) {
 				padding: {top:10px;}
 			}	
 			.post-inside {
 				@include span-columns(12);
 				@include omega();
+				@include media($tabletLand) {
+					display: table-cell;
+					vertical-align: middle;
+					float: none;
+					.category-post {
+						display: none;
+					}	
+					.title-post {
+						margin:{top:0;}
+						font:{size: 1em;}
+    					line-height: 24px;
+					}
+					.date-post {
+						display: none;
+					}
+				}
 				@include media($notebook) {
 					display: table-cell;
 					vertical-align: middle;
@@ -46,12 +73,8 @@
 					}	
 					.title-post {
 						margin:{top:0;}
-						font:{size: 1.3em;}
-    					line-height: 32px;
-    					@include media($notebook) {
-							font:{size: 1em;}
-							line-height: 24px; 
-    					}
+						font:{size: 1em;}
+						line-height: 24px; 
 					}
 					.date-post {
 						display: none;

@@ -1,7 +1,7 @@
 .home-section {
 	@include span-columns(12);
 	@include omega();
-	 .swiper-container {
+	.swiper-container {
        @include span-columns(12);
 		@include omega();
         height: 100%;
@@ -33,6 +33,9 @@
 			        	background-position:center;
 			        	background-size:cover;
 			        	position: relative;
+			        	@include media($tabletLand) {
+			        		height: 300px;
+			        	}
 			        	@include media($notebook) {
 			        		height: 300px;
 			        	}
@@ -51,6 +54,9 @@
 							padding: 30px;
     						box-sizing: border-box;
     						display: table;
+    						@include media($tabletLand) {
+    							padding: 30px 20px;
+    						}
     						.post-inside {
 								display: table-cell;
 								vertical-align: middle;
@@ -61,6 +67,9 @@
 									display: inline-block;
 									text:{transform:uppercase;}
 									color:$white;
+									@include media($tabletLand) {
+										font:{size:0.6em;}
+									}
 									@include media($notebook) {
 										font:{size:0.6em;}
 									}
@@ -76,6 +85,10 @@
 									font:{size:1.5em;}
 									line-height: 38px;
 									font:{family:$regular_font;}
+									@include media($tabletLand) {
+										font:{size: 1em;}
+										line-height: 29px;
+									}
 									@include media($notebook) {
 										font:{size:1.2em;}
 										line-height: 32px;
@@ -93,6 +106,9 @@
 								}	
 								.btn-read-more {
 									font:{family:$second_font;}
+									@include media($tabletLand) {
+										margin:{top:0;}
+									}
 									@include media($notebook) {
 										margin:{top:0;}
 									}
@@ -100,6 +116,9 @@
 										margin:{top:20px;}
 									}
 									a {
+										@include media($tabletLand) {
+											font:{size:0.6em;;}
+										}
 										@include media($notebook) {
 											font:{size:0.6em;;}
 										}
