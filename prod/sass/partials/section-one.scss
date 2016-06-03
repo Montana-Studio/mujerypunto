@@ -6,6 +6,10 @@
 		@include span-columns(12);
 		@include omega();
 		margin:{bottom:10px;}
+		@include media($tabletLand) {
+			@include span-columns(4);
+			margin:{bottom:15px;}
+		}
 		@include media($notebook) {
 			@include span-columns(4);
 			margin:{bottom:15px;}
@@ -17,12 +21,31 @@
 			@include span-columns(12);
 			@include omega();
 			padding: {top:10px; bottom:0px;}
+			@include media($tabletLand) {
+				padding: {top:10px;}
+			}
 			@include media($notebook) {
 				padding: {top:10px;}
 			}	
 			.post-inside {
 				@include span-columns(12);
 				@include omega();
+				@include media($tabletLand) {
+					display: table-cell;
+					vertical-align: middle;
+					float: none;
+					.category-post {
+						display: none;
+					}	
+					.title-post {
+						margin:{top:0;}
+						font-size: 0.8em;
+    					line-height: 19px;
+					}
+					.date-post {
+						display: none;
+					}
+				}
 				@include media($notebook) {
 					display: table-cell;
 					vertical-align: middle;
@@ -46,6 +69,9 @@
 				.btn-read-green {
 					margin:{top:0;}
 					a {
+						@include media($tabletLand) {
+							font-size: 0.65em;
+						}
 						@include media($notebook) {
 							font-size: 0.65em;
 						}	
@@ -54,6 +80,46 @@
 			}
 		}
 		&:first-child {
+			@include media($tabletLand) {
+				@include span-columns(12);
+				@include omega();
+				.imagen-contentpost {
+					@include span-columns(6);
+					@include omega();
+					height: 350px;
+					@include media($tabletLand) {
+						height: 250px;
+					}
+					.imagen-post {
+						@include span-columns(12);
+						@include omega();
+						height: inherit;
+					}
+				}	
+				.content-post {
+					@include span-columns(5);
+					@include omega();
+					height: 250px;
+					display: table;
+					.post-inside {
+						display: table-cell;
+						vertical-align: middle;
+						padding:10px;
+						.category-post {
+							display: block;
+							font:{size:0.7em;}
+						}
+						.title-post {
+							margin:{top:5px;bottom: 10px;}
+							font-size: 1.1em;
+    						line-height: 25px;
+						}
+						.date-post {
+							display: block;
+						}
+					}	
+				}	
+			}
 			@include media($notebook) {
 				@include span-columns(12);
 				@include omega();
@@ -61,6 +127,9 @@
 					@include span-columns(6);
 					@include omega();
 					height: 350px;
+					@include media($tabletLand) {
+						height: 250px;
+					}
 					@include media($notebook) {
 						height: 250px;
 					}
@@ -72,7 +141,7 @@
 						@include omega();
 						height: inherit;
 					}
-				}	
+				}	 
 				.content-post {
 					@include span-columns(5);
 					@include omega();

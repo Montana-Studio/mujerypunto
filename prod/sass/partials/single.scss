@@ -29,6 +29,12 @@
 			}	
 		}
 		.title-post {
+			@include media($tabletLand) {
+				margin: {top:10px; bottom: 10px;}
+				font:{size:1.2em;}
+				padding: 0 40px;
+				line-height: 22px;
+			}
 			@include media($notebook) {
 				margin: {top:10px; bottom: 10px;}
 				font:{size:1.6em;}
@@ -343,6 +349,10 @@
 								font-size: 1em;
 								line-height: 19px;
 								margin:{bottom:0;}
+								@include media($tabletLand) {
+									padding:0;
+									line-height: 23px;
+								}
 								@include media($notebook) {
 									padding:0;
 								}

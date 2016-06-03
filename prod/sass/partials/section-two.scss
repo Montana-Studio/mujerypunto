@@ -6,6 +6,10 @@
 		@include span-columns(12);
 		@include omega();
 		margin:{bottom:10px;}
+		@include media($tabletLand) {
+			@include span-columns(4);
+			margin:{bottom:15px;}
+		}
 		@include media($notebook) {
 			@include span-columns(4);
 			margin:{bottom:15px;}
@@ -16,6 +20,9 @@
 			height: 350px;
 			background-position:center;
 			background-size:cover; 
+			@include media($tabletLand) {
+				height: 150px;
+			}
 			@include media($notebook) {
 				height: 150px;
 			}
@@ -24,12 +31,29 @@
 			@include span-columns(12);
 			@include omega();
 			padding: {top:10px; bottom:0px;}
+			@include media($tabletLand) {
+				padding: {top:10px;}
+			}
 			@include media($notebook) {
 				padding: {top:10px;}
 			}	
 			.post-inside {
 				@include span-columns(12);
 				@include omega();
+				@include media($tabletLand) {
+					display: table-cell;
+					vertical-align: middle;
+					float: none;
+					.category-post {
+						display: none;
+					}	
+					.title-post {
+						margin:{top:0;}
+					}
+					.date-post {
+						display: none;
+					}
+				}
 				@include media($notebook) {
 					display: table-cell;
 					vertical-align: middle;

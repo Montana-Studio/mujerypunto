@@ -6,12 +6,21 @@
 		@include span-columns(12);
 		@include omega();
 		margin:{bottom:10px;}
+		@include media($tabletLand) {
+			@include span-columns(6);
+			@include omega();
+		}
 		@include media($notebook) {
 			@include span-columns(6);
 			@include omega();
 		}
 		.imagen-contentpost {
 			height: 350px;
+			@include media($tabletLand) {
+				@include span-columns(4);
+				@include omega();
+				height: 120px;
+			}
 			@include media($notebook) {
 				@include span-columns(4);
 				@include omega();
@@ -33,6 +42,12 @@
 			@include span-columns(12);
 			@include omega();
 			padding: {top:10px; bottom:0px;}
+			@include media($tabletLand) {
+				@include span-columns(8);
+				@include omega();
+				height: 120px;
+				display: table;
+			}
 			@include media($notebook) {
 				@include span-columns(8);
 				@include omega();
@@ -49,6 +64,12 @@
 			.post-inside {
 				@include span-columns(12);
 				@include omega();
+				@include media($tabletLand) {
+					display: table-cell;
+					vertical-align: middle;
+					float: none;
+					padding:{left:10px;}
+				}
 				@include media($notebook) {
 					display: table-cell;
 					vertical-align: middle;
@@ -70,6 +91,36 @@
 			}
 		}
 		&:first-child {
+			@include media($tabletLand) {
+			@include span-columns(6);
+			margin:{right:10px;}
+				.imagen-contentpost {
+					@include span-columns(12);
+					@include omega();
+					height: 250px;
+					.imagen-post {
+						@include span-columns(12);
+						@include omega();
+					}	
+				}	
+				.content-post {
+					@include span-columns(12);
+					@include omega();
+					.post-inside {
+						@include span-columns(12);
+						@include omega();
+						padding:10px 0;
+						.title-post {
+						}
+						.date-post {
+							display: block;
+						}
+						.category-post {
+							display: block;
+						}	
+					}
+				}	
+			}
 			@include media($notebook) {
 			@include span-columns(6);
 			margin:{right:10px;}
@@ -90,10 +141,8 @@
 						@include omega();
 						padding:10px 0;
 						.title-post {
-							@include media($notebook) {
-								font-size: 1.2em;
-    							line-height: 26px;
-							}
+							font-size: 1.2em;
+							line-height: 26px;
 						}
 						.date-post {
 							display: block;
