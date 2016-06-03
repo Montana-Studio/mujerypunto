@@ -56,7 +56,7 @@
 
 				<div class="comments-facebook">
 					<h3 class="title-insidepost">Comentarios</h3>
-					<div class="fb-comments" data-href="http://www.mujerypunto.cl" data-width="100%" data-numposts="5"></div>
+					<div class="fb-comments" data-href="<?php echo the_permalink(); ?>" data-width="100%" data-numposts="5"></div>
 				</div>
 
 				<div class="nav-post">
