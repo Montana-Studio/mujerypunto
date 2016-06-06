@@ -6,6 +6,9 @@
 		@include span-columns(12);
 		@include omega();
 		margin:{bottom:10px;}
+		@include media($mobileLand) {
+			@include span-columns(5.5);
+		}
 		@include media($tabletLand) {
 			@include span-columns(6);
 			@include omega();
@@ -16,6 +19,12 @@
 		}
 		.imagen-contentpost {
 			height: 350px;
+			@include media($mobileLand) {
+				height: 150px;
+			}
+			@include media($tablet) {
+				height: 200px;
+			}
 			@include media($tabletLand) {
 				@include span-columns(4);
 				@include omega();

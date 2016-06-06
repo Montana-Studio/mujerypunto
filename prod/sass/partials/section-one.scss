@@ -6,6 +6,10 @@
 		@include span-columns(12);
 		@include omega();
 		margin:{bottom:10px;}
+		@include media($mobileLand) {
+			@include span-columns(4);
+			margin:{bottom:15px;}
+		}
 		@include media($tabletLand) {
 			@include span-columns(4);
 			margin:{bottom:15px;}
@@ -16,6 +20,12 @@
 		}
 		.imagen-contentpost {
 			height: 150px;
+			@include media($mobileLand) {
+				height: 200px;
+			}
+			@include media($tablet) {
+				height: 200px;
+			}
 		}
 		.content-post {
 			@include span-columns(12);
@@ -80,16 +90,50 @@
 			}
 		}
 		&:first-child {
+			@include media($mobileLand) {
+				@include span-columns(12);
+				@include omega();
+				.imagen-contentpost {
+					@include span-columns(6);
+					@include omega();
+					height: 200px;
+					.imagen-post {
+						@include span-columns(12);
+						@include omega();
+						height: inherit;
+					}
+				}	
+				.content-post {
+					@include span-columns(5);
+					@include omega();
+					height:200px;
+					display: table;
+					.post-inside {
+						display: table-cell;
+						vertical-align: middle;
+						padding:10px;
+						.category-post {
+							display: block;
+							font:{size:0.7em;}
+						}
+						.title-post {
+							margin:{top:5px;bottom: 10px;}
+							font-size: 1.1em;
+    						line-height: 25px;
+						}
+						.date-post {
+							display: block;
+						}
+					}	
+				}	
+			}
 			@include media($tabletLand) {
 				@include span-columns(12);
 				@include omega();
 				.imagen-contentpost {
 					@include span-columns(6);
 					@include omega();
-					height: 350px;
-					@include media($tabletLand) {
-						height: 250px;
-					}
+					height: 250px;
 					.imagen-post {
 						@include span-columns(12);
 						@include omega();

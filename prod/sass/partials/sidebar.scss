@@ -2,6 +2,15 @@
 	@include span-columns(12);
 	@include omega();
 	margin:{top:20px;}
+	@include media($mobileLand) {
+		display: none;
+	} 
+	@include media($tablet) {
+		@include span-columns(5);
+		@include omega();
+		float:right;
+		margin:{top:40px;}
+	}
 	@include media($tabletLand) {
 		@include span-columns(4);
 		@include omega();
@@ -25,6 +34,11 @@
 		.facebook-sidebar {
 			@include span-columns(12);
 			margin:{bottom:40px;right:0;}
+			@include media($mobileLand) {
+				@include span-columns(5.8); 
+				@include omega();
+				display: inline-block;
+			}
 			.fb-page {
 				@include span-columns(12);
 				@include omega();
@@ -47,6 +61,11 @@
 			border:1px solid $gray_3;
 			padding: {top:0; bottom:10px;left:20px;right:20px;}
 			margin:{bottom:35px;}
+			@include media($mobileLand) {
+				@include span-columns(5.8); 
+				display: inline-block;
+				margin:{right:10px;bottom:0;}
+			}
 			.content-sidebar {
 				@include span-columns(12);
 				@include omega();
@@ -129,6 +148,11 @@
 					@include span-columns(12);
 					@include omega();
 					margin:30px 0;
+					@include media($mobileLand) {
+						@include span-columns(6); 
+						display: inline-block;
+						margin:{right:10px;}
+					}
 					ul {
 						@include span-columns(12);
 						margin:0;

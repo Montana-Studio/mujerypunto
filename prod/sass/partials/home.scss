@@ -33,6 +33,12 @@
 			        	background-position:center;
 			        	background-size:cover;
 			        	position: relative;
+			        	@include media($mobileLand) {
+			        		height: 300px;
+			        	}
+			        	@include media($tablet) {
+			        		height: 300px;
+			        	}
 			        	@include media($tabletLand) {
 			        		height: 300px;
 			        	}
@@ -54,6 +60,9 @@
 							padding: 30px;
     						box-sizing: border-box;
     						display: table;
+    						@include media($tablet) {
+    							padding: 10px;
+    						}
     						@include media($tabletLand) {
     							padding: 30px 20px;
     						}
@@ -67,6 +76,12 @@
 									display: inline-block;
 									text:{transform:uppercase;}
 									color:$white;
+									@include media($mobileLand) {
+										font:{size:0.6em;}
+									}
+									@include media($tablet) {
+										font:{size:0.7em;}
+									}
 									@include media($tabletLand) {
 										font:{size:0.6em;}
 									}
@@ -85,6 +100,14 @@
 									font:{size:1.5em;}
 									line-height: 38px;
 									font:{family:$regular_font;}
+									@include media($mobileLand) {
+										font:{size: 0.9em;}
+										line-height: 24px;
+									}
+									@include media($tablet) {
+										font:{size: 1em;}
+    									line-height: 27px;
+									}
 									@include media($tabletLand) {
 										font:{size: 1em;}
 										line-height: 29px;
@@ -106,6 +129,12 @@
 								}	
 								.btn-read-more {
 									font:{family:$second_font;}
+									@include media($mobileLand) {
+										padding: 0;
+									}
+									@include media($tablet) {
+										padding: 0;
+									}
 									@include media($tabletLand) {
 										margin:{top:0;}
 									}
@@ -116,6 +145,12 @@
 										margin:{top:20px;}
 									}
 									a {
+										@include media($mobileLand) {
+	    									font:{size: 0.6em;}
+										}
+										@include media($tablet) {
+	    									font:{size: 0.6em;}
+										}
 										@include media($tabletLand) {
 											font:{size:0.6em;;}
 										}

@@ -21,6 +21,9 @@
 		@include omega();
 		position: absolute;
 		background: $white;
+		@include media($tablet) {
+			@include pad(10px);
+		}
 		@include media($tabletLand) {
 			position: relative;
 			padding: {top:20px; bottom:10px;}
@@ -31,6 +34,12 @@
 		}
 		.logotipo-mujerypunto {
 			@include span-columns(4);
+			@include media($mobileLand) {
+				@include span-columns(2);
+			}
+			@include media($tablet) {
+				@include span-columns(2); 
+			}
 			@include media($tabletLand) {
 				@include outer-container(20%);
 				margin:0 auto !important;
@@ -60,6 +69,10 @@
 				font:{size:2em;}
 				display: table-cell;
 				vertical-align: middle;
+			}
+			@include media($tablet) {
+				text:{align: right;}
+				padding:{right: 10px;}
 			}
 			@include media($tabletLand) {
 				display: none;
@@ -152,7 +165,7 @@
 	}	
 }
 .menu-mobile-open {
-	@include span-columns(9.5);
+	@include span-columns(8);
 	@include omega();
 	@include pad(20px 10px);
 	float: right;
@@ -163,6 +176,12 @@
 	z-index: 1;
 	text:{align:right;}
 	color:$gray_1; 
+	@include media($mobileLand) {
+		@include span-columns(5);
+	}
+	@include media($tablet) {
+		@include span-columns(4.5);
+	}
 	.logotipo-mujerypunto {
 		@include span-columns(4);
 		@include media($notebook) {

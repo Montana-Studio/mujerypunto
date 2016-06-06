@@ -20,6 +20,12 @@ body {
 		@include omega();
 		max-width: 1280px;
 		padding:{top:10px;left:10px;bottom:0;right:10px;}
+		@include media($mobileLand) {
+			padding:{top:0px;}
+		}
+		@include media($tablet) {
+			padding:{top:0px;}
+		}
 		@include media($tabletLand) {
 			@include pad(0);
 			@include outer-container(93%); 
@@ -36,6 +42,10 @@ body {
 			@include span-columns(12);
 			@include omega();
 			margin:{top:10px;}
+			@include media($tablet) { 
+				@include span-columns(7);
+				@include omega(); 
+			}
 			@include media($tabletLand) { 
 				@include span-columns(8);
 				@include omega();
