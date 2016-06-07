@@ -1,0 +1,108 @@
+.secction-videos {
+	@include span-columns(12);
+	@include omega();
+	.post-video-principal {
+		@include span-columns(12);
+		margin:{bottom:10px;}
+		@include media($tabletLand) {
+			@include span-columns(5.8);
+			margin:{right:10px;}
+		}
+		@include media($notebook) {
+			@include span-columns(5.8);
+			margin:{right:10px;}
+		}
+		.imagen-contentpost {
+			@include span-columns(12);
+			height: 200px; 
+			margin:{bottom:5px;right:0;}
+			@include media($notebook) {
+				height:300px; 
+			}
+		}
+		.content-post {
+			.video-info {
+				color:$gray_1;
+				font:{size:0.8em;}
+				@include span-columns(6);
+				@include omega();
+			}
+			.social-share {
+				text:{align:right;}
+				@include span-columns(6);
+				@include omega();
+			}
+			.title-post {
+				@include media($tabletLand) {
+					font:{size:1.2em;}
+					line-height: 25px;
+				}	
+			}
+		}
+		&:first-child {
+			@include media($tabletLand) {
+				@include span-columns(6);
+				@include omega();
+			}
+			@include media($notebook) {
+				@include span-columns(6);
+				@include omega();
+			}
+		}
+	} 
+	.post-list {
+		@include span-columns(12);
+		@include media($tabletLand) {
+			@include span-columns(5.8);
+			@include omega();
+		}
+		@include media($notebook) {
+			@include span-columns(5.8);
+			@include omega();
+		}
+		.post-video {
+			@include span-columns(12);
+			margin:{bottom:10px;right:0;}
+			.imagen-contentpost {
+				@include span-columns(4);
+				@include omega();
+				height: 120px;
+			}	
+			.content-post {
+				@include span-columns(8);
+				@include omega();
+				height: 120px;
+				display: table;
+				padding: {left:10px;}
+				.post-inside {
+					@include span-columns(12);
+					float: initial;
+					@include omega();
+					display: table-cell;
+					vertical-align: middle;
+					.video-info {
+						color:$gray_1;
+						font:{size:0.8em;}
+						@include span-columns(4);
+						@include omega();
+					}
+					.social-share {
+						text:{align:right;}
+						@include span-columns(7);
+						@include omega();
+						font:{size:0.8em;}
+					}
+					.title-post {
+						font-size: 0.8em;
+	    				line-height: 18px;
+					} 
+				}
+				@include media($tabletLand) {
+					padding:10px;
+					.post-inside {
+					}	
+				}
+			}		
+		}
+	}
+}

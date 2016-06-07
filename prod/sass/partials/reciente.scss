@@ -1,0 +1,102 @@
+.secction-reciente {
+	@include span-columns(12);
+	margin:{top:20px;right:0;}
+	.content-reciente {
+		margin:{top:20px;}
+		@include span-columns(12);
+		@include omega();
+		.column-one {
+			@include span-columns(12);
+			.imagen-contentpost {
+				height: 150px;
+			}
+			.content-post {
+				.category-post {
+					display: none;
+				}
+				.date-post {
+					display: none;
+				}
+			}
+			@include media($tabletLand) {
+				@include span-columns(3);
+				.post-reciente {
+					@include span-columns(12);
+					@include omega();
+					.imagen-contentpost {
+						height: 120px;
+					}
+					.content-post {
+						.category-post {
+							display: none;
+						}
+						.date-post {
+							display: none;
+						}
+					}
+				}	
+			}
+			@include media($notebook) {
+				@include span-columns(3);
+				.post-reciente {
+					@include span-columns(12);
+					@include omega();
+					.imagen-contentpost {
+						height: 120px;
+					}
+					.content-post {
+						.category-post {
+							display: none;
+						}
+						.date-post {
+							display: none;
+						}
+					}
+				}	
+			}
+		}
+		.column-two {
+			@include span-columns(12);
+			.imagen-contentpost {
+				height: 150px;
+			}
+			@include media($tabletLand) {
+				@include span-columns(6);
+					.post-reciente {
+					@include span-columns(12);
+					@include omega();
+					.imagen-contentpost {
+						height: 300px;
+					}
+					.content-post {
+						.title-post {
+							font:{size: 1.3em;}
+	    					line-height: 28px;
+						}
+					}
+				}	
+			}
+			@include media($notebook) {
+				@include span-columns(6);
+					.post-reciente {
+					@include span-columns(12);
+					@include omega();
+					.imagen-contentpost {
+						height: 300px;
+					}
+					.content-post {
+						.title-post {
+							font:{size: 1.3em;}
+	    					line-height: 28px;
+						}
+					}
+				}	
+			}	
+		}
+		.content-post {
+			.btn-read-green {
+				margin:{top:0;bottom:15px;}
+			}
+		}
+	}
+}

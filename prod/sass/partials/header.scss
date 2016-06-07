@@ -112,11 +112,15 @@
 					text:{transform:uppercase;}
 					margin:{right:20px;}
 					@include media($tabletLand) {
-						font-size: 0.7em;
+						font-size: 0.8em;
+						margin:{right:20px;}
+					}
+					@include media($notebook) {
+						font-size: 0.8em;
 						margin:{right:20px;}
 					}
 					@include media($desktop) {
-						font-size: 1em;
+						font-size: 0.8em;
 						margin:{right:30px;}
 					}
 					a {
@@ -124,6 +128,31 @@
     					&:hover {
 	    					color:$green-logo;
 	    				}
+    				}
+    				&.menu-item-has-children {
+    					position: relative;
+
+    					.sub-menu {
+    						position: absolute;
+    						display: none;
+	    					width: 200px;
+							background: #fff;
+							top: 15px;
+							z-index: 9999;
+							li {
+								@include span-columns(12);
+								margin:{bottom:5px;right:0;}
+								padding: 10px;
+								@include media($tabletLand) {
+									font:{size:1em;}
+								}
+							}
+    					}
+    					&:hover {
+    						.sub-menu {
+	    						display: block;
+	    					}
+    					}
     				}
 				}
 			}	

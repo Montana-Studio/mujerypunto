@@ -212,6 +212,7 @@ body {
 			left: 0;
 			right: 0;
 			margin: 0 auto;
+			height: 57%;
 		}
 		@include media($notebook){
 			width: 30%;
@@ -230,7 +231,7 @@ body {
 		padding: 0 15px;
    		margin: 10px 0;
    		@include media($tabletLand){
-			font:{size: 1.2em;} 
+			font:{size: 1.5em;} 
 		}
 	}
 }

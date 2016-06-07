@@ -43,11 +43,11 @@
 			@include span-columns(12);
 			@include omega();
 			text:{align:center;}
-			font:{family:$regular_font;size:1em;weight:bold;style:italic;}
+			font:{family:$second_font;size:1em;weight:light;style:italic;}
 			padding:0 20px;
 			line-height: 23px;
 			@include media($tabletLand){
-				font:{size: 1em;}
+				font:{size: 0.9em;}
 				margin:{top:5px;}
 			}
 			@include media($notebook){
