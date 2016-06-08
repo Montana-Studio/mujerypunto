@@ -142,6 +142,18 @@
 								top: 15px;
 								width: 200px;
 							}
+							@include media($notebook) { 
+								position: absolute;
+								z-index: 9999;
+								top: 25px;
+								width: 200px;
+							}
+							@include media($desktop) { 
+								position: absolute;
+								z-index: 9999;
+								top: 20px;
+								width: 200px;
+							}  
 							li {
 								@include span-columns(12);
 								margin:{bottom:5px;right:0;}
@@ -149,10 +161,13 @@
 								@include media($tabletLand) {
 									font:{size:1em;}
 									padding: 10px;
+								} 
+								@include media($notebook) {
+									padding: 10px;
+    								font:{size: 1.1em;}
 								}
-
 							}
-    					}
+    					}   
     					&:hover {
     						.sub-menu {
 	    						display: block;

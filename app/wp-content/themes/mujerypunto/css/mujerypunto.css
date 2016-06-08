@@ -2870,6 +2870,18 @@ body {
                   z-index: 9999;
                   top: 15px;
                   width: 200px; } }
+              @media screen and (min-width: 80em) {
+                .header .navigation-header .menu-header ul li.menu-item-has-children .sub-menu {
+                  position: absolute;
+                  z-index: 9999;
+                  top: 25px;
+                  width: 200px; } }
+              @media screen and (min-width: 90em) {
+                .header .navigation-header .menu-header ul li.menu-item-has-children .sub-menu {
+                  position: absolute;
+                  z-index: 9999;
+                  top: 20px;
+                  width: 200px; } }
               .header .navigation-header .menu-header ul li.menu-item-has-children .sub-menu li {
                 float: left;
                 display: block;
@@ -2884,6 +2896,10 @@ body {
                   .header .navigation-header .menu-header ul li.menu-item-has-children .sub-menu li {
                     font-size: 1em;
                     padding: 10px; } }
+                @media screen and (min-width: 80em) {
+                  .header .navigation-header .menu-header ul li.menu-item-has-children .sub-menu li {
+                    padding: 10px;
+                    font-size: 1.1em; } }
             .header .navigation-header .menu-header ul li.menu-item-has-children:hover .sub-menu {
               display: block; }
     .header .navigation-header .rrss-myp {
