@@ -131,8 +131,11 @@ body {
 	display: inline-block;
 	text:{transform:uppercase;}
 	color:$green-logo;
+	@include media($mobileLand) {
+		font:{size: 0.6em;}
+	}
 	@include media($tabletLand) {
-		font-size: 0.6em;
+		font:{size: 0.6em;}
     	line-height: 19px;
 	}
 }
@@ -144,6 +147,10 @@ body {
 	font:{size:1.2em;}
 	line-height: 26px;
 	font:{family:$regular_font;}
+	@include media($mobileLand) {
+		font:{size: 1em;}
+    	line-height: 24px;
+	}
 	@include media($tabletLand) {
 		font-size: 0.8em;
     	line-height: 19px;
@@ -162,6 +169,9 @@ body {
 .social-share {
 	display: inline-block;
 	margin:{left:5px;}
+	@include media($mobileLand) {
+		margin:{left:0;}
+	}
 	ul {
 		margin:0;
 		padding:0;
@@ -171,6 +181,9 @@ body {
 			margin:0 5px;
 			a {
 				color: $green-logo;
+				@include media($mobileLand) {
+					font:{size: 0.8em;}
+				}
 				@include media($tabletLand) {
 					font:{size:0.9em;}
 				}
@@ -246,6 +259,9 @@ body {
     a {
     	font:{weight:bold;size: 0.75em;}
     	color:$white;
+    	@include media($mobileLand){
+			font:{size: 0.65em;} 
+		}
     	@include media($tabletLand){
 			font:{size: 0.65em;} 
 		}

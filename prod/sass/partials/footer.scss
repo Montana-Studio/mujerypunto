@@ -1,6 +1,9 @@
 .footer {
 	@include span-columns(12);
 	@include omega();
+	 z-index: 9;
+    position: relative;
+    background: #fff;
 	.newsletter-footer {
 		@include span-columns(12);
 		@include omega();

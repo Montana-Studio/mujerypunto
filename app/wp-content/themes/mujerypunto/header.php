@@ -40,7 +40,7 @@
 			</div>
 			<div class="search-bg"></div>
 		</div>
-		<?php if(wp_is_mobile()){ ?>
+		<?php  //if(wp_is_mobile()){ ?>
 			<div class="menu-mobile-open">
 				<div class="logotipo-mujerypunto">
 					<a href="<?php echo get_site_url(); ?>">
@@ -60,7 +60,7 @@
 					<?php html5blank_nav(); ?>
 				</div>
 			</div>
-		<?php } ?>
+		<?php// } ?>
 		<div class="wrapper move-content-out">
 
 			<header class="header clear" role="banner">

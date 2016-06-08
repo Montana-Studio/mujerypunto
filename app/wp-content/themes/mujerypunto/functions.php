@@ -100,6 +100,9 @@ function html5blank_header_scripts()
 
         wp_register_script('mujerypuntojs', get_template_directory_uri() . '/js/mujerypunto.min.js', array('jquery'), '1.0.0'); // Conditional script(s)
         wp_enqueue_script('mujerypuntojs'); // Enqueue it!  
+
+        wp_register_script('mujeryjs', get_template_directory_uri() . '/js/library.min.js', array('jquery'), '1.0.0'); // Conditional script(s)  
+        wp_enqueue_script('mujeryjs'); // Enqueue it!   
     }
 }
 
@@ -392,7 +395,7 @@ add_shortcode('html5_shortcode_demo_2', 'html5_shortcode_demo_2'); // Place [htm
 \*------------------------------------*/
 
 // Create 1 Custom Post type for a Demo, called HTML5-Blank
-function create_post_type_html5()
+/*function create_post_type_html5()
 {
     register_taxonomy_for_object_type('category', 'html5-blank'); // Register Taxonomies for Category
     register_taxonomy_for_object_type('post_tag', 'html5-blank');
@@ -427,7 +430,39 @@ function create_post_type_html5()
             'category'
         ) // Add Category and Post Tags support
     ));
-}
+}*/
+
+
+// MAIN POST TYPE
+
+function create_post_type_html5() { // Create 1 Custom Post type for a Demo, called HTML5-Blank
+    register_taxonomy_for_object_type('category','secc-video'); // Register Taxonomies for Category
+    register_taxonomy_for_object_type('post_tag','video-secc');
+    register_post_type( 'video-galeria', // Register Custom Post Type
+        array(
+                'labels' => array(
+                        'name' => __( 'Galeria de videos' ), // Rename these to suit
+                        'singular_name' => __( 'Videos' ),
+                        'add_new' => __( 'Agregar video' ),
+                        'add_new_item' => __( 'Agregar nuevo video' ),
+                        'edit' => __( 'Editar' ),
+                        'edit_item' => __( 'Editar video' ),
+                        'new_item' => __( 'Nuevo video' ),
+                        'view' => __( 'Ver video' ),
+                        'view_item' => __( 'Ver videos' ),
+                        'search_items' => __( 'Buscar videos' ),
+                        'not_found' => __( 'Video no encontrado' ),
+                        'not_found_in_trash' => __( 'No  hay videos eliminados' ),
+                ),
+        'public' => true,
+        'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
+        'has_archive' => true,
+        'supports' => array( 'title', 'editor', 'thumbnail','excerpt'), // Go to Dashboard Custom HTML5 Blank post for supports
+        'can_export' => true, // Allows export in Tools > Export
+        'taxonomies' => array( 'post_tag', 'category'), // Add Category and Post Tags support
+        )
+    );
+} 
 
 /*------------------------------------*\
 	ShortCode Functions

@@ -80,104 +80,107 @@
 
 			    <div class="secction-videos">
 			    	<div class="title-bg"><div class="line-bg"></div><h2 class="title-section">Videos</h2></div>
-		    		<div class="post-video-principal">
-						<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>> 
-							<?php 
-								global $post, $posts;
-								$output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
-								$first_img = $matches [1] [0];
-							?>
-							<div class="imagen-contentpost">
-								<a href="<?php the_permalink(); ?>">
-								<div class="imagen-post" style="background-image:url('<?php global $post; $thumbID = get_post_thumbnail_id( $post->ID ); if($thumbID){$imgDestacada = wp_get_attachment_url( $thumbID ); echo $imgDestacada; }else{ echo $first_img;}?>')">
-									<div class="bg-contentpost"></div>
-								</div>	
-								</a>
-							</div>
-							<div class="content-post">
-								<div class="post-inside">
-									<div class="video-info">
-										<div class="vistas"><i class="fa fa-eye"></i> Vistas</div>
-									</div>
-									<div class="social-share">
-										<ul>
-											<li><a href="javascript:fbShare('<?php echo the_permalink(); ?>', '<?php the_title(); ?>', '<?php the_title(); ?>', '<?php echo the_permalink(); ?>', 520, 350)"><i class="fa fa-facebook"></i></a></li>
-											<li><a href="javascript:twShare('<?php echo the_permalink(); ?>', '<?php the_title(); ?> - vía: @revistacosas', 520, 350)"><i class="fa fa-twitter"></i></a></li>
-											<li><a target="_blank" href="https://plus.google.com/share?url=<?php the_permalink(); ?>" onclick="window.open('https://plus.google.com/share?url=<?php the_permalink(); ?>','gplusshare','width=600,height=400,left='+(screen.availWidth/2-225)+',top='+(screen.availHeight/2-150)+'');return false;"><i class="fa fa-google-plus"></i></a></li>
-											<li class="whatsapp"><a href="whatsapp://send?text=<?php the_title(); ?> – <?php urlencode(the_permalink()); ?>" data-action="share/whatsapp/share"><i class="fa fa-whatsapp"></i></a></li>
-										</ul>
-									</div>
-									<a href="<?php the_permalink(); ?>"><h2 class="title-post"><?php the_title(); ?></h2></a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="post-list">
-						<div class="post-video">
-							<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>> 
-								<?php 
-									global $post, $posts;
-									$output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
-									$first_img = $matches [1] [0];
-								?>
-								<div class="imagen-contentpost">
-									<a href="<?php the_permalink(); ?>">
-									<div class="imagen-post" style="background-image:url('<?php global $post; $thumbID = get_post_thumbnail_id( $post->ID ); if($thumbID){$imgDestacada = wp_get_attachment_url( $thumbID ); echo $imgDestacada; }else{ echo $first_img;}?>')">
-										<div class="bg-contentpost"></div>
-									</div>	
-									</a>
-								</div>
-								<div class="content-post">
-									<div class="post-inside">
-										<div class="video-info">
-											<div class="vistas"><i class="fa fa-eye"></i> Vistas</div>
-										</div>
-										<div class="social-share">
-											<ul>
-												<li><a href="javascript:fbShare('<?php echo the_permalink(); ?>', '<?php the_title(); ?>', '<?php the_title(); ?>', '<?php echo the_permalink(); ?>', 520, 350)"><i class="fa fa-facebook"></i></a></li>
-												<li><a href="javascript:twShare('<?php echo the_permalink(); ?>', '<?php the_title(); ?> - vía: @revistacosas', 520, 350)"><i class="fa fa-twitter"></i></a></li>
-												<li><a target="_blank" href="https://plus.google.com/share?url=<?php the_permalink(); ?>" onclick="window.open('https://plus.google.com/share?url=<?php the_permalink(); ?>','gplusshare','width=600,height=400,left='+(screen.availWidth/2-225)+',top='+(screen.availHeight/2-150)+'');return false;"><i class="fa fa-google-plus"></i></a></li>
-												<li class="whatsapp"><a href="whatsapp://send?text=<?php the_title(); ?> – <?php urlencode(the_permalink()); ?>" data-action="share/whatsapp/share"><i class="fa fa-whatsapp"></i></a></li>
-											</ul>
-										</div>
-										<a href="<?php the_permalink(); ?>"><h2 class="title-post"><?php the_title(); ?></h2></a>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="post-video">
-							<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>> 
-								<?php 
-									global $post, $posts;
-									$output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
-									$first_img = $matches [1] [0];
-								?>
-								<div class="imagen-contentpost">
-									<a href="<?php the_permalink(); ?>">
-									<div class="imagen-post" style="background-image:url('<?php global $post; $thumbID = get_post_thumbnail_id( $post->ID ); if($thumbID){$imgDestacada = wp_get_attachment_url( $thumbID ); echo $imgDestacada; }else{ echo $first_img;}?>')">
-										<div class="bg-contentpost"></div>
-									</div>	
-									</a>
-								</div>
-								<div class="content-post">
-									<div class="post-inside">
-										<div class="video-info">
-											<div class="vistas"><i class="fa fa-eye"></i> Vistas</div>
-										</div>
-										<div class="social-share">
-											<ul>
-												<li><a href="javascript:fbShare('<?php echo the_permalink(); ?>', '<?php the_title(); ?>', '<?php the_title(); ?>', '<?php echo the_permalink(); ?>', 520, 350)"><i class="fa fa-facebook"></i></a></li>
-												<li><a href="javascript:twShare('<?php echo the_permalink(); ?>', '<?php the_title(); ?> - vía: @revistacosas', 520, 350)"><i class="fa fa-twitter"></i></a></li>
-												<li><a target="_blank" href="https://plus.google.com/share?url=<?php the_permalink(); ?>" onclick="window.open('https://plus.google.com/share?url=<?php the_permalink(); ?>','gplusshare','width=600,height=400,left='+(screen.availWidth/2-225)+',top='+(screen.availHeight/2-150)+'');return false;"><i class="fa fa-google-plus"></i></a></li>
-												<li class="whatsapp"><a href="whatsapp://send?text=<?php the_title(); ?> – <?php urlencode(the_permalink()); ?>" data-action="share/whatsapp/share"><i class="fa fa-whatsapp"></i></a></li>
-											</ul>
-										</div>
-										<a href="<?php the_permalink(); ?>"><h2 class="title-post"><?php the_title(); ?></h2></a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+
+                    <?php 
+                        $args = array (
+                            'post_type'              => 'video-galeria',
+                            'order'                  => 'DESC',
+                            'orderby'                => 'date',
+                        );
+                        $args2 = array (
+                            'post_type'              => 'video-galeria',
+                            'order'                  => 'DESC',
+                            'orderby'                => 'date',
+                        );
+                        // The Query
+                        $videos = new WP_Query( $args );
+                        $videos2 = new WP_Query( $args2 );
+                        // The Loop
+                        if ( $videos->have_posts() ) {
+                            $cantidad_videos =$videos->post_count;
+                            $cantidad_videos_loop = $cantidad_videos - 1; 
+                            $var=0;
+                            while ( $videos->have_posts() ) {
+                                $videos->the_post();
+                                if($var==0){
+                                     get_template_part('loop-video1');
+                                }else{
+                                    if($var==1){?>
+                                        <div class="post-list">
+                                    <?  get_template_part('loop-video2');
+	                                    }else if($var < $cantidad_videos_loop){
+	                                        get_template_part('loop-video2');
+	                                    }else if($var == $cantidad_videos_loop){
+	                                        get_template_part('loop-video2'); ?>
+	                                    </div>
+	                                <? }  
+                                }
+                               $var++;
+                                
+                            }
+                        } else {
+                            // no posts found
+                        }
+                        // Restore original Post Data
+                        wp_reset_postdata();
+	                ?>
+
+                </div>  
+	            <script type="text/javascript">
+	                ytapiAdd();
+                    var playerss;
+                    function onYouTubePlayerAPIReady() {
+                        var players = document.querySelectorAll('.embeVideo');
+                        for (var i = 0; i < players.length; i++) {
+                            playerss = new YT.Player(players[i], {
+                                playerVars: {'controls': 0,'rel':0,'showinfo':0},
+                                events:{
+                                    'onStateChange': onPlayerStateChange,
+                                },
+                                videoId: players[i].dataset.id
+                            });
+                        }
+                    }
+
+                    function loadVideo(videoID) {
+                        if(playerss) { 
+                            jQuery(document).ready(function($){
+                                $.ajaxSetup({cache:false});
+                                
+	                                $(".post-video").click(function(){
+
+	                                	//Obtengo url de imagen, fecha y titulo desde el click
+	                                    var fecha = $(this).find('.vistas').html();
+	                                    var titulo = $(this).find('.title-post').text();
+
+										//Obtengo url de imagen, fecha y titulo desde principal                                    
+	                                    var titulo_principal = $(".titulo-principal").html();
+	                                    var fecha_principal = $(".vistas-principal").html();
+
+	                                    //Agrego datos en principal
+	                                    $(".titulo-principal").html(titulo);
+	                                    $(".vistas-principal").html(fecha);
+
+	                                    playerss.loadVideoById(videoID);
+	                                    return false;
+	                                });
+                                
+                                
+                            });
+                        }
+                    }
+
+                    function onPlayerStateChange(event) {
+                    	if(event.data === 1){          
+                            
+                        }else if(event.data === 2||event.data === 0 ){
+                            
+                        }
+
+                    }
+
+                    
+                </script>
 			    </div>
 
 		</section>
