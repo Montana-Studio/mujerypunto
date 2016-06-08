@@ -112,11 +112,15 @@
 					text:{transform:uppercase;}
 					margin:{right:20px;}
 					@include media($tabletLand) {
-						font-size: 0.7em;
+						font-size: 0.8em;
+						margin:{right:20px;}
+					}
+					@include media($notebook) {
+						font-size: 0.8em;
 						margin:{right:20px;}
 					}
 					@include media($desktop) {
-						font-size: 1em;
+						font-size: 0.8em;
 						margin:{right:30px;}
 					}
 					a {
@@ -124,6 +128,36 @@
     					&:hover {
 	    					color:$green-logo;
 	    				}
+    				}
+    				&.menu-item-has-children {
+    					position: relative;
+    					.sub-menu {
+    						display: none;
+							background: #fff;
+							top: 30px;
+    						position: relative;
+							@include media($tabletLand) {
+								position: absolute;
+								z-index: 9999;
+								top: 15px;
+								width: 200px;
+							}
+							li {
+								@include span-columns(12);
+								margin:{bottom:5px;right:0;}
+								padding:{left:30px;} 
+								@include media($tabletLand) {
+									font:{size:1em;}
+									padding: 10px;
+								}
+
+							}
+    					}
+    					&:hover {
+    						.sub-menu {
+	    						display: block;
+	    					}
+    					}
     				}
 				}
 			}	
@@ -176,6 +210,7 @@
 	z-index: 1;
 	text:{align:right;}
 	color:$gray_1; 
+	overflow: scroll;
 	@include media($mobileLand) {
 		@include span-columns(5);
 	}
@@ -226,6 +261,13 @@
 				margin:{bottom:20px;}
 				border-bottom:1px solid $gray;
 				padding:{bottom:10px;}
+				.sub-menu{
+					top: 30px;
+    				position: relative;
+					li {
+						padding:{left:20px;}
+					} 
+				}
 			}
 		}
 	}

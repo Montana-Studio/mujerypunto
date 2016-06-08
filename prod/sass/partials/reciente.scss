@@ -1,0 +1,120 @@
+.secction-reciente {
+	@include span-columns(12);
+	margin:{top:20px;right:0;}
+	.content-reciente {
+		margin:{top:20px;}
+		@include span-columns(12);
+		@include omega();
+		.column-one {
+			@include span-columns(12);
+			@include media($mobileLand) {
+				@include span-columns(3);
+			}
+			@include media($tablet) {
+				@include span-columns(3);
+			}
+			@include media($notebook) {
+				@include span-columns(3);
+			}
+			.post-reciente {
+				@include span-columns(12);
+				@include omega();
+				@include media($mobileLand) {
+					margin:{bottom:10px;}
+				}
+				.imagen-contentpost {
+					height: 150px;
+					@include media($mobileLand) {
+						height: 120px;
+					}
+					@include media($tablet) {
+						height: 120px;
+					}
+					@include media($notebook) {
+						height: 120px;
+					}
+				}
+				.content-post {
+					.category-post {
+						display: none;
+					}
+					.date-post {
+						display: none;
+					}
+					.title-post {
+						@include media($mobileLand) {
+							font:{size: 0.8em;}
+	    					line-height: 19px;
+						}
+					}
+					.btn-read-green {
+						@include media($mobileLand) {
+							margin:{bottom: 0;}
+						}	
+						a {
+							@include media($mobileLand) {
+								font:{size: 0.65em;}
+							}
+						}
+					}
+				}
+			}
+		}
+		.column-two {
+			@include span-columns(12);
+			@include media($mobileLand) {
+				@include span-columns(6);
+			}
+			@include media($tabletLand) {
+				@include span-columns(6);
+			}
+			@include media($notebook) {
+				@include span-columns(6);
+			}
+			.post-reciente {
+				@include span-columns(12);
+				@include omega();
+				.imagen-contentpost {
+					@include span-columns(12);
+					@include omega();
+					height: 150px;
+					@include media($mobileLand) {
+						height: 300px;
+					}
+					@include media($tabletLand) {
+						height: 300px;
+					}
+					@include media($notebook) {
+						height: 300px;
+					}
+				}
+				.content-post {
+					@include span-columns(12);
+					@include omega();
+					@include media($mobileLand) {
+						margin:{top:5px;}
+					}
+					.title-post {
+						@include media($mobileLand) {
+							font:{size: 1.3em;}
+    						line-height: 28px;
+						}
+						@include media($tabletLand) {
+							font:{size: 1.3em;}
+	    					line-height: 28px;
+						}
+						@include media($notebook) {
+							font:{size: 1.3em;}
+	    					line-height: 28px;
+						}
+					}
+				}
+			}
+		}
+		.content-post {
+			.btn-read-green {
+				margin:{top:0;bottom:15px;}
+			}
+		}
+	}
+}
