@@ -69,6 +69,14 @@ body {
 				}
 			}
 		}
+		.error-page {
+			text:{align:center;} 
+			@include span-columns(12);
+			h2 {
+				text:{align:center;}
+				padding: 40px 0;
+			}
+		}
 	}
 	&.move-content {
 		@include transition(all 0.3s ease-in-out);

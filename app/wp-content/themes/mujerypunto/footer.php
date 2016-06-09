@@ -54,7 +54,7 @@
 												foreach ($tags as $tag) {
 													$count++;
 													echo '<li>#<a href="' . get_tag_link( $tag->term_id ) . '" title="' . sprintf( __( "View all posts in %s" ), $tag->name ) . '" ' . '>' . $tag->name.'</a> </li> ';
-													if( $count >10 ) break;
+													if( $count >1 ) break;
 												}
 											}
 										?>
@@ -65,7 +65,16 @@
 								<div class="footer-tags">
 									<h3><i class="fa fa-flag-o"></i> CATEGORIAS</h3>
 									<ul class="list-pages"> 
-										<?php wp_list_categories('orderby=name&title_li'); ?>
+										<?php /* wp_list_categories('orderby=name&title_li'); */?>
+										<?php 
+											$categories =  get_the_category();
+											$i=0;
+											do{
+												$a = get_site_url();
+												echo "<li><a href='".$a."/".$categories[$i]->cat_name."'> ".$categories[$i]->cat_name." </a></li>";
+												$i++; 
+											}while($i<2);
+										?>
 									</ul>
 								</div>
 							</li>
