@@ -6,13 +6,13 @@
 					<div class="bajada-news">Nos gustaría compartir las últimas noticias de Mujer & Punto</div>
 					<form action="">
 						<div class="input-form">
-							<input type="text" name="name" placeholder="Nombre">
+							<input type="text" name="name" placeholder="Nombre" id="nombre_newsletter" requierd>
 						</div>
 						<div class="input-form">
-							<input type="email" name="correo" placeholder="Correo electrónico">
+							<input type="email" name="correo" placeholder="Correo electrónico" id="correo_newsletter" requierd>
 						</div>
 						<div class="input-form">
-							<input type="submit" value="Suscribir">
+							<input type="submit"  value="Suscribir"  type="submit" id="myp-newsletter" name="enviar" value="Suscríbete">
 						</div> 
 					</form>
 				</div>
@@ -53,8 +53,8 @@
 											if ($tags) {
 												foreach ($tags as $tag) {
 													$count++;
-													echo '<li>#<a href="' . get_tag_link( $tag->term_id ) . '" title="' . sprintf( __( "View all posts in %s" ), $tag->name ) . '" ' . '>' . $tag->name.'</a> </li> ';
-													if( $count >1 ) break;
+													echo '<li><a href="' . get_tag_link( $tag->term_id ) . '" title="' . sprintf( __( "View all posts in %s" ), $tag->name ) . '" ' . '>' . $tag->name.'</a> </li> ';
+													if( $count >4 ) break;
 												}
 											}
 										?>
@@ -65,7 +65,6 @@
 								<div class="footer-tags">
 									<h3><i class="fa fa-flag-o"></i> CATEGORIAS</h3>
 									<ul class="list-pages"> 
-										<?php /* wp_list_categories('orderby=name&title_li'); */?>
 										<?php 
 											$categories =  get_the_category();
 											$i=0;
@@ -73,7 +72,7 @@
 												$a = get_site_url();
 												echo "<li><a href='".$a."/".$categories[$i]->cat_name."'> ".$categories[$i]->cat_name." </a></li>";
 												$i++; 
-											}while($i<2);
+											}while($i<4);
 										?>
 									</ul>
 								</div>
@@ -103,7 +102,7 @@
 		        slidesPerView: 3,
 		        spaceBetween:0,
 		       	breakpoints: {
-				640: {
+				780: {
 				  slidesPerView: 1,
 				  spaceBetweenSlides:0
 				}
@@ -119,7 +118,7 @@
 				slidesPerView: 3,
 				spaceBetween:0,
 				breakpoints: {
-				640: {
+				780: {
 				  slidesPerView: 1,
 				  spaceBetweenSlides:0
 				}
@@ -135,6 +134,30 @@
 		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 		ga('create', 'UA-XXXXXXXX-XX', 'yourdomain.com');
 		ga('send', 'pageview');
+		</script>
+
+		<script>
+		jQuery(document).ready(function($){
+			$('#myp-newsletter').click(function(){
+				var nombre= $('#nombre_newsletter').val();
+				var correo= $('#correo_newsletter').val();
+				$.ajax({
+					type: 'POST',
+					url: '<?php echo get_template_directory_uri(); ?>/newsletter.php',
+					data: 'nombre='+nombre+'&correo='+correo,
+					success: function(data){
+						if(data=='exito'){
+							$('.newsletter-footer form').hide().fadeOut(); 
+							$('.newsletter-footer .bajada-news').replaceWith('<div class="exito-form">¡Gracias por registrarte en Mujer y Punto! Pronto recibirás más información</div>');
+						}else{
+							$('.newsletter-footer form').hide().fadeOut(); 
+							$('.newsletter-footer .bajada-news').replaceWith('<div class="exito-form">¡Ha ocurrido un error! vuelve a intentarlo</div>');
+						}
+					}
+				});
+				return false; 
+			});	
+		});
 		</script>
 
 	</body>

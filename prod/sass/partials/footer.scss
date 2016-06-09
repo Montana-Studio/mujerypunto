@@ -42,6 +42,26 @@
 				}
 			}
 		}
+		.exito-form {
+			@include span-columns(12);
+			font:{size:1.5em;}
+			color:$green-logo;
+			text:{align:center;}
+			padding: 30px 10px;
+    		line-height: 27px;
+    		@include media($mobileLand) {
+    			padding: 43px 30px;
+    		}
+    		@include media($tablet) {
+    			padding: 60px;
+    		}
+    		@include media($tabletLand) {
+    			padding: 60px;
+    		}
+    		@include media($notebook) {
+    			padding: 60px;
+    		}
+		}
 		.bajada-news {
 			@include span-columns(12);
 			@include omega();

@@ -3,14 +3,13 @@
 	<main role="main">
 		<section class="contentAll">
 
-		<div class="header-page">
-			<div class="title-bg"><div class="line-bg"></div><h1 class="title-section"><?php the_title(); ?></h1></div>
-			<div class="categoria-title">categoria</div>
-		</div>
+    		<div class="header-page">
+    			<div class="title-bg"><div class="line-bg"></div><h1 class="title-section"><?php the_title(); ?></h1></div>
+    			<div class="categoria-title">categoria</div>
+    		</div>
 			
 			<div class="body-sidebar content-page">
-
-                    <?php 
+                <?php 
 
                     if(is_page('belleza')){
 
@@ -18,7 +17,7 @@
                         $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
                         $args = array (
                             'category_name'          => 'belleza',
-                            'posts_per_page'         => '14',
+                            'posts_per_page'         => '4',
                             'paged'                  => $paged,
                             'order'                  => 'DESC',
                             'orderby'                => 'date', 
@@ -52,7 +51,7 @@
                         $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
                         $args = array (
                             'category_name'          => 'celebrities',
-                            'posts_per_page'         => '14',
+                            'posts_per_page'         => '10',
                             'paged'                  => $paged,
                             'order'                  => 'DESC',
                             'orderby'                => 'date',
@@ -86,7 +85,7 @@
                         $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
                         $args = array (
                             'category_name'          => 'moda/tendencias',
-                            'posts_per_page'         => '14',
+                            'posts_per_page'         => '10',
                             'paged'                  => $paged,
                             'order'                  => 'DESC',
                             'orderby'                => 'date',
@@ -120,7 +119,7 @@
                         $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
                         $args = array (
                             'category_name'          => 'relaciones',
-                            'posts_per_page'         => '14',
+                            'posts_per_page'         => '10',
                             'paged'                  => $paged,
                             'order'                  => 'DESC',
                             'orderby'                => 'date',
@@ -154,7 +153,7 @@
                         $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
                         $args = array (
                             'category_name'          => 'viajes',
-                            'posts_per_page'         => '14',
+                            'posts_per_page'         => '10',
                             'paged'                  => $paged,
                             'order'                  => 'DESC',
                             'orderby'                => 'date',
@@ -188,7 +187,7 @@
                         $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
                         $args = array (
                             'category_name'          => 'vida-gourmet',
-                            'posts_per_page'         => '14',
+                            'posts_per_page'         => '10',
                             'paged'                  => $paged,
                             'order'                  => 'DESC',
                             'orderby'                => 'date',
@@ -217,14 +216,15 @@
                         wp_reset_postdata(); 
 
                     }
-                      
-                    ?> 
+                ?> 
 
                 <div class="paginacion-sect">
-                    <?php get_template_part('pagination'); ?>
+                    <div class="pagination">
+                        <?php html5wp_pagination(); ?>
+                    </div>
                 </div>
+			</div>
 
-			</div>	
 			<div class="sidebar">
 				<?php get_sidebar(); ?>
 			</div>

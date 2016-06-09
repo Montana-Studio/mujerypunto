@@ -1,0 +1,293 @@
+// PAGE MODA/TENDENCIAS
+body {
+	.menu-header {
+		ul {
+			li {
+				&.menu-moda-y-estilo {
+					a {
+						&:hover {
+							color:$color_1 !important; 
+						}	
+					}
+				}
+				&.menu-relaciones {
+					a {
+						&:hover {
+							color:$color_2 !important; 
+						}	
+					}
+				}
+				&.menu-belleza {
+					a {
+						&:hover {
+							color:$color_3 !important; 
+						}	
+					}
+				}
+				&.menu-vida-gourmet {
+					a {
+						&:hover {
+							color:$color_4 !important; 
+						}	
+					}
+				}
+				&.menu-viajes {
+					a {
+						&:hover {
+							color:$color_5 !important; 
+						}	
+					}
+				}
+				&.menu-celebrities {
+					a {
+						&:hover {
+							color:$color_6 !important; 
+						}	
+					}
+				}
+			}
+		}
+	}
+	&.category-moda-y-estilo {
+		.categoria-title {
+			color:$color_1; 
+		}	
+		.category-post {
+			color:$color_1; 
+		}
+		.tags-content {
+			article {
+				.category-post {
+					color:$color_1; 
+				}
+				.btn-read-green {
+					a {
+						color:$color_1; 
+					}
+				}
+				.social-share {
+					a {
+						color:$color_1; 
+					}
+				}
+			}
+		}
+		.btn-read-green {
+			a {
+				color:$color_1; 
+			}
+			&:before {
+				 border-bottom: 2px solid $color_1;
+			}	 	
+		}
+		.social-share {
+			a {
+				color:$color_1; 
+			}
+		}
+	}
+}	
+// PAGE RELACIONES
+body {
+	&.category-relaciones {
+		.categoria-title {
+			color:$color_2; 
+		}	
+		.category-post {
+			color:$color_2; 
+		}
+		.tags-content {
+			article {
+				.category-post {
+					color:$color_2; 
+				}
+				.btn-read-green {
+					a {
+						color:$color_2; 
+					}
+				}
+				.social-share {
+					a {
+						color:$color_2; 
+					}
+				}
+			}
+		}
+		.btn-read-green {
+			a {
+				color:$color_2; 
+			}
+			&:before {
+				 border-bottom: 2px solid $color_2;
+			}
+		}
+		.social-share {
+			a {
+				color:$color_2; 
+			}
+		}
+	}
+}	
+// PAGE BELLEZA
+body {
+	&.category-belleza {
+		.categoria-title {
+			color:$color_3; 
+		}	
+		.category-post {
+			color:$color_3; 
+		}
+		.tags-content {
+			article {
+				.category-post {
+					color:$color_3; 
+				}
+				.btn-read-green {
+					a {
+						color:$color_3; 
+					}
+				}
+				.social-share {
+					a {
+						color:$color_3; 
+					}
+				}
+			}
+		}
+		.btn-read-green {
+			a {
+				color:$color_3; 
+			}
+			&:before {
+				 border-bottom: 2px solid $color_3;
+			}
+		}
+		.social-share {
+			a {
+				color:$color_3; 
+			}
+		}
+	} 
+}
+// PAGE VIDA GOURMET
+body {
+	&.category-vida-gourmet {
+		.categoria-title {
+			color:$color_4; 
+		}	
+		.category-post {
+			color:$color_4; 
+		}
+		.tags-content {
+			article {
+				.category-post {
+					color:$color_4; 
+				}
+				.btn-read-green {
+					a {
+						color:$color_4; 
+					}
+				}
+				.social-share {
+					a {
+						color:$color_4; 
+					}
+				}
+			}
+		}
+		.btn-read-green {
+			a {
+				color:$color_4; 
+			}
+			&:before {
+				 border-bottom: 2px solid $color_4;
+			}
+		}
+		.social-share {
+			a {
+				color:$color_4; 
+			}
+		}
+	}
+}
+// PAGE VIAJES
+body {
+	&.category-viajes {
+		.categoria-title {
+			color:$color_5; 
+		}	
+		.category-post {
+			color:$color_5; 
+		}
+		.tags-content {
+			article {
+				.category-post {
+					color:$color_5; 
+				}
+				.btn-read-green {
+					a {
+						color:$color_5; 
+					}
+				}
+				.social-share {
+					a {
+						color:$color_5; 
+					}
+				}
+			}
+		}
+		.btn-read-green {
+			a {
+				color:$color_5; 
+			}
+			&:before {
+				 border-bottom: 2px solid $color_5;
+			}
+		}
+		.social-share {
+			a {
+				color:$color_5;  
+			}
+		}
+	}
+}
+body {
+	&.category-celebrities {
+		.categoria-title {
+			color:$color_6; 
+		}	
+		.category-post {
+			color:$color_6; 
+		}
+		.tags-content {
+			article {
+				.category-post {
+					color:$color_6; 
+				}
+				.btn-read-green {
+					a {
+						color:$color_6; 
+					}
+				}
+				.social-share {
+					a {
+						color:$color_6; 
+					}
+				}
+			}
+		}
+		.btn-read-green {
+			a {
+				color:$color_6; 
+			}
+			&:before {
+				 border-bottom: 2px solid $color_6;
+			}
+		}
+		.social-share {
+			a {
+				color:$color_6; 
+			}
+		}
+	}
+}

@@ -10,11 +10,7 @@
 
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta name="description" content="<?php bloginfo('description'); ?>">
-
 		<?php wp_head(); ?>
-
-
 	</head>
 	<body <?php body_class(); ?>>
 
@@ -40,7 +36,7 @@
 			</div>
 			<div class="search-bg"></div>
 		</div>
-		<?php  //if(wp_is_mobile()){ ?>
+		<?php  if(wp_is_mobile()){ ?>
 			<div class="menu-mobile-open">
 				<div class="logotipo-mujerypunto">
 					<a href="<?php echo get_site_url(); ?>">
@@ -60,22 +56,24 @@
 					<?php html5blank_nav(); ?>
 				</div>
 			</div>
-		<?php// } ?>
+		<?php } ?>
 		<div class="wrapper move-content-out">
 
 			<header class="header clear" role="banner">
 
 					<div class="menu-header">
 						<div class="logotipo-mujerypunto">
-							<a href="<?php echo get_site_url(); ?>">
-								<?php 
-									if(is_page('belleza')){
-										echo '<img src="' .get_template_directory_uri(). '/img/myp_logotipo-morado.png" alt="Logo mujer y punto" class="logo-mujer-y-punto">';
-									}else {
-										echo '<img src="' .get_template_directory_uri(). '/img/myp_logotipo.png" alt="Logo mujer y punto" class="logo-mujer-y-punto">';
-									}
-								?> 
-							</a>
+							<h1>
+								<a href="<?php echo get_site_url(); ?>">
+									<?php 
+										if(is_page('belleza')){
+											echo '<img src="' .get_template_directory_uri(). '/img/myp_logotipo-morado.png" alt="Logo mujer y punto" class="logo-mujer-y-punto" alt="mujer y punto" title="mujer y punto">';
+										}else {
+											echo '<img src="' .get_template_directory_uri(). '/img/myp_logotipo.png" alt="Logo mujer y punto" class="logo-mujer-y-punto" alt="mujer y punto" title="mujer y punto">';
+										}
+									?> 
+								</a>	
+							</h1>
 						</div>
 						<div class="icon-menu">
 							<i class="fa fa-bars"></i>

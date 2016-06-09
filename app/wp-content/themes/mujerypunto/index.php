@@ -5,6 +5,7 @@
 		<div class="search-section show-search">  
 			<div class="bg-search-secntion"></div>
 		</div>
+		
 		<section class="home-section">
 
 				<div class="swiper-container">
@@ -17,7 +18,6 @@
 			    <div class="secction-reciente">
 			    	<div class="title-bg"><div class="line-bg"></div><h2 class="title-section">Lo más reciente</h2></div>
 			    	<div class="content-reciente">
-
 			    		<?php get_template_part('loop-reciente'); ?>  
 			    	</div>
 			    </div>
@@ -72,8 +72,8 @@
 				    		<?php get_template_part('loop-section-seven'); ?>  
 				    	</div>
 			    	</div>
-
 			    </div>
+
 			    <div class="sidebar">
 			    	<?php get_sidebar(); ?>
 			    </div>
@@ -124,8 +124,8 @@
                         // Restore original Post Data
                         wp_reset_postdata();
 	                ?>
-
                 </div>  
+
 	            <script type="text/javascript">
                     var playerss;
                     function onYouTubePlayerAPIReady() {
@@ -177,10 +177,7 @@
                         }
 
                     }
-
-                    
                 </script>
-			    </div>
 
 		</section>
 		<!-- /section -->

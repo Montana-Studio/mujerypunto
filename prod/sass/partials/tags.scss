@@ -2,12 +2,14 @@
 	@include span-columns(12);
 	@include omega();
 	@include media($tabletLand) {
-		@include span-columns(3.8);
-		margin:{bottom:10px;right:10px;}
+		@include span-columns(4);
+		@include omega(3n);
+		margin:{bottom:10px}
 	}
 	@include media($notebook) {
 		@include span-columns(4);
-		margin:{bottom:10px;right:10px;}
+		@include omega(3n);
+		margin:{bottom:10px;}
 	}
 	article {
 		@include span-columns(12);
