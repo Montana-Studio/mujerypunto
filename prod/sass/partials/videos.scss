@@ -77,6 +77,10 @@
 				@include span-columns(4);
 				@include omega();
 				height: 90px;
+				@include media($mobileLand) {
+					@include span-columns(3);
+					height: 116px;
+				} 
 				@include media($tablet) {
 					height: 195px;
 				} 

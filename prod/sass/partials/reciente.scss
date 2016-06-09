@@ -7,7 +7,7 @@
 		@include omega();
 		.column-one {
 			@include span-columns(12);
-			@include media($mobileLand) {
+			@include media($mobileLandTotablet) {
 				@include span-columns(3);
 			}
 			@include media($tablet) {
@@ -28,7 +28,7 @@
 						height: 120px;
 					}
 					@include media($tablet) {
-						height: 120px;
+						height: 130px;
 					}
 					@include media($notebook) {
 						height: 120px;
@@ -46,6 +46,10 @@
 							font:{size: 0.8em;}
 	    					line-height: 19px;
 						}
+						@include media($tablet) {
+							font-size: 1em;
+    						line-height: 22px;
+						}
 					}
 					.btn-read-green {
 						@include media($mobileLand) {
@@ -62,7 +66,7 @@
 		}
 		.column-two {
 			@include span-columns(12);
-			@include media($mobileLand) {
+			@include media($mobileLandTotablet) {
 				@include span-columns(6);
 			}
 			@include media($tabletLand) {
@@ -81,6 +85,9 @@
 					@include media($mobileLand) {
 						height: 300px;
 					}
+					@include media($tablet) {
+						height: 350px;
+					}
 					@include media($tabletLand) {
 						height: 300px;
 					}
@@ -91,14 +98,16 @@
 				.content-post {
 					@include span-columns(12);
 					@include omega();
-					@include media($mobileLand) {
-						margin:{top:5px;}
-					}
+					margin:{top:8px;} 
 					.title-post {
 						@include media($mobileLand) {
 							font:{size: 1.3em;}
     						line-height: 28px;
 						}
+						@include media($tablet) {
+						    font-size: 1.6em;
+    						line-height: 33px;
+    					}	
 						@include media($tabletLand) {
 							font:{size: 1.3em;}
 	    					line-height: 28px;
