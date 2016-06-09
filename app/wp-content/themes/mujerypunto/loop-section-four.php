@@ -1,4 +1,4 @@
-<?php query_posts( 'cat=0&showposts=3' ); 
+<?php query_posts( 'category_name=relaciones&showposts=3' ); 
  					while ( have_posts() ) : the_post();
 						?>
 <div class="post-sect-four">

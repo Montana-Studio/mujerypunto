@@ -1,4 +1,4 @@
-<?php query_posts( 'cat=0&showposts=5' ); 
+<?php query_posts( 'category_name=lo-mas-reciente&showposts=5' ); 
 	$contador=0;
  		while ( have_posts() ) : the_post();
 		if ($contador==0 || $contador==3){?>

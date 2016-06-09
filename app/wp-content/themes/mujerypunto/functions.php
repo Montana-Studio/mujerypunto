@@ -92,17 +92,11 @@ function html5blank_header_scripts()
 {
     if ($GLOBALS['pagenow'] != 'wp-login.php' && !is_admin()) {
 
-        wp_register_script('jquerymin', get_template_directory_uri() . '/js/jquery.min.js', array('jquery'), '1.0.0'); // Custom scripts
-        wp_enqueue_script('jquerymin'); // Enqueue it! 
+        wp_enqueue_script( 'jquery');
+        wp_enqueue_script( 'library', get_template_directory_uri() . '/js/library.min.js', array(), '20160606', true );
+        wp_enqueue_script( 'mujerypunto', get_template_directory_uri() . '/js/mujerypunto.min.js', array(), '20160606', true );
+        wp_enqueue_script( 'sliderhome', get_template_directory_uri() . '/js/swiper.min.js', array(), '20160606', true );
 
-        wp_register_script('sliderhome', get_template_directory_uri() . '/js/swiper.min.js', array('jquery'), '1.0.0'); // Custom scripts Slider Home  
-        wp_enqueue_script('sliderhome'); // Enqueue it! 
-
-        wp_register_script('mujerypuntojs', get_template_directory_uri() . '/js/mujerypunto.min.js', array('jquery'), '1.0.0'); // Conditional script(s)
-        wp_enqueue_script('mujerypuntojs'); // Enqueue it!  
-
-        wp_register_script('mujeryjs', get_template_directory_uri() . '/js/library.min.js', array('jquery'), '1.0.0'); // Conditional script(s)  
-        wp_enqueue_script('mujeryjs'); // Enqueue it!   
     }
 }
 
@@ -110,14 +104,8 @@ function html5blank_header_scripts()
 function html5blank_styles()
 {
 
-    wp_register_style('html5blank', get_template_directory_uri() . '/style.css', array(), '1.0', 'all');
-    wp_enqueue_style('html5blank'); // Enqueue it!
-
-    wp_register_style('sliderhome', get_template_directory_uri() . '/css/swiper.min.css', array(), '1.0', 'all');  
-    wp_enqueue_style('sliderhome'); // Enqueue it!  
-
-    wp_register_style('mujerypuntocss', get_template_directory_uri() . '/css/mujerypunto.css', array(), '1.0', 'all');
-    wp_enqueue_style('mujerypuntocss'); // Enqueue it!  
+    wp_enqueue_style( 'sliderhome', get_template_directory_uri() . '/css/swiper.min.css', array(), '1.0', 'all' );
+    wp_enqueue_style( 'mujerypunto', get_template_directory_uri() . '/css/mujerypunto.css',  array(), '1.0', 'all');
     
 }
 
