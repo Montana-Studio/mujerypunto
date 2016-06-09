@@ -135,6 +135,18 @@
 				width: 100%;
 				height: auto;
 				display: block;
+				@include media($tabletLand) {
+					width: 50%;
+					height: auto;
+					display: block;
+					margin:0 auto;
+				}
+				@include media($notebook) {
+					width: 50%;
+					height: auto;
+					display: block;
+					margin:0 auto;
+				}
 			}
 			.swiper-gallery{
                 @include span-columns(12);
