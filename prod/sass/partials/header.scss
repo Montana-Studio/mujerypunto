@@ -55,6 +55,9 @@
 				height: auto;
 				display: block;
 			}
+			h1 {
+				margin:0;
+			}
 		}
 		.icon-menu {
 			@include span-columns(2);
@@ -220,7 +223,7 @@
 	float: right;
 	background: $white;
 	height: 100%;
-	position: fixed;
+	position: absolute;
 	right: 0;
 	z-index: 1;
 	text:{align:right;}

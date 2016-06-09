@@ -83,7 +83,7 @@
 			@include omega();
 			margin:0 auto;
 			display: block;
-			padding:{top:20px;left:20px;right:20px;}
+			@include pad(20px 20px 20px 20px);
 			@include media($tablet) {
 				padding:{bottom:10px;} 
 			}
@@ -104,25 +104,21 @@
 				@include omega();
 				@include media($mobileLand) {
 					@include span-columns(4);
-					float: none;
 					display: inline-block; 
 					margin:{right:10px;}
 				}
 				@include media($tablet) {
 					@include span-columns(4);
-					float: none;
 					display: inline-block; 
 					margin:{right:10px;}
 				}
 				@include media($tabletLand) {
 					@include span-columns(4);
-					float: none;
 					display: inline-block; 
 					margin:{right:10px;}
 				}
 				@include media($notebook) {
 					@include span-columns(4);
-					float: none;
 					display: inline-block; 
 					margin:{right:10px;}
 				}
@@ -144,12 +140,13 @@
 						padding: 13px 20px;
 					}
 				}
-				input[type="submit"] {
+				#myp-newsletter {
 					@include span-columns(12);
-					@include omega();
+                    @include pad(10.5px 20px);
 					background:$black;
 					color:$white;
-					text:{align:center;transform:uppercase;weight:bold;} 
+                    font:{weight:bold;family:$second_font;}
+					text:{align:center;transform:uppercase;} 
 					&:hover {
 						@include transition(all 0.5s ease-in-out);
 						background:$gray_2;

@@ -12,7 +12,7 @@
 							<input type="email" name="correo" placeholder="Correo electrónico" id="correo_newsletter" requierd>
 						</div>
 						<div class="input-form">
-							<input type="submit"  value="Suscribir"  type="submit" id="myp-newsletter" name="enviar" value="Suscríbete">
+                            <div id="myp-newsletter" >Enviar</div>
 						</div> 
 					</form>
 				</div>
@@ -150,7 +150,7 @@
 						if(data=='exito'){
 							$('.newsletter-footer form').hide().fadeOut(); 
 							$('.newsletter-footer .bajada-news').replaceWith('<div class="exito-form">¡Gracias por registrarte en Mujer y Punto! Pronto recibirás más información</div>');
-						}else{
+                        }else{
 							$('.newsletter-footer form').hide().fadeOut(); 
 							$('.newsletter-footer .bajada-news').replaceWith('<div class="exito-form">¡Ha ocurrido un error! vuelve a intentarlo</div>');
 						}
@@ -158,15 +158,10 @@
 				});
 				return false; 
             }
-			$('#myp-newsletter').click(function(){
+			$('#myp-newsletter').on('click',function(){
 				ingresa_usuario_newsletter();
 			});	
             
-            $(".input-form input[type='email'], .input-form input[type='text'], .input-form input[type='submit']").keypress(function (e) {
-                if (e.keyCode == 13) {
-                    ingresa_usuario_newsletter();
-                }
-             });
 		});
 		</script>
 
