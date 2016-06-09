@@ -4,25 +4,28 @@
 	@include pad(0); 
 	.post-sect-three {
 		@include span-columns(12);
-		@include omega();
 		margin:{bottom:10px;}
 		@include media($mobileLand) {
 			@include span-columns(6);
+            @include omega(2n);
 			margin:{bottom:15px;right:7px;}
 			float: inherit;
 		}
 		@include media($tabletLand) {
 			@include span-columns(6);
+            @include omega(2n);
 			margin:{bottom:15px;right:7px;}
 			float: inherit;
 		}
 		@include media($notebook) {
 			@include span-columns(6);
+            @include omega(2n);
 			margin:{bottom:15px;right:7px;}
 			float: inherit;
 		}
 		@include media($desktop) {
 			margin:{bottom:15px;right:12px;}
+            @include omega(2n);
 		}
 		.imagen-post {
 			@include span-columns(12);

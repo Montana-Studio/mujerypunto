@@ -1,6 +1,6 @@
 
 
-$( document ).ready(function() {
+jQuery(document).ready(function($){
 	$('.icon-menu').click(function(){
 		$('.icon-menu').toggleClass('icon-white');   
 		$('.wrapper-focus-out').toggleClass('open-focus-out');   

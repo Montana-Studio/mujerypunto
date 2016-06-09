@@ -1,4 +1,4 @@
-<?php query_posts( 'cat=0&showposts=4' ); 
+<?php query_posts( 'category_name=belleza&showposts=4' ); 
  					while ( have_posts() ) : the_post();
 						?>
 <div class="post-sect-three">

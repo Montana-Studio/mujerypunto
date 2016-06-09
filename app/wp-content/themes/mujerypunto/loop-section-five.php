@@ -1,7 +1,7 @@
-<?php query_posts( 'cat=0&showposts=4' ); 
+<?php query_posts( 'category_name=vida-gourmet&showposts=3' ); 
  					while ( have_posts() ) : the_post();
 						?>
-<div class="post-sect-five">
+<div class="post-sect-two">
 	<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>> 
 
 		<?php 
@@ -21,7 +21,7 @@
 			<div class="post-inside">
 				<div class="category-post"><?php foreach((get_the_category()) as $category) { echo $category->cat_name . ' / '; } ?></div>
 				<span class="date-post"><?php the_time('l, j F Y'); ?></span>
-				<a href="<?php the_permalink(); ?>"><h2 class="title-post"><?php the_title(); ?></h2></a>
+				<a href="<?php the_permalink(); ?>"><h2 class="title-post"><?php the_title(); ?></h2></a> 
 				<div class="btn-read-green"><a href="<?php the_permalink(); ?>">Seguir Leyendo</a></div>
 				<div class="social-share">
 					<ul>

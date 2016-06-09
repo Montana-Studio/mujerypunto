@@ -1,4 +1,4 @@
-<?php query_posts( 'category_name=moda-y-estilo&showposts=4' ); 
+<?php query_posts( 'category_name=celebrities&showposts=4' ); 
  					while ( have_posts() ) : the_post();
 						?>
 <div class="post-sect-one">

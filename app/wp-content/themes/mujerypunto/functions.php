@@ -93,9 +93,9 @@ function html5blank_header_scripts()
     if ($GLOBALS['pagenow'] != 'wp-login.php' && !is_admin()) {
 
         wp_enqueue_script( 'jquery');
+        wp_enqueue_script( 'library', get_template_directory_uri() . '/js/library.min.js', array(), '20160606', true );
         wp_enqueue_script( 'mujerypunto', get_template_directory_uri() . '/js/mujerypunto.min.js', array(), '20160606', true );
         wp_enqueue_script( 'sliderhome', get_template_directory_uri() . '/js/swiper.min.js', array(), '20160606', true );
-        wp_enqueue_script( 'sliderhome', get_template_directory_uri() . '/js/library.min.j', array(), '20160606', true );
 
     }
 }

@@ -21,7 +21,7 @@
 	<div class="box-sidebar twitter">
 		<div class="title-sidebar"><i class="fa fa-twitter"></i> Tweets</div>
 		<div class="content-tweet">
-			<a class="twitter-timeline"  href="https://twitter.com/mujerypuntos" data-widget-id="725809892875972608" data-chrome="nofooter noheader"></a>
+			<a class="twitter-timeline"  href="https://twitter.com/mujerypunto" data-widget-id="725809892875972608" data-chrome="nofooter noheader"></a>
             <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 		</div>
 	</div>
