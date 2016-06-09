@@ -146,6 +146,7 @@
 					url: '<?php echo get_template_directory_uri(); ?>/newsletter.php',
 					data: 'nombre='+nombre+'&correo='+correo,
 					success: function(data){
+                        console.log(data);
 						if(data=='exito'){
 							$('.newsletter-footer form').hide().fadeOut(); 
 							$('.newsletter-footer .bajada-news').replaceWith('<div class="exito-form">¡Gracias por registrarte en Mujer y Punto! Pronto recibirás más información</div>');
