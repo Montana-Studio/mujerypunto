@@ -131,6 +131,11 @@
 				font:{family:$regular_font;}
 				line-height: 27px;
 			}
+			img {
+				width: 100%;
+				height: auto;
+				display: block;
+			}
 			.swiper-gallery{
                 @include span-columns(12);
                 position: relative;
