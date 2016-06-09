@@ -12,7 +12,11 @@
 
 				<?php get_template_part('loop-tags'); ?>
 
-				<?php get_template_part('pagination'); ?>
+				<div class="paginacion-sect">
+                    <div class="pagination">
+                        <?php html5wp_pagination(); ?>
+                    </div>
+                </div>
 
 			</div>
 

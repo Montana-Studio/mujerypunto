@@ -1,5 +1,3 @@
-
-
 jQuery(document).ready(function($){
 	$('.icon-menu').click(function(){
 		$('.icon-menu').toggleClass('icon-white');   
@@ -23,8 +21,9 @@ jQuery(document).ready(function($){
 
 	$('.swiper-gallery').prepend('<div class="title-insidepost">Galería de imágenes</div>');
 
-});
+	
 
+});
 
 function fbShare(url, title, descr, image, winWidth, winHeight) {
     var winTop = (screen.height / 2) - (winHeight / 2);

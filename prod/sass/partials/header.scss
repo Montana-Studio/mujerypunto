@@ -145,13 +145,13 @@
 							@include media($notebook) { 
 								position: absolute;
 								z-index: 9999;
-								top: 25px;
+								top: 16px;
 								width: 200px;
 							}
 							@include media($desktop) { 
 								position: absolute;
 								z-index: 9999;
-								top: 20px;
+								top: 15px;
 								width: 200px;
 							}  
 							li {

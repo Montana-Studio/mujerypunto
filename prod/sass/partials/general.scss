@@ -75,6 +75,18 @@ body {
 			h2 {
 				text:{align:center;}
 				padding: 40px 0;
+				@include media($tablet) {
+					padding:240px 0;
+				}
+				@include media($notebook) {
+					padding:80px 0;
+				}
+				&:hover {
+					a {
+						@include transition(all 0.3s ease-in-out);
+						color:$green-logo;	
+					}
+				}
 			}
 		}
 	}
