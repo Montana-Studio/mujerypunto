@@ -3,6 +3,7 @@ jQuery(document).ready(function($){
 		$('.icon-menu').toggleClass('icon-white');   
 		$('.wrapper-focus-out').toggleClass('open-focus-out');   
 		$('.wrapper').toggleClass('move-content move-content-out');
+		$('.icon-menu i').toggleClass('fa-close fa-bars');  
 	}); 
 
 	$('.search-btn').click(function(){
@@ -21,8 +22,9 @@ jQuery(document).ready(function($){
 
 	$('.swiper-gallery').prepend('<div class="title-insidepost">Galería de imágenes</div>');
 
-	
-
+	$('.abrir-submenu').click(function(){
+		$('.sub-menu').slideToggle();
+	});
 });
 
 function fbShare(url, title, descr, image, winWidth, winHeight) {

@@ -24,7 +24,7 @@
 				}
 				.imagen-contentpost {
 					height: 150px;
-					@include media($mobileLand) {
+					@include media($mobileLandTotablet) {
 						height: 120px;
 					}
 					@include media($tablet) {
@@ -42,7 +42,7 @@
 						display: none;
 					}
 					.title-post {
-						@include media($mobileLand) {
+						@include media($mobileLandTotablet) {
 							font:{size: 0.8em;}
 	    					line-height: 19px;
 						}
@@ -52,7 +52,7 @@
 						}
 					}
 					.btn-read-green {
-						@include media($mobileLand) {
+						@include media($mobileLandTotablet) {
 							margin:{bottom: 0;}
 						}	
 						a {
@@ -82,7 +82,7 @@
 					@include span-columns(12);
 					@include omega();
 					height: 150px;
-					@include media($mobileLand) {
+					@include media($mobileLandTotablet) {
 						height: 300px;
 					}
 					@include media($tablet) {
@@ -100,7 +100,7 @@
 					@include omega();
 					margin:{top:8px;} 
 					.title-post {
-						@include media($mobileLand) {
+						@include media($mobileLandTotablet) {
 							font:{size: 1.3em;}
     						line-height: 28px;
 						}
@@ -117,7 +117,7 @@
 	    					line-height: 28px;
 						}
 					}
-				}
+				} 
 			}
 		}
 		.content-post {

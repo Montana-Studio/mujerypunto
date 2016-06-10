@@ -217,7 +217,7 @@
 	}	
 }
 .menu-mobile-open {
-	@include span-columns(8);
+	@include span-columns(9);
 	@include omega();
 	@include pad(20px 10px);
 	float: right;
@@ -229,8 +229,14 @@
 	text:{align:right;}
 	color:$gray_1; 
 	overflow: scroll;
-	@include media($mobileLand) {
-		@include span-columns(5);
+	@include media($mobile) {
+		@include span-columns(8);
+	}
+	@include media($mobileTomobileLand) {
+		@include span-columns(8);
+	}
+	@include media($mobileLandTotablet) {
+		@include span-columns(4.5);
 	}
 	@include media($tablet) {
 		@include span-columns(4.5);

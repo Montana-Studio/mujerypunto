@@ -167,7 +167,7 @@ body {
 	font:{size:1.2em;}
 	line-height: 26px;
 	font:{family:$regular_font;}
-	@include media($mobileLand) {
+	@include media($mobileLandTotablet) {
 		font:{size: 1em;}
     	line-height: 24px;
 	}
@@ -201,7 +201,7 @@ body {
 			margin:0 5px;
 			a {
 				color: $green-logo;
-				@include media($mobileLand) {
+				@include media($mobileLandTotablet) {
 					font:{size: 0.8em;}
 				}
 				@include media($tabletLand) {
