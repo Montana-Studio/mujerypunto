@@ -1,5 +1,6 @@
 <?php
-function actualiza($id,$url,$likes,$comments,$link,$mysqli){
+
+/*function actualiza($id,$url,$likes,$comments,$link,$mysqli){
   $result_url = $mysqli->query('UPDATE instagram_fotos_aleatorio SET url = "'.$url.'" ,likes = "'.$likes.'", comments="'.$comments.'", link="'.$link.'" WHERE id ='.$id.' ');
 }
 function actualiza_fotos($mysqli){
@@ -22,8 +23,7 @@ function actualiza_fotos($mysqli){
 }
 
 
-$mysqli = mysqli_connect('localhost','root','root','mujerypunto') or die("Error " . mysqli_error($link)); 
-$mysqli->set_charset('utf8_bin');
+
 date_default_timezone_set('America/Santiago');
 if(date('H')>'8' && date('H')<'14'){
   $result = $mysqli->query("SELECT DISTINCT renueva FROM instagram_fotos_aleatorio");
@@ -39,7 +39,11 @@ if(date('H')>'8' && date('H')<'14'){
     actualiza_fotos($mysqli);
     $result2 = $mysqli->query("UPDATE instagram_fotos_aleatorio SET renueva='0'");
   }
-}
+}*/
+
+$mysqli = mysqli_connect('localhost','root','root','mujerypunto') or die("Error " . mysqli_error($link)); 
+$mysqli->set_charset('utf8_bin');
+
 $result = $mysqli->query("SELECT * FROM instagram_fotos_aleatorio ORDER by id LIMIT 9");
 $row= mysqli_fetch_array($result, MYSQLI_BOTH);
 $i=0;
