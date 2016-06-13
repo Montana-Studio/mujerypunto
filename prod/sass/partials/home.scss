@@ -98,29 +98,29 @@
 									@include omega();
 									margin:{top:5px;bottom:10px;}
 									color:$white;
-									font:{size:1.5em;}
-									line-height: 38px;
+									font:{size: 1.8em;}
+    								line-height: 45px;
 									text-shadow: 2px 2px 4px #000;
 									font:{family:$regular_font;}
 									@include media($mobileLand) {
-										font:{size: 0.9em;}
-										line-height: 24px;
+										font:{size: 1.9em;}
+    									line-height: 43px;
 									} 
 									@include media($tablet) {
-										font:{size: 1em;}
-    									line-height: 27px;
+										font-size: 1.7em;
+    									line-height: 43px;
 									}
 									@include media($tabletLand) {
-										font:{size: 1em;}
-										line-height: 29px;
+										font-size: 1.4em;
+    									line-height: 33px;
 									}
 									@include media($notebook) {
-										font:{size:1.2em;}
-										line-height: 32px;
+										font-size: 1.4em;
+    									line-height: 35px;
 									}
 									@include media($desktop) {
-										font-size: 1.4em;
-    									line-height: 37px;
+										font-size: 1.7em;
+    									line-height: 42px;
 									}
 								}
 								.date {
@@ -132,6 +132,8 @@
 								}	
 								.btn-read-more {
 									font:{family:$second_font;}
+									margin:{top:0;}
+									padding:{top:0;}
 									@include media($mobileLand) {
 										padding: 0;
 									}
