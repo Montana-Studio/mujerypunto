@@ -25,6 +25,10 @@ jQuery(document).ready(function($){
 	$('.abrir-submenu').click(function(){
 		$('.sub-menu').slideToggle();
 	});
+
+	$('.imagen-post').lazyload({
+	    effect : 'fadeIn'
+	});  
 });
 
 function fbShare(url, title, descr, image, winWidth, winHeight) {
