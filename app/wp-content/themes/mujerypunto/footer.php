@@ -35,7 +35,7 @@
 									<a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/myp_logo.png" alt="Logo mujer y punto"></a>
 								</div>
 								<div class="footer-tags">
-									<h3><i class="fa fa-circle"></i> M&P</h3>
+									<h1><i class="fa fa-circle"></i> Mujer y Punto</h1> 
 									<ul class="list-pages"> 
 										<li><a href="#">Sobre Mujer & Punto</a></li>
 										<li><a href="#">Contacto Editorial</a></li>

@@ -15,7 +15,7 @@
 	<body <?php body_class(); ?>>
 
 	<div id="fb-root"></div>
-	<script>(function(d, s, id) {
+	<script async>(function(d, s, id) {
 	  var js, fjs = d.getElementsByTagName(s)[0];
 	  if (d.getElementById(id)) return;
 	  js = d.createElement(s); js.id = id;
@@ -30,7 +30,6 @@
 					<div class="search-content">
 						<div class="cerrar-search" id="sect-search-close">Cerrar <i class="fa fa-close"></i></div> 
 						<input class="search-input" type="search" name="s" placeholder="<?php _e( 'Para buscar presiona Enter', 'html5blank' ); ?>">
-						<!--button class="search-submit" type="submit" role="button"><?php _e( 'Search', 'html5blank' ); ?></button-->
 					</div> 
 				</form>
 			</div>
