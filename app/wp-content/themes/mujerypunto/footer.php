@@ -1,15 +1,15 @@
 			<!-- footer -->
-			<footer class="footer" role="contentinfo">
+			<footer class="footer">
 
 				<div class="newsletter-footer">
 					<div class="title-bg"><div class="line-bg"></div><h2 class="title-section">Newsletter</h2></div>
 					<div class="bajada-news">Nos gustaría compartir las últimas noticias de Mujer & Punto</div>
 					<form action="">
 						<div class="input-form">
-							<input type="text" name="name" placeholder="Nombre" id="nombre_newsletter" requierd>
+							<input type="text" name="name" placeholder="Nombre" id="nombre_newsletter">
 						</div>
 						<div class="input-form">
-							<input type="email" name="correo" placeholder="Correo electrónico" id="correo_newsletter" requierd>
+							<input type="email" name="correo" placeholder="Correo electrónico" id="correo_newsletter">
 						</div>
 						<div class="input-form">
                             <div id="myp-newsletter" >Enviar</div>

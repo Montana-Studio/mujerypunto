@@ -27,7 +27,8 @@ jQuery(document).ready(function($){
 	});
 
 	$('.lazy').lazyload({
-	    effect : 'fadeIn'
+	    effect : 'fadeIn',
+	   	failure_limit : 5
 	});  
 });
 function fbShare(url, title, descr, image, winWidth, winHeight) {

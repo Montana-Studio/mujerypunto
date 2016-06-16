@@ -1,5 +1,5 @@
 <!-- sidebar -->
-<aside class="sidebar-content" role="complementary">
+<aside class="sidebar-content">
 
 	<div class="box-sidebar">
 		<div class="title-sidebar"><i class="fa fa-star-o"></i> Lo más popular</div>
@@ -21,7 +21,7 @@
 	<div class="box-sidebar twitter">
 		<div class="title-sidebar"><i class="fa fa-twitter"></i> Tweets</div>
 		<div class="content-tweet">
-			<a class="twitter-timeline"  href="https://twitter.com/mujerypunto" height="400" data-chrome="nofooter noheader"></a>
+			<a class="twitter-timeline"  href="https://twitter.com/mujerypunto" data-chrome="nofooter noheader"></a>
             <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 		</div>
 	</div>

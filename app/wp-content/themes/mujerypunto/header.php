@@ -8,22 +8,21 @@
         <link href="<?php echo get_template_directory_uri(); ?>/img/icons/favicon.ico" rel="shortcut icon">
         <link href="<?php echo get_template_directory_uri(); ?>/img/icons/touch.png" rel="apple-touch-icon-precomposed">
 
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<?php wp_head(); ?>
 	</head>
 	<body <?php body_class(); ?>>
 
 	<div id="fb-root"></div>
-	<script async>(function(d, s, id) {
+	<script>(function(d, s, id) {
 	  var js, fjs = d.getElementsByTagName(s)[0];
 	  if (d.getElementById(id)) return;
 	  js = d.createElement(s); js.id = id;
 	  js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.6&appId=828462330630430";
 	  fjs.parentNode.insertBefore(js, fjs);
 	}(document, 'script', 'facebook-jssdk'));
-	</script>
-
+	</script> 
 		<div class="search-section">
 			<div class="search-content">
 				<form class="search" method="get" action="<?php echo home_url(); ?>" role="search">
@@ -41,9 +40,9 @@
 					<a href="<?php echo get_site_url(); ?>">
 						<?php 
 							if(is_page('belleza')){
-								echo '<img src="' .get_template_directory_uri(). '/img/myp_logotipo-morado.png" alt="Logo mujer y punto" class="logo-mujer-y-punto">';
+								echo '<img src="' .get_template_directory_uri(). '/img/myp_logotipo-morado.png" width="150" height="150" alt="Logo mujer y punto" class="logo-mujer-y-punto">';
 							}else {
-								echo '<img src="' .get_template_directory_uri(). '/img/myp_logotipo.png" alt="Logo mujer y punto" class="logo-mujer-y-punto">';
+								echo '<img src="' .get_template_directory_uri(). '/img/myp_logotipo.png" width="150" height="150" alt="Logo mujer y punto" class="logo-mujer-y-punto">'; 
 							}
 						?>  
 					</a>
@@ -58,7 +57,7 @@
 		<?php } ?>
 		<div class="wrapper move-content-out">
 
-			<header class="header clear" role="banner">
+			<header class="header clear">
 
 					<div class="menu-header">
 						<div class="logotipo-mujerypunto">
@@ -66,9 +65,9 @@
 								<a href="<?php echo get_site_url(); ?>">
 									<?php 
 										if(is_page('belleza')){
-											echo '<img src="' .get_template_directory_uri(). '/img/myp_logotipo-morado.png" alt="Logo mujer y punto" class="logo-mujer-y-punto" alt="mujer y punto" title="mujer y punto">';
+											echo '<img src="' .get_template_directory_uri(). '/img/myp_logotipo-morado.png" width="228" height="110" alt="Logo mujer y punto" class="logo-mujer-y-punto" alt="mujer y punto" title="mujer y punto">';
 										}else {
-											echo '<img src="' .get_template_directory_uri(). '/img/myp_logotipo.png" alt="Logo mujer y punto" class="logo-mujer-y-punto" alt="mujer y punto" title="mujer y punto">';
+											echo '<img src="' .get_template_directory_uri(). '/img/myp_logotipo.png" width="228" height="110" class="logo-mujer-y-punto" alt="Logotipo mujer y punto" title="mujer y punto">';
 										}
 									?> 
 								</a>	
@@ -79,7 +78,7 @@
 						</div>
 					</div>
 
-					<nav class="navigation-header" role="navigation">
+					<nav class="navigation-header">
 						<div class="menu-header">
 							<?php html5blank_nav(); ?>
 						</div>

@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-	<main role="main" class="contentAll"> 
+	<main class="contentAll"> 
 
 		<div class="search-section show-search">  
 			<div class="bg-search-secntion"></div>
@@ -20,6 +20,10 @@
 			    	<div class="content-reciente">
 			    		<?php get_template_part('loop-reciente'); ?>  
 			    	</div>
+			    </div>
+
+			    <div class="sidebar">
+			    	<?php get_sidebar(); ?>
 			    </div>
 
 			    <div class="body-sidebar">
@@ -72,10 +76,6 @@
 				    		<?php get_template_part('loop-section-seven'); ?>  
 				    	</div>
 			    	</div>
-			    </div>
-
-			    <div class="sidebar">
-			    	<?php get_sidebar(); ?>
 			    </div>
 
 			    <div class="secction-videos">
