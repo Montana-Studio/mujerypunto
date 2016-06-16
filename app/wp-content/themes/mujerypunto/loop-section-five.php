@@ -4,14 +4,9 @@
 <div class="post-sect-two">
 	<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>> 
 
-		<?php 
-			global $post, $posts;
-			$output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
-			$first_img = $matches [1] [0];
-		?>
 		<div class="imagen-contentpost">
 			<a href="<?php the_permalink(); ?>">
-			<div class="imagen-post" style="background-image:url('<?php global $post; $thumbID = get_post_thumbnail_id( $post->ID ); if($thumbID){$imgDestacada = wp_get_attachment_url( $thumbID ); echo $imgDestacada; }else{ echo $first_img;}?>')">
+			<div class="lazy imagen-post" data-original="<?php the_post_thumbnail_url(300,300); ?>" style="background-image: url('<?php echo get_bloginfo('template_directory');?>/img/grey.gif');">
 				<div class="bg-contentpost"></div>
 			</div>	
 			</a>
