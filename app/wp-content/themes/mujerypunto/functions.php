@@ -102,7 +102,7 @@ function html5blank_header_scripts()
 function html5blank_styles()
 {
 
-    wp_enqueue_style( 'sliderhome', get_template_directory_uri() . '/css/swiper.min.css', array(), '1.0', 'all' );
+    //wp_enqueue_style( 'sliderhome', get_template_directory_uri() . '/css/swiper.min.css', array(), '1.0', 'all' );
     wp_enqueue_style( 'mujerypunto', get_template_directory_uri() . '/css/mujerypunto.css',  array(), '1.0', 'all');
     
 }
