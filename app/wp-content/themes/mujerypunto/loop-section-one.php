@@ -29,7 +29,7 @@
 			<div class="post-inside">
 				<div class="category-post"><?php foreach((get_the_category()) as $category) { echo $category->cat_name . ' / '; } ?></div>
 				<span class="date-post"><?php the_time('l, j F Y'); ?></span>
-				<h3 class="title-post"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3> 
+				<h5 class="title-post"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5> 
 				<div class="btn-read-green"><a href="<?php the_permalink(); ?>">Seguir Leyendo</a></div>
 				<div class="social-share">
 					<ul>

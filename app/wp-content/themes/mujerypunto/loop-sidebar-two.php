@@ -28,12 +28,12 @@
 		<div class="content-post">
 			<div class="post-inside">
 				<a href="<?php the_permalink(); ?>">
-					<h5 class="title-post">
+					<div class="title-post">
 						<?php $thetitle = $post->post_title; $getlength = strlen($thetitle); $thelength = 45;
 							echo substr($thetitle, 0, $thelength);
 							if ($getlength > $thelength) echo "...";
 						?>
-					</h5>
+					</div>
 				</a>
 				<div class="btn-read-green"><a href="<?php the_permalink(); ?>">Seguir Leyendo</a></div>
 				<div class="social-share">

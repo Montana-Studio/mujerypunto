@@ -2,7 +2,7 @@
 	// WP_Query arguments
 	$args = array (
 		'category_name'          => 'celebrities',
-		'posts_per_page'         => '3',
+		'posts_per_page'         => '4',
 	);
 
 	// The Query
@@ -29,7 +29,7 @@
 			<div class="post-inside">
 				<div class="category-post"><?php foreach((get_the_category()) as $category) { echo $category->cat_name . ' / '; } ?></div>
 				<span class="date-post"><?php the_time('l, j F Y'); ?></span>
-				<h6 class="title-post"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h6>
+				<div class="title-post"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></div>
 				<div class="btn-read-green"><a href="<?php the_permalink(); ?>">Seguir Leyendo</a></div>
 				<div class="social-share">
 					<ul>

@@ -21,7 +21,7 @@
 			<div class="content-post-all">
 				<div class="post-inside">
 					<div class="category"><?php foreach((get_the_category()) as $category) { echo $category->cat_name . ' / '; } ?></div>
-					<a href="<?php the_permalink(); ?>"><h2><?php the_title(); ?></h2></a> 
+					<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 					<div class="btn-read-more"><a href="<?php the_permalink(); ?>">Seguir Leyendo</a></div>
 				</div>
 			</div>
