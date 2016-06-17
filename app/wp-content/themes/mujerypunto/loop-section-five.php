@@ -12,10 +12,10 @@
 	if ( $secFive->have_posts() ) {
 		while ( $secFive->have_posts() ) {
 			$secFive->the_post();
-			$do_not_duplicate = $post->ID;
+			if ( $post->ID == $do_not_duplicate ) continue;	
 ?>
 <div class="post-sect-two">
-	<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>> 
+	<div id="post-five-<?php the_ID(); ?>" <?php post_class(); ?>> 
 
 		<div class="imagen-contentpost">
 			<a href="<?php the_permalink(); ?>">
@@ -29,7 +29,7 @@
 			<div class="post-inside">
 				<div class="category-post"><?php foreach((get_the_category()) as $category) { echo $category->cat_name . ' / '; } ?></div>
 				<span class="date-post"><?php the_time('l, j F Y'); ?></span>
-				<a href="<?php the_permalink(); ?>"><h7 class="title-post"><?php the_title(); ?></h7></a> 
+				<h6 class="title-post"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a> </h6>
 				<div class="btn-read-green"><a href="<?php the_permalink(); ?>">Seguir Leyendo</a></div>
 				<div class="social-share">
 					<ul>

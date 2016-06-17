@@ -12,10 +12,10 @@
 	if ( $secFive->have_posts() ) {
 		while ( $secFive->have_posts() ) {
 			$secFive->the_post();
-			$do_not_duplicate = $post->ID;
+			if ( $post->ID == $do_not_duplicate ) continue;	
 ?>
 <div class="post-sect-one">
-	<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>> 
+	<div id="post-one-<?php the_ID(); ?>" <?php post_class(); ?>> 
 
 		<div class="imagen-contentpost">
 			<a href="<?php the_permalink(); ?>">
@@ -29,7 +29,7 @@
 			<div class="post-inside">
 				<div class="category-post"><?php foreach((get_the_category()) as $category) { echo $category->cat_name . ' / '; } ?></div>
 				<span class="date-post"><?php the_time('l, j F Y'); ?></span>
-				<a href="<?php the_permalink(); ?>"><h3 class="title-post"><?php the_title(); ?></h3></a> 
+				<h3 class="title-post"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3> 
 				<div class="btn-read-green"><a href="<?php the_permalink(); ?>">Seguir Leyendo</a></div>
 				<div class="social-share">
 					<ul>
@@ -63,7 +63,6 @@
 	} else {
 		// no posts found
 	}
-
 	// Restore original Post Data
 	wp_reset_postdata();
 ?>

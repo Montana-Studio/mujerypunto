@@ -4,7 +4,7 @@
 				<div class="newsletter-footer">
 					<div class="title-bg"><div class="line-bg"></div><h2 class="title-section">Newsletter</h2></div>
 					<div class="bajada-news">Nos gustaría compartir las últimas noticias de Mujer & Punto</div>
-					<form action="">
+					<form>
 						<div class="input-form">
 							<input type="text" name="name" placeholder="Nombre" id="nombre_newsletter">
 						</div>
@@ -65,12 +65,14 @@
 								<div class="footer-tags">
 									<h3><i class="fa fa-flag-o"></i> CATEGORIAS</h3>
 									<ul class="list-pages"> 
+
 										<?php 
-											$categories =  get_the_category();
+											$categories =  wp_list_categories('title_li=');
 											$i=0;
 											do{
+												$categoria_nombre = strtolower(str_replace(' ', '-', $categories[$i]->cat_name));
 												$a = get_site_url();
-												echo "<li><a href='".$a."/".$categories[$i]->cat_name."'> ".$categories[$i]->cat_name." </a></li>";
+												echo "<li><a href='".$a."/".$categoria_nombre."'> ".$categoria_nombre." </a></li>";
 												$i++; 
 											}while($i<4);
 										?>

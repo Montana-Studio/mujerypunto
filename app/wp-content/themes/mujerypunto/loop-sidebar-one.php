@@ -1,8 +1,21 @@
-<?php query_posts( 'cat=0&showposts=4' ); 
- 					while ( have_posts() ) : the_post();
-						?>
+<?php 
+	// WP_Query arguments
+	$args = array (
+		'category_name'          => '0',
+		'posts_per_page'         => '4',
+	);
+
+	// The Query
+	$secFive = new WP_Query( $args );
+
+	// The Loop
+	if ( $secFive->have_posts() ) {
+		while ( $secFive->have_posts() ) {
+			$secFive->the_post();
+			$do_not_duplicate = $post->ID;
+?>
 <div class="post-sidebar">
-	<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>> 
+	<div id="post-sidebar-<?php the_ID(); ?>" <?php post_class(); ?>> 
 
 		<div class="imagen-contentpost">
 			<a href="<?php the_permalink(); ?>">
@@ -50,7 +63,12 @@
 
 	</div>
 </div>	 					
-	
 <?php
-endwhile; 
+		}
+	} else {
+		// no posts found
+	}
+
+	// Restore original Post Data
+	wp_reset_postdata();
 ?>

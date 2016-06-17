@@ -1,8 +1,21 @@
-<?php query_posts( 'category_name=relaciones&showposts=3' ); 
- 					while ( have_posts() ) : the_post();
-						?>
+<?php 
+	// WP_Query arguments
+	$args = array (
+		'category_name'          => 'relaciones',
+		'posts_per_page'         => '3',
+	);
+
+	// The Query
+	$secFive = new WP_Query( $args );
+
+	// The Loop
+	if ( $secFive->have_posts() ) {
+		while ( $secFive->have_posts() ) {
+			$secFive->the_post();
+			if ( $post->ID == $do_not_duplicate ) continue;	
+?>
 <div class="post-sect-four">
-	<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>> 
+	<div id="post-four-<?php the_ID(); ?>" <?php post_class(); ?>> 
 
 		<div class="imagen-contentpost">
 			<a href="<?php the_permalink(); ?>">
@@ -16,7 +29,7 @@
 			<div class="post-inside">
 				<div class="category-post"><?php foreach((get_the_category()) as $category) { echo $category->cat_name . ' / '; } ?></div>
 				<span class="date-post"><?php the_time('l, j F Y'); ?></span>
-				<a href="<?php the_permalink(); ?>"><h6 class="title-post"><?php the_title(); ?></h6></a> 
+				<h6 class="title-post"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h6>
 				<div class="btn-read-green"><a href="<?php the_permalink(); ?>">Seguir Leyendo</a></div>
 				<div class="social-share">
 					<ul>
@@ -45,7 +58,12 @@
 
 	</div>
 </div>						
-	
 <?php
-endwhile; 
+		}
+	} else {
+		// no posts found
+	}
+
+	// Restore original Post Data
+	wp_reset_postdata();
 ?>

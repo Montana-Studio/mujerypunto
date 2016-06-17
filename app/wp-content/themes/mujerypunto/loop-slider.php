@@ -1,8 +1,21 @@
-<?php query_posts( 'cat=0&showposts=9' );
- 					while ( have_posts() ) : the_post();
-						?>
+<?php 
+	// WP_Query arguments
+	$args = array (
+		'category_name'          => '0',
+		'posts_per_page'         => '9',
+	);
+
+	// The Query
+	$secFive = new WP_Query( $args );
+
+	// The Loop
+	if ( $secFive->have_posts() ) {
+		while ( $secFive->have_posts() ) {
+			$secFive->the_post();
+			$do_not_duplicate = $post->ID;
+?>
 <div class="swiper-slide">	
-	<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<div id="post-slider-<?php the_ID(); ?>" <?php post_class(); ?>>
 		
 		<div class="lazy imagen-post" data-original="<?php the_post_thumbnail_url(300,300); ?>" style="background-image: url('<?php echo get_bloginfo('template_directory');?>/img/grey.gif');">
 			<div class="content-post-all">
@@ -18,5 +31,11 @@
 	</div>
 </div>	
 <?php
-endwhile;
+		}
+	} else {
+		// no posts found
+	}
+
+	// Restore original Post Data
+	wp_reset_postdata();
 ?>

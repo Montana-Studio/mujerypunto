@@ -38,9 +38,9 @@
 	<div class="box-sidebar imperdibles-sidebar">
 		<div class="title-sidebar"><i class="fa fa-star-o"></i> Imperdibles M&P</div>
 		<div class="content-sidebar">
-    		<?php get_template_part('loop-sidebar-one'); ?> 
-    	</div>
-	</div>
+    		<?php get_template_part('loop-sidebar-two'); ?> 
+    	</div> 
+	</div> 
 
 </aside>
 <!-- /sidebar -->
