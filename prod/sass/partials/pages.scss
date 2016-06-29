@@ -75,4 +75,210 @@
 			margin:{top:5px;}
 		}
 	}
+	.category-post {
+			margin:{bottom:10px;}
+			@include media($notebook) {
+				margin:{bottom:20px;}
+			}
+		}
+		.imagen-post {
+			@include span-columns(12);
+			@include omega();
+			height: 300px;
+			background-position:center;
+			background-size:cover; 
+			@include media($notebook) {
+				height:400px;
+			}
+			@include media($desktop) {
+				height:500px;
+			}
+		}
+		.date-post {
+			margin: {top:10px; bottom: 0px;}
+			@include media($notebook) {
+				margin: {top:20px;}
+			}	
+		}
+		.title-post {
+			@include media($tabletLand) {
+				margin: {top:10px; bottom: 10px;}
+				font:{size:1.2em;}
+				padding: 0;
+				line-height: 22px;
+			}
+			@include media($notebook) {
+				margin: {top:10px; bottom: 10px;}
+				font:{size:1.6em;}
+				padding: 0;
+				line-height: 32px;
+			}
+		}
+		.tag-post {
+			@include span-columns(12);
+			@include omega();
+			font:{family:$primary_font;size:0.7em;weight:400;}
+			color:$gray_1;
+			text:{transform:uppercase;}
+			margin:10px 0;
+			@include media($notebook) {
+				margin:{top: 0;bottom: 15px;}
+			}
+			a {
+				color:$green-logo;
+			}
+		}	
+		.share-single {
+			@include span-columns(12);
+			@include omega();
+			@include media($desktop) {
+				@include outer-container(70%);
+				float: initial;
+				margin: 0 auto !important;
+			}
+			ul {
+				@include span-columns(12);
+				margin:0;
+				padding:0;
+				text:{align:center;}
+				li {
+					@include span-columns(5.8);
+					float: none;
+					display: inline-block;
+					list-style: none;
+					@include media($notebook) {
+						@include span-columns(3.8);
+						float: none;
+						display: inline-block;
+					}	
+					margin:{right:5px !important;bottom:5px;}
+					.btn-share-single {
+						@include span-columns(12);
+						@include omega();
+						border: 1px solid $green-logo;
+						text:{align:center;}
+						padding:10px 0; 
+						a {
+							@include span-columns(12);
+							@include omega();
+							height: 100%;
+							color:$green-logo;
+							font:{family:$primary_font;size:0.8em;weight:400;}
+							text:{transform:uppercase;}
+							background-size:cover;
+							background-position:center;
+							i {
+								margin:{right:5px;}
+								font:{size:1.2em;}
+							}
+						}
+						&:hover {
+							@include transition(all 0.3s ease-in-out);
+							background:$green-logo;
+							a { 
+								color:$white;
+							}	
+						}
+					}
+					&.whatsapp {
+						@include media($notebook) {
+							display: none;
+						}	
+					}
+				}
+			}
+		}
+		.content-post {
+			@include span-columns(12);
+			@include omega();
+			font:{family:$second_font;size:14px;}
+			line-height: 23px;
+			text:{align:left;}
+			color:$gray_2;
+			padding:0 10px;
+			@include media($notebook) {
+				padding:0;
+			}
+			h2 {
+				font:{family:$regular_font;}
+				line-height: 27px;
+			}
+			img {
+				width: 100%;
+				height: auto;
+				display: block;
+				@include media($tabletLand) {
+					width: 50%;
+					height: auto;
+					display: block;
+					margin:0 auto;
+				}
+				@include media($notebook) {
+					width: 50%;
+					height: auto;
+					display: block;
+					margin:0 auto;
+				}
+			}
+			.swiper-gallery{
+                @include span-columns(12);
+                position: relative;
+                overflow: hidden;
+                margin:{bottom:20px;}
+                .title-section{
+                    @include span-columns(12);
+                    @include shift(0);
+                }
+                .swiper-wrapper{
+                    .swiper-slide{
+                       text:{align:center;}
+                       	.item-imagen-post {
+	                       	height: 300px;
+	                       	background-position:center;
+	                       	background-size:cover;
+	                       	@include media($notebook) {
+	                       		height: 200px;
+	                       	}
+	                       	@include media($desktop) {
+	                       		height: 350px;
+	                       	}
+	                    }
+                    }
+                }
+                .swiper-pagination{
+                    span{
+                        background:{color:$black;}
+                    }
+                } 
+                .arrows{
+                    position: absolute;
+                    top:50%;
+                    z-index: 10;
+                    width:30px;
+                    cursor: pointer; 
+                    i{
+                        color:$green_logo;
+                        font:{size:em(25);}
+                    }
+                    &:hover{
+                        i{
+                            color:$green_logo;
+                        }
+                    }
+                    &.next-gallery{
+                        right:0;
+                    }
+                    &.prev-gallery{
+                        left:0;
+                    }
+                    &.swiper-button-disabled{
+                        i{
+                            color:$green_logo;
+                            opacity: 0.2;
+                            cursor:default;
+                        }
+                    }
+                }
+            }
+		}
 }

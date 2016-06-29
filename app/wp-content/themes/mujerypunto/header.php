@@ -15,14 +15,31 @@
 	<body <?php body_class(); ?>>
 
 	<div id="fb-root"></div>
-	<script>(function(d, s, id) {
-	  var js, fjs = d.getElementsByTagName(s)[0];
-	  if (d.getElementById(id)) return;
-	  js = d.createElement(s); js.id = id;
-	  js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.6&appId=828462330630430";
-	  fjs.parentNode.insertBefore(js, fjs);
-	}(document, 'script', 'facebook-jssdk'));
-	</script> 
+	<script>
+	    window.fbAsyncInit = function() {
+	        FB.init({
+	          appId      : '889409131204632',
+	          xfbml      : true,
+	          version    : 'v2.6'
+	        });
+	      };
+	    (function(d, s, id) {
+	      var js, fjs = d.getElementsByTagName(s)[0];
+	      if (d.getElementById(id)) return;
+	      js = d.createElement(s); js.id = id;
+	      js.src = "//connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v2.6";
+	      fjs.parentNode.insertBefore(js, fjs);
+	    }(document, 'script', 'facebook-jssdk'));
+	    function fbShare(url, title, descr, image, winWidth, winHeight) {
+	        var winTop = (screen.height / 2) - (winHeight / 2);    
+	        var winLeft = (screen.width / 2) - (winWidth / 2); 
+	        FB.ui({
+	            method: 'share',
+	            mobile_iframe: true,
+	            href: url,
+	          }, function(response){});
+	    }	
+   	</script> 
 		<div class="search-section">
 			<div class="search-content">
 				<form class="search" method="get" action="<?php echo home_url(); ?>" role="search">

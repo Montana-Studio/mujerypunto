@@ -40,6 +40,7 @@
 					<ul>
 						<li>
 							<a href="javascript:fbShare('<?php echo the_permalink(); ?>', '<?php the_title(); ?>', '<?php the_title(); ?>', '<?php echo the_permalink(); ?>', 520, 350)">
+							
 								<i class="fa fa-facebook"></i> 
 							</a>
 						</li>
