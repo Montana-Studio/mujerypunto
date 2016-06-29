@@ -31,11 +31,6 @@ jQuery(document).ready(function($){
 	   	failure_limit : 5
 	});  
 });
-function fbShare(url, title, descr, image, winWidth, winHeight) {
-    var winTop = (screen.height / 2) - (winHeight / 2);
-    var winLeft = (screen.width / 2) - (winWidth / 2); 
-    window.open('https://www.facebook.com/dialog/share?app_id=932994110103491&title='+title+'&summary='+title+'&href='+url+'&pimages[0]='+image,'sharer&top=' + winTop + '&left=' + winLeft + '&toolbar=0&status=0&width=' + winWidth + '&height=' + winHeight+'');
-}
 function twShare(url, title, winWidth, winHeight) {
     var winTop = (screen.height / 2) - (winHeight / 2);
     var winLeft = (screen.width / 2) - (winWidth / 2);
