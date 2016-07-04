@@ -34,7 +34,7 @@ body {
 		}
 		@include media($notebook) {
 			@include pad(0);
-			@include outer-container(80%);
+			@include outer-container(90%);
 			margin: 0 auto !important;
 			float: none;
 		}

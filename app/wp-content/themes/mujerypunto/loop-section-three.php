@@ -27,8 +27,6 @@
 
 		<div class="content-post">
 			<div class="post-inside">
-				<div class="category-post"><?php foreach((get_the_category()) as $category) { echo $category->cat_name . ' / '; } ?></div>
-				<span class="date-post"><?php the_time('l, j F Y'); ?></span>
 				<div class="title-post"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></div>
 				<div class="btn-read-green"><a href="<?php the_permalink(); ?>">Seguir Leyendo</a></div>
 				<div class="social-share">
@@ -39,7 +37,7 @@
 							</a>
 						</li>
 						<li>
-							<a href="javascript:twShare('<?php echo the_permalink(); ?>', '<?php the_title(); ?> - vía: @revistacosas', 520, 350)">
+							<a href="javascript:twShare('<?php echo the_permalink(); ?>', '<?php the_title(); ?> - vía: @mujerypunto', 520, 350)">
 								<i class="fa fa-twitter"></i> 
 							</a>
 						</li>
@@ -49,7 +47,7 @@
 						</li>
 						<li class="whatsapp">
 							<?php $title = strtolower(str_replace(' ', '-', the_title('', '', false))) ?>
-							<a href="whatsapp://send?text=<?php echo $title; ?>-<?php urlencode(the_permalink()); ?>" data-action="share/whatsapp/share" data-href="http://69.64.43.207/~mujerypunto"><i class="fa fa-whatsapp"></i></a>
+							<a href="whatsapp://send?text=<?php echo $title; ?>-<?php urlencode(the_permalink()); ?>" data-action="share/whatsapp/share" data-href="<?php the_permalink(); ?>"><i class="fa fa-whatsapp"></i></a>
 						</li>
 					</ul>
 				</div>

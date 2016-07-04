@@ -1,6 +1,15 @@
 <!-- sidebar -->
 <aside class="sidebar-content">
-
+    
+    <?php if(is_single()){ ?> 
+        <div style="display:block;width:300px;margin:0 auto 10px;">
+            
+            <ins data-revive-zoneid="1" data-revive-target="_blank" data-revive-ct0="{clickurl_enc}" data-revive-id="bc4ce818c158f7a81a7acefab7a0e36a"></ins>
+            <script async src="http://bloques.mujerypunto.com/activos/www/mtnetd/asyncjs.php"></script>
+            
+        </div>
+    <?php } ?>
+    
 	<div class="box-sidebar">
 		<div class="title-sidebar"><i class="fa fa-star-o"></i> Lo más popular</div>
 		<div class="content-sidebar">
@@ -30,7 +39,7 @@
 		<div class="title-sidebar"><i class="fa fa-instagram"></i> Instagram</div>
 		<div class="list-instagram ">
 			<ul>
-				<?php get_template_part('instagram'); ?> 
+				<?php //get_template_part('instagram'); ?> 
 			</ul>
 		</div>	 
 	</div>

@@ -1,7 +1,7 @@
 <?php 
 	// WP_Query arguments
 	$args = array (
-		'category_name'          => '0',
+		'category_name'          => 'destacados',
 		'posts_per_page'         => '9',
 	);
 

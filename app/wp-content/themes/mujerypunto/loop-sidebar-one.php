@@ -1,8 +1,10 @@
 <?php 
 	// WP_Query arguments
 	$args = array (
-		'category_name'          => '0',
-		'posts_per_page'         => '4',
+		'posts_per_page' => 4,
+        'meta_key' => 'wpb_post_views_count',
+        'orderby' => 'meta_value_num',
+        'order' => 'DESC'
 	);
 
 	// The Query
@@ -45,7 +47,7 @@
 							</a>
 						</li>
 						<li>
-							<a href="javascript:twShare('<?php echo the_permalink(); ?>', '<?php the_title(); ?> - vía: @revistacosas', 520, 350)">
+							<a href="javascript:twShare('<?php echo the_permalink(); ?>', '<?php the_title(); ?> - vía: @mujerypunto', 520, 350)">
 								<i class="fa fa-twitter"></i> 
 							</a>
 						</li>

@@ -78,7 +78,7 @@
                                         </li>
                                         <li>
                                             <div class="btn-share-single">
-                                                <a href="javascript:twShare('<?php echo the_permalink(); ?>', '<?php the_title(); ?> - vía: @revistacosas', 520, 350)"><i class="fa fa-twitter"></i> twitter</a>
+                                                <a href="javascript:twShare('<?php echo the_permalink(); ?>', '<?php the_title(); ?> - vía: @mujerypunto', 520, 350)"><i class="fa fa-twitter"></i> twitter</a>
                                             </div>
                                         </li>
                                         <li>
@@ -140,7 +140,7 @@
                                         </li>
                                         <li>
                                             <div class="btn-share-single">
-                                                <a href="javascript:twShare('<?php echo the_permalink(); ?>', '<?php the_title(); ?> - vía: @revistacosas', 520, 350)"><i class="fa fa-twitter"></i> twitter</a>
+                                                <a href="javascript:twShare('<?php echo the_permalink(); ?>', '<?php the_title(); ?> - vía: @mujerypunto', 520, 350)"><i class="fa fa-twitter"></i> twitter</a>
                                             </div>
                                         </li>
                                         <li>

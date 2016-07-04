@@ -44,7 +44,7 @@
 							</a>
 						</li>
 						<li>
-							<a href="javascript:twShare('<?php echo the_permalink(); ?>', '<?php the_title(); ?> - vía: @revistacosas', 520, 350)">
+							<a href="javascript:twShare('<?php echo the_permalink(); ?>', '<?php the_title(); ?> - vía: @mujeypunto', 520, 350)">
 								<i class="fa fa-twitter"></i> 
 							</a>
 						</li>

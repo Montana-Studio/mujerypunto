@@ -34,7 +34,7 @@
 						</li>
 						<li>
 							<div class="btn-share-single">
-								<a href="javascript:twShare('<?php echo the_permalink(); ?>', '<?php the_title(); ?> - vía: @revistacosas', 520, 350)"><i class="fa fa-twitter"></i> twitter</a>
+								<a href="javascript:twShare('<?php echo the_permalink(); ?>', '<?php the_title(); ?> - vía: @mujerypunto', 520, 350)"><i class="fa fa-twitter"></i> twitter</a>
 							</div>
 						</li>
 						<li>
@@ -51,8 +51,32 @@
 				</div>
 				
 				<div class="content-post">
-					<?php the_content(); ?>
+					<?php
+                    $orderedListAfter= 1;
+                    $content = apply_filters('the_content', get_the_content());
+                    $content = explode("</p>", $content);
+                    for ($i = 0; $i <count($content); $i++) {
+                    if ($i == $orderedListAfter) { ?>
+                    <!-- START OF AD CODE -->
+                    <div style="max-width:728px;margin:0 auto;display:block;width:100%;">
+
+                        <ins data-revive-zoneid="2" data-revive-target="_blank" data-revive-ct0="{clickurl_enc}" data-revive-id="bc4ce818c158f7a81a7acefab7a0e36a"></ins>
+                        <script async src="//bloques.mujerypunto.com/activos/www/mtnetd/asyncjs.php"></script>
+                        
+                    </div>
+                    <!-- END OF AD CODE -->
+                    <?php
+                    }
+                    echo $content[$i] . "</p>";
+                    } ?>
 				</div>
+                
+                <div style="max-width:728px;margin:0 auto;display:block;width:100%;">
+
+                    <ins data-revive-zoneid="3" data-revive-target="_blank" data-revive-ct0="{clickurl_enc}" data-revive-id="bc4ce818c158f7a81a7acefab7a0e36a"></ins>
+                    <script async src="//bloques.mujerypunto.com/activos/www/mtnetd/asyncjs.php"></script>
+
+                </div>
 
 				<div class="comments-facebook">
 					<h3 class="title-insidepost">Comentarios</h3>
@@ -124,9 +148,9 @@
 											<div class="btn-read-green"><a href="<?php the_permalink(); ?>">Seguir Leyendo</a></div>
 											<div class="social-share">
 												<ul>
-													<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-													<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-													<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+													<li><a href="javascript:fbShare('<?php echo the_permalink(); ?>', '<?php the_title(); ?>', '<?php the_title(); ?>', '<?php echo the_permalink(); ?>', 520, 350)"><i class="fa fa-facebook"></i></a></li>
+													<li><a  href="javascript:twShare('<?php echo the_permalink(); ?>', '<?php the_title(); ?> - vía: @mujerypunto', 520, 350)"><i class="fa fa-twitter"></i></a></li>
+													<li><a target="_blank" href="https://plus.google.com/share?url=<?php the_permalink(); ?>" onclick="window.open('https://plus.google.com/share?url=<?php the_permalink(); ?>','gplusshare','width=600,height=400,left='+(screen.availWidth/2-225)+',top='+(screen.availHeight/2-150)+'');return false;"><i class="fa fa-google-plus"></i></a></li>
 												</ul>
 											</div>
 										</div>
@@ -157,5 +181,4 @@
 	</section>
 
 	</main>
-
 <?php get_footer(); ?>
