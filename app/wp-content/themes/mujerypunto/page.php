@@ -7,10 +7,9 @@
     			<div class="title-bg"><div class="line-bg"></div><h1 class="title-section"><?php the_title(); ?></h1></div>
     			<div class="categoria-title">categoria</div>
     		</div>
-            
-
-			
+            			
 			<div class="body-sidebar content-page">
+
                 <?php 
 
                     if(is_page('lo-mas-reciente')){
@@ -26,15 +25,15 @@
                         ); 
 
                         // The Query
-                        $paginas = new WP_Query( $args );
+                        $wp_query = new WP_Query( $args );
 
                         // The Loop
-                        if ( $paginas->have_posts() ) {
-                            while ( $paginas->have_posts() ) {
-                                $paginas->the_post(); ?>
+                        if ( $wp_query->have_posts() ) {
+                            while ( $wp_query->have_posts() ) {
+                                $wp_query->the_post(); ?>
                                 <?php get_template_part('loop-tags'); ?>
                            <?php  }
-                        } else { ?>
+                        } else { ?> 
 
                             <article>
 
