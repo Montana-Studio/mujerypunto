@@ -7,8 +7,12 @@
     			<div class="title-bg"><div class="line-bg"></div><h1 class="title-section"><?php the_title(); ?></h1></div>
     			<div class="categoria-title">categoria</div>
     		</div>
-            			
-			<div class="body-sidebar content-page">
+           
+            <?php if(is_page('lo-mas-reciente')) { ?>
+                <div class="body-sidebar">
+             <?php }else { ?> 
+                <div class="body-sidebar content-page">
+            <?php } ?> 			
 
                 <?php 
 
