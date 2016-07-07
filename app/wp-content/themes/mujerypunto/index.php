@@ -77,7 +77,7 @@
 				    	</div>
 			    	</div>
 			    </div>
-
+				<?php /*
 			    <div class="secction-videos">
 			    	<div class="title-bg"><div class="line-bg"></div><h2 class="title-section">Videos</h2></div>
 
@@ -127,58 +127,58 @@
                 </div>  
 
 	            <script type="text/javascript">
-                    var playerss;
-                    function onYouTubePlayerAPIReady() {
-                        var players = document.querySelectorAll('.embeVideo');
-                        for (var i = 0; i < players.length; i++) {
-                            playerss = new YT.Player(players[i], {
-                                playerVars: {'controls': 0,'rel':0,'showinfo':0},
-                                events:{
-                                    'onStateChange': onPlayerStateChange,
-                                },
-                                videoId: players[i].dataset.id
-                            });
-                        }
-                    }
+					var playerss;
+					function onYouTubePlayerAPIReady() {
+						var players = document.querySelectorAll('.embeVideo');
+						for (var i = 0; i < players.length; i++) {
+							playerss = new YT.Player(players[i], {
+								playerVars: {'controls': 0,'rel':0,'showinfo':0},
+								events:{
+									'onStateChange': onPlayerStateChange,
+								},
+								videoId: players[i].dataset.id
+							});
+						}
+					}
 
-                    function loadVideo(videoID) {
-                        if(playerss) { 
-                            jQuery(document).ready(function($){
-                                $.ajaxSetup({cache:false});
-                                
-	                                $(".post-video").click(function(){
+					function loadVideo(videoID) {
+						if(playerss) { 
+							jQuery(document).ready(function($){
+								$.ajaxSetup({cache:false});
 
-	                                	//Obtengo url de imagen, fecha y titulo desde el click
-	                                    var fecha = $(this).find('.vistas').html();
-	                                    var titulo = $(this).find('.title-post').text();
+									$(".post-video").click(function(){
+
+										//Obtengo url de imagen, fecha y titulo desde el click
+										var fecha = $(this).find('.vistas').html();
+										var titulo = $(this).find('.title-post').text();
 
 										//Obtengo url de imagen, fecha y titulo desde principal                                    
-	                                    var titulo_principal = $(".titulo-principal").html();
-	                                    var fecha_principal = $(".vistas-principal").html();
+										var titulo_principal = $(".titulo-principal").html();
+										var fecha_principal = $(".vistas-principal").html();
 
-	                                    //Agrego datos en principal
-	                                    $(".titulo-principal").html(titulo);
-	                                    $(".vistas-principal").html(fecha);
+										//Agrego datos en principal
+										$(".titulo-principal").html(titulo);
+										$(".vistas-principal").html(fecha);
 
-	                                    playerss.loadVideoById(videoID);
-	                                    return false;
-	                                });
-                                
-                                
-                            });
-                        }
-                    }
+										playerss.loadVideoById(videoID);
+										return false;
+									});
 
-                    function onPlayerStateChange(event) {
-                    	if(event.data === 1){          
-                            
-                        }else if(event.data === 2||event.data === 0 ){
-                            
-                        }
 
-                    }
+							});
+						}
+					}
+
+					function onPlayerStateChange(event) {
+						if(event.data === 1){          
+
+						}else if(event.data === 2||event.data === 0 ){
+
+						}
+
+					}
                 </script>
-
+				*/?>
 		</section>
 		<!-- /section -->
 	</main>
