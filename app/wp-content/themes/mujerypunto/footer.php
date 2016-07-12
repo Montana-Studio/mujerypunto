@@ -95,13 +95,23 @@
 
 		</div>
 		<!-- /wrapper -->
-        
-        <div style="max-width:320px;margin:0 auto;position:fixed;bottom:0;z-index:9999;left:0;right:0;">
+        <?php 
+			if(!in_category('sexualidad')){
+		?>
+			<div style="max-width:320px;margin:0 auto;position:fixed;bottom:0;z-index:9999;left:0;right:0;">
 
-            <ins data-revive-zoneid="4" data-revive-target="_blank" data-revive-ct0="{clickurl_enc}" data-revive-id="bc4ce818c158f7a81a7acefab7a0e36a"></ins>
-            <script async src="//bloques.mujerypunto.com/activos/www/mtnetd/asyncjs.php"></script>
-            
-        </div>
+				<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+				<!-- mujer y punto mobile -->
+				<ins class="adsbygoogle"
+					 style="display:inline-block;width:320px;height:100px"
+					 data-ad-client="ca-pub-9947251232337904"
+					 data-ad-slot="3806437879"></ins>
+				<script>
+				(adsbygoogle = window.adsbygoogle || []).push({});
+				</script>
+
+			</div>
+		<?php } ?>
         
 		<?php wp_footer(); ?>
 		<script>

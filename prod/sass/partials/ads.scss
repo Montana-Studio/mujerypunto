@@ -1,0 +1,19 @@
+.header_728x90{
+	margin:0 auto;
+	max-width:728px;
+	display: block;
+}
+.bottom_728x90{
+	@extend .header_728x90;
+	width:100%;
+	clear:both;
+}
+.content_300x250{
+	@extend .header_728x90;
+	max-width:300px;
+}
+.sidebar_300x250{
+	@extend .header_728x90;
+	max-width:300px;
+	margin:{bottom:10px;}
+}

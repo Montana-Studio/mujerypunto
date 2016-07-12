@@ -55,29 +55,49 @@
                     $orderedListAfter= 1;
                     $content = apply_filters('the_content', get_the_content());
                     $content = explode("</p>", $content);
+					
                     for ($i = 0; $i <count($content); $i++) {
-                    if ($i == $orderedListAfter) { ?>
-                    <!-- START OF AD CODE -->
-                    <div style="max-width:728px;margin:0 auto;display:block;width:100%;">
+                    	if ($i == $orderedListAfter) { 
+							if(!in_category('sexualidad')){ ?>
+                    		
+								<div class="content_300x250">
+								
+									<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+									<!-- mujer y punto interior de al medio final -->
+									<ins class="adsbygoogle"
+										 style="display:block"
+										 data-ad-client="ca-pub-9947251232337904"
+										 data-ad-slot="7474583478"
+										 data-ad-format="auto"></ins>
+									<script>
+									(adsbygoogle = window.adsbygoogle || []).push({});
+									</script>
 
-                        <ins data-revive-zoneid="2" data-revive-target="_blank" data-revive-ct0="{clickurl_enc}" data-revive-id="bc4ce818c158f7a81a7acefab7a0e36a"></ins>
-                        <script async src="//bloques.mujerypunto.com/activos/www/mtnetd/asyncjs.php"></script>
-                        
-                    </div>
-                    <!-- END OF AD CODE -->
-                    <?php
-                    }
-                    echo $content[$i] . "</p>";
+								</div>
+                    <?php 
+							}
+						}
+                    	echo $content[$i] . "</p>";
                     } ?>
 				</div>
                 
-                <div style="max-width:728px;margin:0 auto;display:block;width:100%;">
+                <?php if(!in_category('sexualidad')){ ?>
+					<div class="bottom_728x90">
 
-                    <ins data-revive-zoneid="3" data-revive-target="_blank" data-revive-ct0="{clickurl_enc}" data-revive-id="bc4ce818c158f7a81a7acefab7a0e36a"></ins>
-                    <script async src="//bloques.mujerypunto.com/activos/www/mtnetd/asyncjs.php"></script>
+						<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+						<!-- mujer y punto interior final tercero -->
+						<ins class="adsbygoogle"
+							 style="display:block"
+							 data-ad-client="ca-pub-9947251232337904"
+							 data-ad-slot="8951316677"
+							 data-ad-format="auto"></ins>
+						<script>
+						(adsbygoogle = window.adsbygoogle || []).push({});
+						</script>
 
-                </div>
-
+					</div>
+				<?php } ?>
+				
 				<div class="comments-facebook">
 					<h3 class="title-insidepost">Comentarios</h3>
 					<div class="fb-comments" data-href="<?php echo the_permalink(); ?>" data-width="100%" data-numposts="5"></div>
