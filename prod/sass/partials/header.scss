@@ -86,6 +86,33 @@
 			&.icon-white {
 				color:$white;
 			}
+			
+		}
+		.search-btn {
+			@include span-columns(2);
+			float: right;
+			height: 45px;
+			display: table;
+			text:{align:center;}
+			z-index: 999;
+			position: absolute;
+    		right: 30px;
+			font-size: 0.9em;
+			i {
+				font:{size:2em;}
+				display: table-cell;
+				vertical-align: middle;
+			}
+			@include media($tablet) {
+				text:{align: right;}
+				padding:{right: 10px;}
+			}
+			@include media($tabletLand) {
+				display: none;
+			}
+			@include media($notebook) {
+				display: none;
+			}
 		}
 	}
 	.navigation-header {
@@ -217,7 +244,7 @@
 	}	
 }
 .menu-mobile-open {
-	@include span-columns(9);
+	@include span-columns(9.2);
 	@include omega();
 	@include pad(20px 10px);
 	float: right;
@@ -242,7 +269,7 @@
 		@include span-columns(4.5);
 	}
 	.logotipo-mujerypunto {
-		@include span-columns(4);
+		@include span-columns(5);
 		@include media($notebook) {
 			@include outer-container(15%);
 			margin:0 auto !important;
@@ -255,18 +282,45 @@
 		}
 	}
 	.icon-search-menu {
-		@include span-columns(2);
-		float: right;
-		height: 42px;
-		display: table;
-		text:{align:center;}
+		@include span-columns(12);
+		@include omega();
+		height: 40px;
 		z-index: 999;
-		position: absolute;
-		right: 0;
-		i {
-			font:{size:1.7em;}
-			display: table-cell;
-			vertical-align: middle;
+		margin:{top:12px;}
+		border-bottom:1px solid $gray_3;  
+		.search-mobile {
+			@include span-columns(12);
+			height: inherit;
+			.search-input {
+				@include span-columns(9);
+				@include omega();
+				height: inherit;
+				font:{size:0.9em;style:italic;}
+				color:$gray_1;
+				padding:{left:0;}
+				border:0;
+				background:none;
+				outline: none;
+				@include appearance(none);
+				@include placeholder {
+					color:$gray_1;
+				}
+			}
+			.search-submit {
+				@include span-columns(3);
+				@include appearance(none);
+				@include omega();
+				font:{size:1.2em;}
+				display: table-cell;
+				vertical-align: middle;
+				color:$gray_1;
+				height: inherit;
+				border:0;
+				background:none;
+				i {
+					vertical-align: top;
+				}
+			}	
 		}
 	}
 	.menu-header-mobile {

@@ -175,5 +175,16 @@
 				}
 			}
 		}
+		.sidebar-box-one {
+			@include span-columns(12);
+			margin:{bottom:15px;}
+			a {
+				@include span-columns(12);
+			}
+			img {
+				display: block;
+				margin:0 auto;
+			}
+		}
 	}
 }

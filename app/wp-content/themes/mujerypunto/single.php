@@ -105,7 +105,7 @@
 
 				<div class="nav-post">
 
-					<div class="title-bg"><div class="line-bg"></div><h2 class="title-section">Articulos Relacionados</h2></div>
+					<div class="title-bg title-none"><div class="line-bg"></div></div>
 
 					<div class="nav-SinglePost prev-post">
 						<div class="arrow-nav"><a href="<?php echo get_permalink(get_adjacent_post(false,'',true)); ?>"><i class="fa fa-angle-left"></i></a></div>

@@ -61,5 +61,29 @@
     	</div> 
 	</div> 
 
+	<div class="sidebar-box-one">
+		<a href="<?php echo get_site_url();?>/category/radio-mujer-y-punto/">
+			<img src="<?php echo get_template_directory_uri();?>/img/banner-podcast.gif" alt="podcast mujer y punto">
+		</a>
+	</div>
+
+	<div class="sidebar-box-one">
+		<a href="<?php echo get_site_url();?>/category/radio-mujer-y-punto/">
+			<img src="<?php echo get_template_directory_uri();?>/img/consulta_2.jpg" alt="podcast mujer y punto">
+		</a>
+	</div>
+
+	<div class="sidebar-box-one">
+		<a href="mailto:contacto@mujerypunto.com">
+			<img src="<?php echo get_template_directory_uri();?>/img/banner-contacto-editorial.jpg" alt="podcast mujer y punto">	
+		</a>
+	</div>
+
+	<div class="sidebar-box-one">
+		<a href="mailto:aseulveda@mediatrends.cl?subject=Contacto comercial MyP&cc=hugo@mediatrends.cl">
+			<img src="<?php echo get_template_directory_uri();?>/img/banner-contacto-publicitario.jpg" alt="podcast mujer y punto">
+		</a>
+	</div>
+
 </aside>
 <!-- /sidebar -->

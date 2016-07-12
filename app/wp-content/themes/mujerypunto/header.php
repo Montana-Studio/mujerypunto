@@ -10,6 +10,7 @@
 
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="google-site-verification" content="y0WaXIDecmGZ_GPawrSJeKmQ5YMTEm1LxwYgwyWYyxI" />
 		<?php wp_head(); ?>
 		<style>
 			.wp-caption{
@@ -68,8 +69,11 @@
 					?>  
 				</a>
 			</div> 
-			<div class="icon-search-menu search-btn">
-				<i class="fa fa-search"></i>
+			<div class="icon-search-menu ">
+				<form class="search-mobile" method="get" action="<?php echo home_url(); ?>" role="search">
+					<input class="search-input" type="search" name="s" placeholder="<?php _e( 'Buscar en el sitio', 'html5blank' ); ?>">
+					<button class="search-submit" type="submit" role="button"><i class="fa fa-search"></i></button>
+				</form>	
 			</div>
 			<div class="menu-header-mobile">
 				<?php html5blank_nav(); ?>
@@ -93,11 +97,14 @@
 								</a>	
 							</h1>
 						</div>
+						<div class="search-btn">
+							<i class="fa fa-search"></i>
+						</div>
 						<div class="icon-menu">
 							<i class="fa fa-bars"></i>
 						</div>
 					</div>
-
+					
 					<nav class="navigation-header">
 						<div class="menu-header">
 							<?php html5blank_nav(); ?>

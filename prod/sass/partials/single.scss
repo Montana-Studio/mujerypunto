@@ -132,6 +132,11 @@
 			}
 			p{
 				padding:0 10px;
+				a {
+					color:$green-logo;
+					text:{decoration:underline;}
+					font:{style:italic;}
+				}
 			}
 			img {
 				width: 100%;

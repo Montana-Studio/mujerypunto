@@ -77,7 +77,7 @@
 				    	</div>
 			    	</div>
 			    </div>
-				<?php /*
+				<?php /* 
 			    <div class="secction-videos">
 			    	<div class="title-bg"><div class="line-bg"></div><h2 class="title-section">Videos</h2></div>
 
