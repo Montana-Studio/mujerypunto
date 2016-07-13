@@ -10,7 +10,7 @@
 
 			<div class="body-sidebar">
 
-				<?php get_template_part('loop-tags'); ?>
+				<?php get_template_part('loop-search'); ?>
 
 				<?php get_template_part('pagination'); ?>
 
@@ -18,7 +18,7 @@
 
 			<div class="sidebar">	
 				<?php get_sidebar(); ?>
-			</div>
+			</div> 
 
 		</section>
 	</main>
