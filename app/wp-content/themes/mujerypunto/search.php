@@ -10,9 +10,13 @@
 
 			<div class="body-sidebar">
 
-				<?php get_template_part('loop-search'); ?>
+				<?php get_template_part('loop-search'); ?> 
 
-				<?php get_template_part('pagination'); ?>
+				<div class="custom-pagination">
+                     <?php kriesi_pagination(); ?> 
+                </div>
+
+				<?php //get_template_part('pagination'); ?>
 
 			</div>
 

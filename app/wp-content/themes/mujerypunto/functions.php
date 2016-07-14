@@ -203,6 +203,8 @@ function html5wp_pagination()
     ));
 }
 
+
+
 // Custom Excerpts
 function html5wp_index($length) // Create 20 Word Callback for Index page Excerpts, call using html5wp_excerpt('html5wp_index');
 {
@@ -588,4 +590,61 @@ function wpb_track_post_views ($post_id) {
     wpb_set_post_views($post_id);
 }
 add_action( 'wp_head', 'wpb_track_post_views');
+
+// POST POR BUSQUEDA: 12
+function limit_posts_per_archive_page() {
+    if ( is_search() ) {
+        set_query_var('posts_per_archive_page', 18);
+    }
+}
+add_filter('pre_get_posts', 'limit_posts_per_archive_page');
+
+// CUSTOM NAVIGATION: 12
+function kriesi_pagination($pages = '', $range = 4)
+{  
+     $showitems = ($range * 2)+1;  
+
+     global $paged;
+     if(empty($paged)) $paged = 1;
+
+     if($pages == '')
+     {
+         global $wp_query;
+         $pages = $wp_query->max_num_pages;
+         if(!$pages)
+         {
+             $pages = 1;
+         }
+     }   
+
+     if(1 != $pages)
+     {
+         echo "<div class='pagination'>";
+         if($paged > 2 && $paged > $range+1 && $showitems < $pages) echo "<a href='".get_pagenum_link(1)."'>&laquo;</a>";
+         if($paged > 1 && $showitems < $pages) echo "<a href='".get_pagenum_link($paged - 1)."'>&lsaquo;</a>";
+
+         for ($i=1; $i <= $pages; $i++)
+         {
+             if (1 != $pages &&( !($i >= $paged+$range+1 || $i <= $paged-$range-1) || $pages <= $showitems ))
+             {
+                 echo ($paged == $i)? "<span class='current'>".$i."</span>":"<a href='".get_pagenum_link($i)."' class='inactive' >".$i."</a>";
+             }
+         }
+
+         if ($paged < $pages && $showitems < $pages) echo "<a href='".get_pagenum_link($paged + 1)."'>&rsaquo;</a>";  
+         if ($paged < $pages-1 &&  $paged+$range-1 < $pages && $showitems < $pages) echo "<a href='".get_pagenum_link($pages)."'>&raquo;</a>";
+         echo "</div>\n";
+     }
+}
+
+add_filter('pre_get_posts', 'posts_in_category');
+
+function posts_in_category($query){
+    if ($query->is_category) {
+        if (is_category()) {
+            $query->set('posts_per_archive_page', 12);
+        }
+    }
+} 
+
 ?>

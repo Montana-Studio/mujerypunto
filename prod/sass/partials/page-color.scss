@@ -72,6 +72,13 @@ body {
 				}
 			}
 		}
+		.custom-pagination {
+			.pagination {
+				.current {
+					color:$color_1;
+				}
+			}
+		}
 		.btn-read-green {
 			a {
 				color:$color_1; 
@@ -110,6 +117,13 @@ body {
 					a {
 						color:$color_2; 
 					}
+				}
+			}
+		}
+		.custom-pagination {
+			.pagination {
+				.current {
+					color:$color_2;
 				}
 			}
 		}
@@ -154,6 +168,13 @@ body {
 				}
 			}
 		}
+		.custom-pagination {
+			.pagination {
+				.current {
+					color:$color_3;
+				}
+			}
+		}
 		.btn-read-green {
 			a {
 				color:$color_3; 
@@ -192,6 +213,13 @@ body {
 					a {
 						color:$color_4; 
 					}
+				}
+			}
+		}
+		.custom-pagination {
+			.pagination {
+				.current {
+					color:$color_4;
 				}
 			}
 		}
@@ -236,6 +264,13 @@ body {
 				}
 			}
 		}
+		.custom-pagination {
+			.pagination {
+				.current {
+					color:$color_5;
+				}
+			}
+		}
 		.btn-read-green {
 			a {
 				color:$color_5; 
@@ -273,6 +308,13 @@ body {
 					a {
 						color:$color_6; 
 					}
+				}
+			}
+		}
+		.custom-pagination {
+			.pagination {
+				.current {
+					color:$color_6;
 				}
 			}
 		}

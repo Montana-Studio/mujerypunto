@@ -2787,6 +2787,30 @@ body {
     -o-transform: scaleX(1);
     transform: scaleX(1); }
 
+.custom-pagination {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 100%;
+  margin-right: 0; }
+  .custom-pagination:last-child {
+    margin-right: 0; }
+  .custom-pagination .pagination {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 100%;
+    margin-right: 0; }
+    .custom-pagination .pagination:last-child {
+      margin-right: 0; }
+    .custom-pagination .pagination a {
+      margin-left: 8px;
+      margin-right: 8px; }
+    .custom-pagination .pagination .current {
+      margin-left: 8px;
+      margin-right: 8px;
+      color: #03C9A9; }
+
 .header {
   float: left;
   display: block;
@@ -7097,6 +7121,8 @@ body.category-moda-y-estilo .tags-content article .btn-read-green a {
   color: #E74C3C; }
 body.category-moda-y-estilo .tags-content article .social-share a {
   color: #E74C3C; }
+body.category-moda-y-estilo .custom-pagination .pagination .current {
+  color: #E74C3C; }
 body.category-moda-y-estilo .btn-read-green a {
   color: #E74C3C; }
 body.category-moda-y-estilo .btn-read-green:before {
@@ -7113,6 +7139,8 @@ body.category-relaciones .tags-content article .category-post {
 body.category-relaciones .tags-content article .btn-read-green a {
   color: #59ABE3; }
 body.category-relaciones .tags-content article .social-share a {
+  color: #59ABE3; }
+body.category-relaciones .custom-pagination .pagination .current {
   color: #59ABE3; }
 body.category-relaciones .btn-read-green a {
   color: #59ABE3; }
@@ -7131,6 +7159,8 @@ body.category-belleza .tags-content article .btn-read-green a {
   color: #9B59B6; }
 body.category-belleza .tags-content article .social-share a {
   color: #9B59B6; }
+body.category-belleza .custom-pagination .pagination .current {
+  color: #9B59B6; }
 body.category-belleza .btn-read-green a {
   color: #9B59B6; }
 body.category-belleza .btn-read-green:before {
@@ -7147,6 +7177,8 @@ body.category-vida-gourmet .tags-content article .category-post {
 body.category-vida-gourmet .tags-content article .btn-read-green a {
   color: #F27935; }
 body.category-vida-gourmet .tags-content article .social-share a {
+  color: #F27935; }
+body.category-vida-gourmet .custom-pagination .pagination .current {
   color: #F27935; }
 body.category-vida-gourmet .btn-read-green a {
   color: #F27935; }
@@ -7165,6 +7197,8 @@ body.category-viajes .tags-content article .btn-read-green a {
   color: #4ECDC4; }
 body.category-viajes .tags-content article .social-share a {
   color: #4ECDC4; }
+body.category-viajes .custom-pagination .pagination .current {
+  color: #4ECDC4; }
 body.category-viajes .btn-read-green a {
   color: #4ECDC4; }
 body.category-viajes .btn-read-green:before {
@@ -7181,6 +7215,8 @@ body.category-celebrities .tags-content article .category-post {
 body.category-celebrities .tags-content article .btn-read-green a {
   color: #F64747; }
 body.category-celebrities .tags-content article .social-share a {
+  color: #F64747; }
+body.category-celebrities .custom-pagination .pagination .current {
   color: #F64747; }
 body.category-celebrities .btn-read-green a {
   color: #F64747; }

@@ -343,3 +343,18 @@ body {
     	}
     }
 }
+.custom-pagination {
+	@include span-columns(12);
+	@include omega();
+	.pagination {
+		@include span-columns(12);
+		@include omega();
+		a {
+			margin:{left:8px; right:8px;} 
+		}	
+		.current {
+			margin:{left:8px; right:8px;} 
+			color:$green-logo; 
+		}
+	}
+}
