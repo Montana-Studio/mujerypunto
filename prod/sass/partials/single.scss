@@ -137,22 +137,23 @@
 					text:{decoration:underline;}
 					font:{style:italic;}
 				}
+				span {
+					&.irc_ho {
+						word-wrap: break-word;
+					}
+				}	
+				&.wp-caption-text {
+					font:{size:11px !important;}
+				}
 			}
 			img {
-				width: 100%;
+				max-width: 100%;
 				height: auto;
 				display: block;
-				@include media($tabletLand) {
-					width: 50%;
-					height: auto;
-					display: block;
-					margin:0 auto;
-				}
-				@include media($notebook) {
-					width: 50%;
-					height: auto;
-					display: block;
-					margin:0 auto;
+			}
+			.wp-caption {
+				.wp-caption-text {
+					font:{size:11px !important;}
 				}
 			}
 			.swiper-gallery{

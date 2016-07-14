@@ -128,7 +128,7 @@
 				</div>
 
 				<div class="post-relacionados">
-						<div class="title-bg"><div class="line-bg"></div><h2 class="title-section">Historias Similares</h2></div>
+						<div class="title-bg"><div class="line-bg"></div><h2 class="title-section">Lo que podría gustarte</h2></div>
 				    	<div class="post-related">
 							<ul>
 							<?php $orig_post = $post;
