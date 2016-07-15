@@ -17,6 +17,7 @@
 				width:100% !important;
 			}
 		</style>
+
 	</head>
 	<body <?php body_class(); ?>>
 

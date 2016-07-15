@@ -2,6 +2,7 @@
 	margin:0 auto;
 	max-width:728px;
 	display: block;
+	clear: both;
 }
 .bottom_728x90{
 	@extend .header_728x90;
@@ -11,6 +12,8 @@
 .content_300x250{
 	@extend .header_728x90;
 	max-width:300px;
+	margin:{bottom:10px;}
+	clear: both;
 }
 .sidebar_300x250{
 	@extend .header_728x90;

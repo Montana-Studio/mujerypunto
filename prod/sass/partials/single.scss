@@ -151,6 +151,13 @@
 				height: auto;
 				display: block;
 			}
+			iframe{
+				max-width: 100%;
+				max-height:320px;
+				@include media($notebook){
+					max-height:640px;
+				}
+			}
 			.wp-caption {
 				.wp-caption-text {
 					font:{size:11px !important;}

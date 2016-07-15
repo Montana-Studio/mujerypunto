@@ -52,51 +52,9 @@
 				
 				<div class="content-post">
 					<?php
-                    $orderedListAfter= 1;
-                    $content = apply_filters('the_content', get_the_content());
-                    $content = explode("</p>", $content);
-					
-                    for ($i = 0; $i <count($content); $i++) {
-                    	if ($i == $orderedListAfter) { 
-							if(!in_category('sexualidad')){ ?>
-                    		
-								<div class="content_300x250">
-								
-									<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-									<!-- mujer y punto interior de al medio final -->
-									<ins class="adsbygoogle"
-										 style="display:block"
-										 data-ad-client="ca-pub-9947251232337904"
-										 data-ad-slot="7474583478"
-										 data-ad-format="auto"></ins>
-									<script>
-									(adsbygoogle = window.adsbygoogle || []).push({});
-									</script>
-
-								</div>
-                    <?php 
-							}
-						}
-                    	echo $content[$i] . "</p>";
-                    } ?>
+						the_content();
+					?>
 				</div>
-                
-                <?php if(!in_category('sexualidad')){ ?>
-					<div class="bottom_728x90">
-
-						<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-						<!-- mujer y punto interior final tercero -->
-						<ins class="adsbygoogle"
-							 style="display:block"
-							 data-ad-client="ca-pub-9947251232337904"
-							 data-ad-slot="8951316677"
-							 data-ad-format="auto"></ins>
-						<script>
-						(adsbygoogle = window.adsbygoogle || []).push({});
-						</script>
-
-					</div>
-				<?php } ?>
 				
 				<div class="comments-facebook">
 					<h3 class="title-insidepost">Comentarios</h3>
