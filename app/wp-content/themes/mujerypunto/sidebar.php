@@ -22,22 +22,8 @@
 
     <?php if(is_single()&&wp_is_mobile()) { ?>
 
-		<div class="box-sidebar">
-			<div class="title-sidebar"><i class="fa fa-star-o"></i> Lo más popular</div>
-			<div class="content-sidebar">
-	    		<?php get_template_part('loop-sidebar-one'); ?> 
-	    	</div>
-		</div>
-
-		<div class="box-sidebar imperdibles-sidebar">
-			<div class="title-sidebar"><i class="fa fa-star-o"></i> Imperdibles M&P</div>
-			<div class="content-sidebar">
-	    		<?php get_template_part('loop-sidebar-two'); ?> 
-	    	</div> 
-		</div> 
-
-		<div class="sidebar-box-one">
-			<a href="<?php echo get_site_url();?>/category/radio-mujer-y-punto/">
+		<!--div class="sidebar-box-one">
+			<a href="<?php /* echo get_site_url();?>/category/radio-mujer-y-punto/">
 				<img src="<?php echo get_template_directory_uri();?>/img/banner-podcast.gif" alt="podcast mujer y punto">
 			</a>
 		</div>
@@ -46,9 +32,9 @@
 			<a href="<?php echo get_site_url();?>/category/radio-mujer-y-punto/"> 
 				<img src="<?php echo get_template_directory_uri();?>/img/banner-consulta-psicologica.jpg" alt="podcast mujer y punto">
 			</a>
-		</div>
+		</div> */ ?>
 
-		<div class="sidebar-box-one contacto-banner ">
+		<!--div class="sidebar-box-one contacto-banner ">
 			<div class="inside-contact contacto-editorial">
 				<div class="title-contact">
 					<div class="title-one">Contacto</div>
@@ -70,8 +56,7 @@
 					<div class="title-two">Publicitario</div>
 				</div>	
 			</div>
-		</div>
-
+		</div-->
 
     <?php }else {?>
 
@@ -116,8 +101,8 @@
 	    	</div> 
 		</div> 
 
-		<div class="sidebar-box-one">
-			<a href="<?php echo get_site_url();?>/category/radio-mujer-y-punto/">
+		<!--div class="sidebar-box-one">
+			<a href="<?php /* echo get_site_url();?>/category/radio-mujer-y-punto/">
 				<img src="<?php echo get_template_directory_uri();?>/img/banner-podcast.gif" alt="podcast mujer y punto">
 			</a>
 		</div>
@@ -126,9 +111,9 @@
 			<a href="<?php echo get_site_url();?>/category/radio-mujer-y-punto/"> 
 				<img src="<?php echo get_template_directory_uri();?>/img/banner-consulta-psicologica.jpg" alt="podcast mujer y punto">
 			</a>
-		</div>
+		</div> */ ?>
 
-		<div class="sidebar-box-one contacto-banner ">
+		<!--div class="sidebar-box-one contacto-banner ">
 			<div class="inside-contact contacto-editorial">
 				<div class="title-contact">
 					<div class="title-one">Contacto</div>
@@ -150,7 +135,7 @@
 					<div class="title-two">Publicitario</div>
 				</div>	
 			</div>
-		</div>
+		</div-->
 
    <?php } ?>
     
