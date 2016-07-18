@@ -50,7 +50,7 @@
 					</ul>
 				</div>
 				
-				<div class="content-post">
+				<div class="content-post" id="loadAdsContent">
 					<?php
 						the_content();
 					?>

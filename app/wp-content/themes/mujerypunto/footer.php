@@ -100,8 +100,7 @@
 		?>
 			<div style="max-width:320px;margin:0 auto;position:fixed;bottom:0;z-index:9999;left:0;right:0;">
 
-				<ins data-revive-zoneid="4" data-revive-target="_blank" data-revive-ct0="{clickurl_enc}" data-revive-id="bc4ce818c158f7a81a7acefab7a0e36a"></ins>
-				<script async src="//bloques.mujerypunto.com/activos/www/mtnetd/asyncjs.php"></script>
+				<ins data-revive-zoneid="4" data-revive-target="_blank" data-revive-ct0="{clickurl_enc}" data-revive-id="bc4ce818c158f7a81a7acefab7a0e36a"></ins><script async src="//bloques.mujerypunto.com/activos/www/mtnetd/asyncjs.php"></script>
 
 			</div>
 		<?php } ?>
@@ -112,32 +111,32 @@
 			if(is_single()&&!in_category('sexualidad')){
 		?>
 			<script>
-				$(document).ready(function(){
 					function inserta_banners(banner1,banner2,banner3){
-						var count = $(".content-post").find("p").length;
+						var count = $("#loadAdsContent").find("p").length;
 						var cantidad_minima_posts_para_tres_banners = 6;
 						var cantidad_maxima_posts_para_un_banner = 3;
-						if(count>cantidad_minima_posts_para_tres_banners){
-							var medio = parseInt(count/2);
-							$( "p:nth-child(2)" ).append( banner1);
-							$( "p:nth-child("+medio+")" ).append( banner2 );
-							$( "p:nth-child("+count+")" ).append( banner3 );
-						}
-						if(count<cantidad_maxima_posts_para_un_banner){
-							var medio = parseInt(count/2);
-							$( "p:nth-child(2)" ).append( "<strong>"+banner1+"</strong>" );
-						}
-						if(count<=cantidad_minima_posts_para_tres_banners && count >= cantidad_maxima_posts_para_un_banner){
-							var medio = parseInt(count/2);
-							$( "p:nth-child(2)" ).append( "<strong>"+banner1+"</strong>" );
-							$( "p:nth-child("+medio+")" ).append( "<strong>"+banner2+"</strong>" );
-						}
+						var medio = parseInt(count/2);
+						
+						if(count>6){
+							
+							$( "#loadAdsContent>p:first-child" ).append( banner1 );
+							$( "#loadAdsContent>p:nth-child("+medio+")" ).append( banner2 );
+							$( "#loadAdsContent>p:last-child" ).append( banner3 );
+						}else{
+							if(count<3){
+								$( "#loadAdsContent>p:first-child" ).append( banner1 );
+
+							}else if(count<=6 && count >= 3){
+							$( "#loadAdsContent>p:first-child" ).append( banner1 );
+							$( "#loadAdsContent>p:last-child" ).append( banner3 );
+
+							}	
+						} 
 					}
-var banner1 = '<div class="content_300x250"><iframe id="a9b85a31" name="a9b85a31" src="http://bloques.mujerypunto.com/activos/www/mtnetd/afr.php?zoneid=2&amp;target=_blank&amp;cb={random}&amp;ct0={clickurl_enc}" frameborder="0" scrolling="no" width="300" height="250"><a href="http://bloques.mujerypunto.com/activos/www/mtnetd/ck.php?n=ab1bb9ea&amp;cb={random}" target="_blank"><img src="http://bloques.mujerypunto.com/activos/www/mtnetd/avw.php?zoneid=2&amp;cb={random}&amp;n=ab1bb9ea&amp;ct0={clickurl_enc}" border="0" alt="" /></a></iframe></div>';
-var banner2 = '<div class="content_300x250"><iframe id="a1503047" name="a1503047" src="http://bloques.mujerypunto.com/activos/www/mtnetd/afr.php?zoneid=10&amp;target=_blank&amp;cb={random}&amp;ct0={clickurl_enc}" frameborder="0" scrolling="no" width="300" height="250"><a href="http://bloques.mujerypunto.com/activos/www/mtnetd/ck.php?n=a2b832b4&amp;cb={random}" target="_blank"><img src="http://bloques.mujerypunto.com/activos/www/mtnetd/avw.php?zoneid=10&amp;cb={random}&amp;n=a2b832b4&amp;ct0={clickurl_enc}" border="0" alt="" /></a></iframe></div>';
-var banner3 = '<div class="bottom_728x90"><ins data-revive-zoneid="3" data-revive-target="_blank" data-revive-ct0="{clickurl_enc}" data-revive-id="bc4ce818c158f7a81a7acefab7a0e36a"></ins>						<sc'+'ript async src="//bloques.mujerypunto.com/activos/www/mtnetd/asyncjs.php"></scr'+'ipt></div>';
-					inserta_banners(banner1,banner2,banner3);
-				});
+					var banner1 = '<div class="content_300x250"><ins data-revive-zoneid="1" data-revive-target="_blank" data-revive-ct0="{clickurl_enc}" data-revive-id="bc4ce818c158f7a81a7acefab7a0e36a"></ins><scr'+'ipt async src="//bloques.mujerypunto.com/activos/www/mtnetd/asyncjs.php"></scr'+'ipt></div>';
+					var banner2 = '<div class="content_300x250"><ins data-revive-zoneid="2" data-revive-target="_blank" data-revive-ct0="{clickurl_enc}" data-revive-id="bc4ce818c158f7a81a7acefab7a0e36a"></ins><scr'+'ipt async src="//bloques.mujerypunto.com/activos/www/mtnetd/asyncjs.php"></scr'+'ipt></div>';
+					var banner3 = '<div class="bottom_728x90"><ins data-revive-zoneid="3" data-revive-target="_blank" data-revive-ct0="{clickurl_enc}" data-revive-id="bc4ce818c158f7a81a7acefab7a0e36a"></ins><scr'+'ipt async src="//bloques.mujerypunto.com/activos/www/mtnetd/asyncjs.php"></scr'+'ipt></div>';
+					 window.onload =inserta_banners(banner1,banner2,banner3);
 			</script>
 		<?php
 			}
@@ -190,7 +189,7 @@ var banner3 = '<div class="bottom_728x90"><ins data-revive-zoneid="3" data-reviv
 		<script type='text/javascript'><!--//<![CDATA[
 		   var ox_u = 'http://bloques.mujerypunto.com/activos/www/mtnetd/al.php?zoneid=9&target=_blank&cb={random}&ct0={clickurl_enc}&layerstyle=simple&align=center&valign=middle&padding=0&padding=0&shifth=0&shiftv=0&closebutton=f&nobg=t&noborder=t';
 		   if (document.context) ox_u += '&context=' + escape(document.context);
-		   document.write("<scr"+"ipt type='text/javascript' src='" + ox_u + "'></scr"+"ipt>");
+		   document.write('<scr'+'ipt type="text/javascript" src="' + ox_u + '"></scr'+'ipt>');
 		//]]>--></script>
 		
 	</body>

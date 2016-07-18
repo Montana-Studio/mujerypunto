@@ -9,6 +9,7 @@
 			<ins data-revive-zoneid="6" data-revive-target="_blank" data-revive-ct0="{clickurl_enc}" data-revive-id="bc4ce818c158f7a81a7acefab7a0e36a"></ins>
 			<script async src="//bloques.mujerypunto.com/activos/www/mtnetd/asyncjs.php"></script>
 		</div>
+		
 		<div class="box-sidebar">
 			<div class="title-sidebar"><i class="fa fa-star-o"></i> Lo más popular</div>
 			<div class="content-sidebar">
