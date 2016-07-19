@@ -77,7 +77,11 @@
 				    	</div>
 			    	</div>
 			    </div>
+<<<<<<< HEAD
 				 
+=======
+				<?php /* 
+>>>>>>> cc4392ff9d91de67688cf4402a8af02ada07e814
 			    <div class="secction-videos">
 			    	<div class="title-bg"><div class="line-bg"></div><h2 class="title-section">Videos</h2></div>
 

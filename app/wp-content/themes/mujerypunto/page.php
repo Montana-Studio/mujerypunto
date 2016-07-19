@@ -177,10 +177,8 @@
                     }
                 ?> 
 
-                <div class="paginacion-sect">
-                    <div class="pagination">
-                        <?php html5wp_pagination(); ?>
-                    </div>
+                <div class="custom-pagination">
+                     <?php kriesi_pagination(); ?> 
                 </div>
 
 			</div>

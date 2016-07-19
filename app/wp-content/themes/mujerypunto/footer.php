@@ -100,20 +100,48 @@
 		?>
 			<div style="max-width:320px;margin:0 auto;position:fixed;bottom:0;z-index:9999;left:0;right:0;">
 
-				<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-				<!-- mujer y punto mobile -->
-				<ins class="adsbygoogle"
-					 style="display:inline-block;width:320px;height:100px"
-					 data-ad-client="ca-pub-9947251232337904"
-					 data-ad-slot="3806437879"></ins>
-				<script>
-				(adsbygoogle = window.adsbygoogle || []).push({});
-				</script>
+				<ins data-revive-zoneid="4" data-revive-target="_blank" data-revive-ct0="{clickurl_enc}" data-revive-id="bc4ce818c158f7a81a7acefab7a0e36a"></ins><script async src="//bloques.mujerypunto.com/activos/www/mtnetd/asyncjs.php"></script>
 
 			</div>
 		<?php } ?>
         
 		<?php wp_footer(); ?>
+		
+		<?php 
+			if(is_single()&&!in_category('sexualidad')){
+		?>
+			<script>
+					function inserta_banners(banner1,banner2,banner3){
+						var count = $("#loadAdsContent").find("p").length;
+						var cantidad_minima_posts_para_tres_banners = 6;
+						var cantidad_maxima_posts_para_un_banner = 3;
+						var medio = parseInt(count/2);
+						
+						if(count>6){
+							
+							$( "#loadAdsContent>p:first-child" ).append( banner1 );
+							$( "#loadAdsContent>p:nth-child("+medio+")" ).append( banner2 );
+							$( "#loadAdsContent>p:last-child" ).append( banner3 );
+						}else{
+							if(count<3){
+								$( "#loadAdsContent>p:first-child" ).append( banner1 );
+
+							}else if(count<=6 && count >= 3){
+							$( "#loadAdsContent>p:first-child" ).append( banner1 );
+							$( "#loadAdsContent>p:last-child" ).append( banner3 );
+
+							}	
+						} 
+					}
+					var banner1 = '<div class="content_300x250"><ins data-revive-zoneid="1" data-revive-target="_blank" data-revive-ct0="{clickurl_enc}" data-revive-id="bc4ce818c158f7a81a7acefab7a0e36a"></ins><scr'+'ipt async src="//bloques.mujerypunto.com/activos/www/mtnetd/asyncjs.php"></scr'+'ipt></div>';
+					var banner2 = '<div class="content_300x250"><ins data-revive-zoneid="2" data-revive-target="_blank" data-revive-ct0="{clickurl_enc}" data-revive-id="bc4ce818c158f7a81a7acefab7a0e36a"></ins><scr'+'ipt async src="//bloques.mujerypunto.com/activos/www/mtnetd/asyncjs.php"></scr'+'ipt></div>';
+					var banner3 = '<div class="bottom_728x90"><ins data-revive-zoneid="3" data-revive-target="_blank" data-revive-ct0="{clickurl_enc}" data-revive-id="bc4ce818c158f7a81a7acefab7a0e36a"></ins><scr'+'ipt async src="//bloques.mujerypunto.com/activos/www/mtnetd/asyncjs.php"></scr'+'ipt></div>';
+					 window.onload =inserta_banners(banner1,banner2,banner3);
+			</script>
+		<?php
+			}
+		?>
+		
 		<script>
             
 		    var gallerySliders = new Swiper('.swiper-gallery', {
@@ -158,5 +186,11 @@
 
         </script>
 
+		<script type='text/javascript'><!--//<![CDATA[
+		   var ox_u = 'http://bloques.mujerypunto.com/activos/www/mtnetd/al.php?zoneid=9&target=_blank&cb={random}&ct0={clickurl_enc}&layerstyle=simple&align=center&valign=middle&padding=0&padding=0&shifth=0&shiftv=0&closebutton=f&nobg=t&noborder=t';
+		   if (document.context) ox_u += '&context=' + escape(document.context);
+		   document.write('<scr'+'ipt type="text/javascript" src="' + ox_u + '"></scr'+'ipt>');
+		//]]>--></script>
+		
 	</body>
 </html>

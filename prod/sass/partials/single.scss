@@ -132,22 +132,35 @@
 			}
 			p{
 				padding:0 10px;
+				a {
+					color:$green-logo;
+					text:{decoration:underline;}
+					font:{style:italic;}
+				}
+				span {
+					&.irc_ho {
+						word-wrap: break-word;
+					}
+				}	
+				&.wp-caption-text {
+					font:{size:11px !important;}
+				}
 			}
 			img {
-				width: 100%;
+				max-width: 100%;
 				height: auto;
 				display: block;
-				@include media($tabletLand) {
-					width: 50%;
-					height: auto;
-					display: block;
-					margin:0 auto;
+			}
+			iframe{
+				max-width: 100%;
+				max-height:320px;
+				@include media($notebook){
+					max-height:640px;
 				}
-				@include media($notebook) {
-					width: 50%;
-					height: auto;
-					display: block;
-					margin:0 auto;
+			}
+			.wp-caption {
+				.wp-caption-text {
+					font:{size:11px !important;}
 				}
 			}
 			.swiper-gallery{

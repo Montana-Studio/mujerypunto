@@ -267,6 +267,10 @@ body {
 			font:{size: 1.5em;} 
 		}
 	}
+	&.title-none {
+		height: 20px;
+		margin:{bottom:0;}
+	}
 }
 .btn-read-more {
     display: inline-block;
@@ -338,4 +342,19 @@ body {
     		@include transform(scaleX(1));
     	}
     }
+}
+.custom-pagination {
+	@include span-columns(12);
+	@include omega();
+	.pagination {
+		@include span-columns(12);
+		@include omega();
+		a {
+			margin:{left:8px; right:8px;} 
+		}	
+		.current {
+			margin:{left:8px; right:8px;} 
+			color:$green-logo; 
+		}
+	}
 }

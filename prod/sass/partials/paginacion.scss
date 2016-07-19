@@ -5,14 +5,18 @@
 	font:{family:$second_font;size:0.8em;weight:bold;}
 	color:$gray_1;
 	margin:20px 0;
-	.pagination {
-		@include span-columns(12);
-		.page-numbers {
-			padding: 0 5px;
-			&.current {
-				color:$green_logo;
-			}
-		}	
-	}
-	
+}
+.pagination {
+	@include span-columns(12);
+	@include omega();
+	text:{align:center;transform:uppercase;}
+	font:{family:$second_font;size:0.8em;weight:bold;}
+	color:$gray_1;
+	margin:20px 0;
+	.page-numbers {
+		padding: 0 5px;
+		&.current {
+			color:$green_logo;
+		}
+	}	
 }

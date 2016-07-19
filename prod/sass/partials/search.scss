@@ -31,6 +31,7 @@
 				@include span-columns(12);
 				@include omega();
 				border:0;
+				@include appearance(none);
 				border-bottom:1px solid $black;
 				outline: none;
 				color:$black;

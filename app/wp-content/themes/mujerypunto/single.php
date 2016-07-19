@@ -50,53 +50,11 @@
 					</ul>
 				</div>
 				
-				<div class="content-post">
+				<div class="content-post" id="loadAdsContent">
 					<?php
-                    $orderedListAfter= 1;
-                    $content = apply_filters('the_content', get_the_content());
-                    $content = explode("</p>", $content);
-					
-                    for ($i = 0; $i <count($content); $i++) {
-                    	if ($i == $orderedListAfter) { 
-							if(!in_category('sexualidad')){ ?>
-                    		
-								<div class="content_300x250">
-								
-									<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-									<!-- mujer y punto interior de al medio final -->
-									<ins class="adsbygoogle"
-										 style="display:block"
-										 data-ad-client="ca-pub-9947251232337904"
-										 data-ad-slot="7474583478"
-										 data-ad-format="auto"></ins>
-									<script>
-									(adsbygoogle = window.adsbygoogle || []).push({});
-									</script>
-
-								</div>
-                    <?php 
-							}
-						}
-                    	echo $content[$i] . "</p>";
-                    } ?>
+						the_content();
+					?>
 				</div>
-                
-                <?php if(!in_category('sexualidad')){ ?>
-					<div class="bottom_728x90">
-
-						<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-						<!-- mujer y punto interior final tercero -->
-						<ins class="adsbygoogle"
-							 style="display:block"
-							 data-ad-client="ca-pub-9947251232337904"
-							 data-ad-slot="8951316677"
-							 data-ad-format="auto"></ins>
-						<script>
-						(adsbygoogle = window.adsbygoogle || []).push({});
-						</script>
-
-					</div>
-				<?php } ?>
 				
 				<div class="comments-facebook">
 					<h3 class="title-insidepost">Comentarios</h3>
@@ -105,7 +63,7 @@
 
 				<div class="nav-post">
 
-					<div class="title-bg"><div class="line-bg"></div><h2 class="title-section">Articulos Relacionados</h2></div>
+					<div class="title-bg title-none"><div class="line-bg"></div></div>
 
 					<div class="nav-SinglePost prev-post">
 						<div class="arrow-nav"><a href="<?php echo get_permalink(get_adjacent_post(false,'',true)); ?>"><i class="fa fa-angle-left"></i></a></div>
@@ -128,7 +86,7 @@
 				</div>
 
 				<div class="post-relacionados">
-						<div class="title-bg"><div class="line-bg"></div><h2 class="title-section">Historias Similares</h2></div>
+						<div class="title-bg"><div class="line-bg"></div><h2 class="title-section">Lo que podría gustarte</h2></div>
 				    	<div class="post-related">
 							<ul>
 							<?php $orig_post = $post;

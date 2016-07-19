@@ -175,5 +175,75 @@
 				}
 			}
 		}
+		.sidebar-box-one {
+			@include span-columns(12);
+			margin:{bottom:15px;}
+			a {
+				@include span-columns(12);
+			}
+			img {
+				display: block;
+				margin:0 auto;
+			}
+			&.contacto-banner {
+				@include span-columns(12);
+				@include omega();
+				.inside-contact {
+					width: 300px;
+					height: 90px; 
+					display: table;
+					margin:{left:auto;right:auto;}
+					.title-contact {
+						@include span-columns(6);
+						@include omega();
+						padding:{left:20px;}
+						color:$white;
+						font:{size:1.2em;}
+						display: table-cell;
+						vertical-align: middle;
+						float: initial;
+						.title-one {
+							font:{family:$second_font;weight:bold;}
+							text:{transform:uppercase;}
+						}
+						.title-two {
+							font:{family:$regular_font;size:0.8em;}
+							letter-spacing: 1px;
+						}
+					}
+					.button-contact {
+						@include span-columns(6);
+						@include omega();
+						display: table-cell;
+						vertical-align: middle;
+						float: initial;
+						text:{align:center;}
+						padding:{left:10px;right:10px;}
+						a {
+							font:{family:$second_font;size:0.9em;}
+							color:$white;
+							border:1px solid $white;
+							padding:6px 15px;
+							border-radius:25px;
+							&:hover {
+								@include transition(all 0.4s ease-in-out);
+								background:$white;
+								color:$green-logo;
+							}
+						}
+					}	
+					&.contacto-editorial {
+						background:url('../img/banner-contacto-editorial.jpg');
+					}	
+					&.contacto-publicitario {
+						background:url('../img/banner-contacto-publicitario.jpg');
+						.title-contact {
+							text:{align:right;}
+							padding:{left:0;right:20px;}
+						}
+					}
+				}
+			}
+		}
 	}
 }

@@ -207,4 +207,16 @@
 			}
 	    }
     }
+    .post-sect-four {
+    	.title-post {
+    		@include media($notebook) {
+    			font:{size: 1.3em;} 
+    			line-height: 27px;
+    		}
+    		@include media($desktop) {
+    			font:{size: 1.4em;}
+    			line-height: 27px;
+    		}
+    	} 
+    }
 }

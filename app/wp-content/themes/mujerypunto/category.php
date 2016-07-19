@@ -10,7 +10,7 @@
 
 			<div class="body-sidebar">
 
-			<?php 
+    			<?php 
 
                     if(is_category('moda-y-estilo')){
 
@@ -18,7 +18,6 @@
                         $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
                         $args = array (
                             'category_name'          => 'moda-y-estilo',
-                            'posts_per_page'         => '21',
                             'paged'                  => $paged,
                             'order'                  => 'DESC',
                             'orderby'                => 'date', 
@@ -52,7 +51,6 @@
                         $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
                         $args = array (
                             'category_name'          => 'relaciones',
-                            'posts_per_page'         => '21',
                             'paged'                  => $paged,
                             'order'                  => 'DESC',
                             'orderby'                => 'date',
@@ -86,7 +84,6 @@
                         $paged = (get_query_var('paged')) ? get_query_var('belleza') : 1;
                         $args = array (
                             'category_name'          => 'belleza',
-                            'posts_per_page'         => '21',
                             'paged'                  => $paged,
                             'order'                  => 'DESC',
                             'orderby'                => 'date',
@@ -120,7 +117,6 @@
                         $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
                         $args = array (
                             'category_name'          => 'vida-gourmet',
-                            'posts_per_page'         => '21',
                             'paged'                  => $paged,
                             'order'                  => 'DESC',
                             'orderby'                => 'date',
@@ -154,7 +150,6 @@
                         $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
                         $args = array (
                             'category_name'          => 'viajes',
-                            'posts_per_page'         => '21',
                             'paged'                  => $paged,
                             'order'                  => 'DESC',
                             'orderby'                => 'date',
@@ -188,14 +183,14 @@
                         $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
                         $args = array (
                             'category_name'          => 'celebrities',
-                            'posts_per_page'         => '21',
                             'paged'                  => $paged,
                             'order'                  => 'DESC',
                             'orderby'                => 'date',
                         );
 
                         // The Query
-                        $paginas = new WP_Query( $args );
+                        $paginas = new WP_Query( $args ); 
+
 
                         // The Loop
                         if ( $paginas->have_posts() ) {
@@ -222,7 +217,6 @@
                         $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
                         $args = array (
                             'category_name'          => 'sanz-y-punto',
-                            'posts_per_page'         => '21',
                             'paged'                  => $paged,
                             'order'                  => 'DESC',
                             'orderby'                => 'date',
@@ -256,7 +250,6 @@
                         $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
                         $args = array (
                             'category_name'          => 'actualidad',
-                            'posts_per_page'         => '21',
                             'paged'                  => $paged,
                             'order'                  => 'DESC',
                             'orderby'                => 'date',
@@ -290,7 +283,6 @@
                         $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
                         $args = array (
                             'category_name'          => 'artes-espectaculos',
-                            'posts_per_page'         => '21',
                             'paged'                  => $paged,
                             'order'                  => 'DESC',
                             'orderby'                => 'date',
@@ -324,7 +316,6 @@
                         $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
                         $args = array (
                             'category_name'          => 'chile',
-                            'posts_per_page'         => '21',
                             'paged'                  => $paged,
                             'order'                  => 'DESC',
                             'orderby'                => 'date',
@@ -358,7 +349,6 @@
                         $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
                         $args = array (
                             'category_name'          => 'columnas-de-la-caro',
-                            'posts_per_page'         => '21',
                             'paged'                  => $paged,
                             'order'                  => 'DESC',
                             'orderby'                => 'date',
@@ -392,7 +382,6 @@
                         $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
                         $args = array (
                             'category_name'          => 'concursos',
-                            'posts_per_page'         => '21',
                             'paged'                  => $paged,
                             'order'                  => 'DESC',
                             'orderby'                => 'date',
@@ -426,7 +415,6 @@
                         $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
                         $args = array (
                             'category_name'          => 'crianza',
-                            'posts_per_page'         => '21',
                             'paged'                  => $paged,
                             'order'                  => 'DESC',
                             'orderby'                => 'date',
@@ -460,7 +448,6 @@
                         $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
                         $args = array (
                             'category_name'          => 'eventos-y-lanzamientos',
-                            'posts_per_page'         => '21',
                             'paged'                  => $paged,
                             'order'                  => 'DESC',
                             'orderby'                => 'date',
@@ -494,7 +481,6 @@
                         $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
                         $args = array (
                             'category_name'          => 'fitness',
-                            'posts_per_page'         => '21',
                             'paged'                  => $paged,
                             'order'                  => 'DESC',
                             'orderby'                => 'date',
@@ -528,7 +514,6 @@
                         $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
                         $args = array (
                             'category_name'          => 'la-mirada-de-ellos',
-                            'posts_per_page'         => '21',
                             'paged'                  => $paged,
                             'order'                  => 'DESC',
                             'orderby'                => 'date',
@@ -562,7 +547,6 @@
                         $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
                         $args = array (
                             'category_name'          => 'la-ruta-de-la-novia',
-                            'posts_per_page'         => '21',
                             'paged'                  => $paged,
                             'order'                  => 'DESC',
                             'orderby'                => 'date',
@@ -596,7 +580,6 @@
                         $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
                         $args = array (
                             'category_name'          => 'lo-mas-reciente',
-                            'posts_per_page'         => '21',
                             'paged'                  => $paged,
                             'order'                  => 'DESC',
                             'orderby'                => 'date',
@@ -630,7 +613,6 @@
                         $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
                         $args = array (
                             'category_name'          => 'mexico',
-                            'posts_per_page'         => '21',
                             'paged'                  => $paged,
                             'order'                  => 'DESC',
                             'orderby'                => 'date',
@@ -664,7 +646,6 @@
                         $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
                         $args = array (
                             'category_name'          => 'mujer-actual',
-                            'posts_per_page'         => '21',
                             'paged'                  => $paged,
                             'order'                  => 'DESC',
                             'orderby'                => 'date',
@@ -698,7 +679,6 @@
                         $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
                         $args = array (
                             'category_name'          => 'mujeres-que-encantan',
-                            'posts_per_page'         => '21',
                             'paged'                  => $paged,
                             'order'                  => 'DESC',
                             'orderby'                => 'date',
@@ -732,7 +712,6 @@
                         $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
                         $args = array (
                             'category_name'          => 'radio-mujer-y-punto',
-                            'posts_per_page'         => '21',
                             'paged'                  => $paged,
                             'order'                  => 'DESC',
                             'orderby'                => 'date',
@@ -766,7 +745,6 @@
                         $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
                         $args = array (
                             'category_name'          => 'reviews',
-                            'posts_per_page'         => '21',
                             'paged'                  => $paged,
                             'order'                  => 'DESC',
                             'orderby'                => 'date',
@@ -800,7 +778,6 @@
                         $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
                         $args = array (
                             'category_name'          => 'ser-feliz-y-coaching',
-                            'posts_per_page'         => '21',
                             'paged'                  => $paged,
                             'order'                  => 'DESC',
                             'orderby'                => 'date',
@@ -834,7 +811,6 @@
                         $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
                         $args = array (
                             'category_name'          => 'sexualidad',
-                            'posts_per_page'         => '21',
                             'paged'                  => $paged,
                             'order'                  => 'DESC',
                             'orderby'                => 'date',
@@ -868,7 +844,6 @@
                         $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
                         $args = array (
                             'category_name'          => 'sobre-mujer-y-punto',
-                            'posts_per_page'         => '21',
                             'paged'                  => $paged,
                             'order'                  => 'DESC',
                             'orderby'                => 'date',
@@ -902,7 +877,6 @@
                         $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
                         $args = array (
                             'category_name'          => 'datos-y-panoramas',
-                            'posts_per_page'         => '21',
                             'paged'                  => $paged,
                             'order'                  => 'DESC',
                             'orderby'                => 'date',
@@ -933,10 +907,13 @@
                     }
                 ?> 
 
-				<div class="paginacion-sect">
+				<!--div class="paginacion-sect">
                     <div class="pagination">
-                        <?php html5wp_pagination(); ?>
+                        <?php // kriesi_pagination(); ?> 
                     </div>
+                </div-->
+                <div class="custom-pagination">
+                     <?php kriesi_pagination(); ?> 
                 </div>
 
 			</div>
