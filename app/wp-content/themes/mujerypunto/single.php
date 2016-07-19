@@ -34,7 +34,7 @@
 						</li>
 						<li>
 							<div class="btn-share-single">
-								<a href="javascript:twShare('<?php echo the_permalink(); ?>', '<?php the_title(); ?> - vía: @revistacosas', 520, 350)"><i class="fa fa-twitter"></i> twitter</a>
+								<a href="javascript:twShare('<?php echo the_permalink(); ?>', '<?php the_title(); ?> - vía: @mujerypunto', 520, 350)"><i class="fa fa-twitter"></i> twitter</a>
 							</div>
 						</li>
 						<li>
@@ -51,9 +51,53 @@
 				</div>
 				
 				<div class="content-post">
-					<?php the_content(); ?>
-				</div>
+					<?php
+                    $orderedListAfter= 1;
+                    $content = apply_filters('the_content', get_the_content());
+                    $content = explode("</p>", $content);
+					
+                    for ($i = 0; $i <count($content); $i++) {
+                    	if ($i == $orderedListAfter) { 
+							if(!in_category('sexualidad')){ ?>
+                    		
+								<div class="content_300x250">
+								
+									<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+									<!-- mujer y punto interior de al medio final -->
+									<ins class="adsbygoogle"
+										 style="display:block"
+										 data-ad-client="ca-pub-9947251232337904"
+										 data-ad-slot="7474583478"
+										 data-ad-format="auto"></ins>
+									<script>
+									(adsbygoogle = window.adsbygoogle || []).push({});
+									</script>
 
+								</div>
+                    <?php 
+							}
+						}
+                    	echo $content[$i] . "</p>";
+                    } ?>
+				</div>
+                
+                <?php if(!in_category('sexualidad')){ ?>
+					<div class="bottom_728x90">
+
+						<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+						<!-- mujer y punto interior final tercero -->
+						<ins class="adsbygoogle"
+							 style="display:block"
+							 data-ad-client="ca-pub-9947251232337904"
+							 data-ad-slot="8951316677"
+							 data-ad-format="auto"></ins>
+						<script>
+						(adsbygoogle = window.adsbygoogle || []).push({});
+						</script>
+
+					</div>
+				<?php } ?>
+				
 				<div class="comments-facebook">
 					<h3 class="title-insidepost">Comentarios</h3>
 					<div class="fb-comments" data-href="<?php echo the_permalink(); ?>" data-width="100%" data-numposts="5"></div>
@@ -124,9 +168,9 @@
 											<div class="btn-read-green"><a href="<?php the_permalink(); ?>">Seguir Leyendo</a></div>
 											<div class="social-share">
 												<ul>
-													<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-													<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-													<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+													<li><a href="javascript:fbShare('<?php echo the_permalink(); ?>', '<?php the_title(); ?>', '<?php the_title(); ?>', '<?php echo the_permalink(); ?>', 520, 350)"><i class="fa fa-facebook"></i></a></li>
+													<li><a  href="javascript:twShare('<?php echo the_permalink(); ?>', '<?php the_title(); ?> - vía: @mujerypunto', 520, 350)"><i class="fa fa-twitter"></i></a></li>
+													<li><a target="_blank" href="https://plus.google.com/share?url=<?php the_permalink(); ?>" onclick="window.open('https://plus.google.com/share?url=<?php the_permalink(); ?>','gplusshare','width=600,height=400,left='+(screen.availWidth/2-225)+',top='+(screen.availHeight/2-150)+'');return false;"><i class="fa fa-google-plus"></i></a></li>
 												</ul>
 											</div>
 										</div>
@@ -157,5 +201,4 @@
 	</section>
 
 	</main>
-
 <?php get_footer(); ?>

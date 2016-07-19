@@ -77,7 +77,7 @@
 				    	</div>
 			    	</div>
 			    </div>
-
+				 
 			    <div class="secction-videos">
 			    	<div class="title-bg"><div class="line-bg"></div><h2 class="title-section">Videos</h2></div>
 
@@ -103,11 +103,12 @@
                             while ( $videos->have_posts() ) {
                                 $videos->the_post();
                                 if($var==0){
-                                     get_template_part('loop-video1');
+                                     include 'loop-video1.php';
                                 }else{
                                     if($var==1){?>
                                         <div class="post-list">
-                                    <?  get_template_part('loop-video2');
+                                    <? // get_template_part('loop-video2');
+                                    	include 'loop-video2.php';
 	                                    }else if($var < $cantidad_videos_loop){
 	                                        get_template_part('loop-video2');
 	                                    }else if($var == $cantidad_videos_loop){
@@ -127,58 +128,65 @@
                 </div>  
 
 	            <script type="text/javascript">
-                    var playerss;
-                    function onYouTubePlayerAPIReady() {
-                        var players = document.querySelectorAll('.embeVideo');
-                        for (var i = 0; i < players.length; i++) {
-                            playerss = new YT.Player(players[i], {
-                                playerVars: {'controls': 0,'rel':0,'showinfo':0},
-                                events:{
-                                    'onStateChange': onPlayerStateChange,
-                                },
-                                videoId: players[i].dataset.id
-                            });
-                        }
-                    }
 
-                    function loadVideo(videoID) {
-                        if(playerss) { 
-                            jQuery(document).ready(function($){
-                                $.ajaxSetup({cache:false});
-                                
-	                                $(".post-video").click(function(){
+	            	function ytapiAdd() {
+					    if (!window['YT']) {var YT = {loading: 0,loaded: 0};}if (!window['YTConfig']) {var YTConfig = {'host': 'http://www.youtube.com'};}if (!YT.loading) {YT.loading = 1;(function(){var l = [];YT.ready = function(f) {if (YT.loaded) {f();} else {l.push(f);}};window.onYTReady = function() {YT.loaded = 1;for (var i = 0; i < l.length; i++) {try {l[i]();} catch (e) {}}};YT.setConfig = function(c) {for (var k in c) {if (c.hasOwnProperty(k)) {YTConfig[k] = c[k];}}};var a = document.createElement('script');a.type = 'text/javascript';a.id = 'www-widgetapi-script';a.src = 'https:' + '//s.ytimg.com/yts/jsbin/www-widgetapi-vfl9y3wzY/www-widgetapi.js';a.async = true;var b = document.getElementsByTagName('script')[0];b.parentNode.insertBefore(a, b);})();}
+					}
 
-	                                	//Obtengo url de imagen, fecha y titulo desde el click
-	                                    var fecha = $(this).find('.vistas').html();
-	                                    var titulo = $(this).find('.title-post').text();
+					var playerss;
+					function onYouTubePlayerAPIReady() {
+						var players = document.querySelectorAll('.embeVideo');
+						for (var i = 0; i < players.length; i++) {
+							playerss = new YT.Player(players[i], {
+								playerVars: {'controls': 0,'rel':0,'showinfo':0},
+								events:{
+									'onStateChange': onPlayerStateChange,
+								},
+								videoId: players[i].dataset.id
+							});
+						}
+					}
+
+					function loadVideo(videoID) {
+						if(playerss) { 
+							jQuery(document).ready(function($){
+								$.ajaxSetup({cache:false});
+
+									$(".post-video").click(function(){
+
+										//Obtengo url de imagen, fecha y titulo desde el click
+										var fecha = $(this).find('.vistas').html();
+										var titulo = $(this).find('.title-post').text();
 
 										//Obtengo url de imagen, fecha y titulo desde principal                                    
-	                                    var titulo_principal = $(".titulo-principal").html();
-	                                    var fecha_principal = $(".vistas-principal").html();
+										var titulo_principal = $(".titulo-principal").html();
+										var fecha_principal = $(".vistas-principal").html();
 
-	                                    //Agrego datos en principal
-	                                    $(".titulo-principal").html(titulo);
-	                                    $(".vistas-principal").html(fecha);
+										//Agrego datos en principal
+										$(".titulo-principal").html(titulo);
+										$(".vistas-principal").html(fecha);
 
-	                                    playerss.loadVideoById(videoID);
-	                                    return false;
-	                                });
-                                
-                                
-                            });
-                        }
-                    }
+										playerss.loadVideoById(videoID);
+										return false;
+									});
 
-                    function onPlayerStateChange(event) {
-                    	if(event.data === 1){          
-                            
-                        }else if(event.data === 2||event.data === 0 ){
-                            
-                        }
 
-                    }
+							});
+						}
+					}
+
+					function onPlayerStateChange(event) {
+						if(event.data === 1){          
+
+						}else if(event.data === 2||event.data === 0 ){
+
+						}
+
+					}
+
+					ytapiAdd();
                 </script>
-
+				
 		</section>
 		<!-- /section -->
 	</main>

@@ -53,6 +53,5 @@ do{
   $i++;
 }while($row=mysqli_fetch_array($result));
 $instagram_html.="";
-echo $instagram_html;
-​
+echo $instagram_html;   
 ?>

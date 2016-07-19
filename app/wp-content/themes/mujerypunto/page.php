@@ -7,32 +7,37 @@
     			<div class="title-bg"><div class="line-bg"></div><h1 class="title-section"><?php the_title(); ?></h1></div>
     			<div class="categoria-title">categoria</div>
     		</div>
-			
-			<div class="body-sidebar content-page">
+           
+            <?php if(is_page('lo-mas-reciente')) { ?>
+                <div class="body-sidebar">
+             <?php }else { ?> 
+                <div class="body-sidebar content-page">
+            <?php } ?> 			
+
                 <?php 
 
-                    if(is_page('belleza')){
+                    if(is_page('lo-mas-reciente')){
 
                         // WP_Query arguments
                         $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
                         $args = array (
-                            'category_name'          => 'belleza',
-                            'posts_per_page'         => '4',
+                            'category_name'          => 'lo-mas-reciente',
+                            'posts_per_page'         => '21',
                             'paged'                  => $paged,
                             'order'                  => 'DESC',
                             'orderby'                => 'date', 
                         ); 
 
                         // The Query
-                        $paginas = new WP_Query( $args );
+                        $wp_query = new WP_Query( $args );
 
                         // The Loop
-                        if ( $paginas->have_posts() ) {
-                            while ( $paginas->have_posts() ) {
-                                $paginas->the_post(); ?>
-                                <?php get_template_part('loop-page'); ?>
+                        if ( $wp_query->have_posts() ) {
+                            while ( $wp_query->have_posts() ) {
+                                $wp_query->the_post(); ?>
+                                <?php get_template_part('loop-tags'); ?>
                            <?php  }
-                        } else { ?>
+                        } else { ?> 
 
                             <article>
 
@@ -45,175 +50,129 @@
                         // Restore original Post Data
                         wp_reset_postdata();   
 
-                    }elseif(is_page('celebrities')){
+                    }elseif(is_page('quienes-somos')){
 
-                        // WP_Query arguments
-                        $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-                        $args = array (
-                            'category_name'          => 'celebrities',
-                            'posts_per_page'         => '10',
-                            'paged'                  => $paged,
-                            'order'                  => 'DESC',
-                            'orderby'                => 'date',
-                        );
+                       ?>
+                            <?php if (have_posts()): while (have_posts()) : the_post(); ?>
 
-                        // The Query
-                        $paginas = new WP_Query( $args );
+                            <article class="single-post" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-                        // The Loop
-                        if ( $paginas->have_posts() ) {
-                            while ( $paginas->have_posts() ) {
-                                $paginas->the_post(); ?>
-                                <?php get_template_part('loop-page'); ?>
-                           <?php  }
-                        } else { ?>
+                                <?php 
+                                    global $post, $posts;
+                                    $output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
+                                    $first_img = $matches [1] [0];
+                                ?>
+                                <div class="date-post"><?php the_time('l, j F Y'); ?></div>
 
-                            <article>
+                                <h1 class="title-post"><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h1>
 
-                                <h2><?php _e( 'Sorry, nothing to display.', 'html5blank' ); ?></h2>
+                                <div class="tag-post"><?php the_tags( __( 'Tags: ', 'html5blank' ), ', ', '<br>'); // Separated by commas with a line break at the end ?></div>
 
-                            </article>
+                                <div class="content-post">
+                                    <?php the_content(); ?>
+                                </div>
 
-                        <?php }
+                                <div class="share-single">
+                                    <ul>
+                                        <li>
+                                            <div class="btn-share-single">
+                                                <a href="javascript:fbShare('<?php echo the_permalink(); ?>', '<?php the_title(); ?>', '<?php the_title(); ?>', '<?php echo the_permalink(); ?>', 520, 350)"><i class="fa fa-facebook"></i> Facebook</a>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="btn-share-single">
+                                                <a href="javascript:twShare('<?php echo the_permalink(); ?>', '<?php the_title(); ?> - vía: @mujerypunto', 520, 350)"><i class="fa fa-twitter"></i> twitter</a>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="btn-share-single">
+                                                <a target="_blank" href="https://plus.google.com/share?url=<?php the_permalink(); ?>" onclick="window.open('https://plus.google.com/share?url=<?php the_permalink(); ?>','gplusshare','width=600,height=400,left='+(screen.availWidth/2-225)+',top='+(screen.availHeight/2-150)+'');return false;"><i class="fa fa-google-plus"></i> google plus</a>
+                                            </div>
+                                        </li>
+                                        <li class="whatsapp">
+                                            <div class="btn-share-single">
+                                                <a href="whatsapp://send?text=<?php the_title(); ?> – <?php urlencode(the_permalink()); ?>" data-action="share/whatsapp/share"><i class="fa fa-whatsapp"></i> whatsapp</a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
 
-                        // Restore original Post Data
-                        wp_reset_postdata(); 
-
-                    }elseif(is_page('moda/tendencias')){
-
-                        // WP_Query arguments
-                        $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-                        $args = array (
-                            'category_name'          => 'moda/tendencias',
-                            'posts_per_page'         => '10',
-                            'paged'                  => $paged,
-                            'order'                  => 'DESC',
-                            'orderby'                => 'date',
-                        );
-
-                        // The Query
-                        $paginas = new WP_Query( $args );
-
-                        // The Loop
-                        if ( $paginas->have_posts() ) {
-                            while ( $paginas->have_posts() ) {
-                                $paginas->the_post(); ?>
-                                <?php get_template_part('loop-page'); ?>
-                           <?php  }
-                        } else { ?>
-
-                            <article>
-
-                                <h2><?php _e( 'Sorry, nothing to display.', 'html5blank' ); ?></h2>
+                                <div class="comments-facebook">
+                                    <h3 class="title-insidepost">Comentarios</h3>
+                                    <div class="fb-comments" data-href="<?php echo the_permalink(); ?>" data-width="100%" data-numposts="5"></div>
+                                </div>
 
                             </article>
 
-                        <?php }
+                            <?php endwhile; ?>
 
-                        // Restore original Post Data
-                        wp_reset_postdata(); 
+                            <?php else: ?>
 
-                    }elseif(is_page('relaciones')){
+                            <?php endif; ?>
 
-                        // WP_Query arguments
-                        $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-                        $args = array (
-                            'category_name'          => 'relaciones',
-                            'posts_per_page'         => '10',
-                            'paged'                  => $paged,
-                            'order'                  => 'DESC',
-                            'orderby'                => 'date',
-                        );
+                       <?php
 
-                        // The Query
-                        $paginas = new WP_Query( $args );
+                    }elseif(is_page('carolina-guida-huidobro')){
 
-                        // The Loop
-                        if ( $paginas->have_posts() ) {
-                            while ( $paginas->have_posts() ) {
-                                $paginas->the_post(); ?>
-                                <?php get_template_part('loop-page'); ?>
-                           <?php  }
-                        } else { ?>
+                       ?>
+                            <?php if (have_posts()): while (have_posts()) : the_post(); ?>
 
-                            <article>
+                            <article class="single-post" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-                                <h2><?php _e( 'Sorry, nothing to display.', 'html5blank' ); ?></h2>
+                                <?php 
+                                    global $post, $posts;
+                                    $output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
+                                    $first_img = $matches [1] [0];
+                                ?>
+                                <div class="date-post"><?php the_time('l, j F Y'); ?></div>
 
-                            </article>
+                                <h1 class="title-post"><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h1>
 
-                        <?php }
+                                <div class="tag-post"><?php the_tags( __( 'Tags: ', 'html5blank' ), ', ', '<br>'); // Separated by commas with a line break at the end ?></div>
 
-                        // Restore original Post Data
-                        wp_reset_postdata(); 
+                                <div class="content-post">
+                                    <?php the_content(); ?>
+                                </div>
 
-                    }elseif(is_page('viajes')){
+                                <div class="share-single">
+                                    <ul>
+                                        <li>
+                                            <div class="btn-share-single">
+                                                <a href="javascript:fbShare('<?php echo the_permalink(); ?>', '<?php the_title(); ?>', '<?php the_title(); ?>', '<?php echo the_permalink(); ?>', 520, 350)"><i class="fa fa-facebook"></i> Facebook</a>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="btn-share-single">
+                                                <a href="javascript:twShare('<?php echo the_permalink(); ?>', '<?php the_title(); ?> - vía: @mujerypunto', 520, 350)"><i class="fa fa-twitter"></i> twitter</a>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="btn-share-single">
+                                                <a target="_blank" href="https://plus.google.com/share?url=<?php the_permalink(); ?>" onclick="window.open('https://plus.google.com/share?url=<?php the_permalink(); ?>','gplusshare','width=600,height=400,left='+(screen.availWidth/2-225)+',top='+(screen.availHeight/2-150)+'');return false;"><i class="fa fa-google-plus"></i> google plus</a>
+                                            </div>
+                                        </li>
+                                        <li class="whatsapp">
+                                            <div class="btn-share-single">
+                                                <a href="whatsapp://send?text=<?php the_title(); ?> – <?php urlencode(the_permalink()); ?>" data-action="share/whatsapp/share"><i class="fa fa-whatsapp"></i> whatsapp</a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
 
-                        // WP_Query arguments
-                        $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-                        $args = array (
-                            'category_name'          => 'viajes',
-                            'posts_per_page'         => '10',
-                            'paged'                  => $paged,
-                            'order'                  => 'DESC',
-                            'orderby'                => 'date',
-                        );
-
-                        // The Query
-                        $paginas = new WP_Query( $args );
-
-                        // The Loop
-                        if ( $paginas->have_posts() ) {
-                            while ( $paginas->have_posts() ) {
-                                $paginas->the_post(); ?>
-                                <?php get_template_part('loop-page'); ?>
-                           <?php  }
-                        } else { ?>
-
-                            <article>
-
-                                <h2><?php _e( 'Sorry, nothing to display.', 'html5blank' ); ?></h2>
+                                <div class="comments-facebook">
+                                    <h3 class="title-insidepost">Comentarios</h3>
+                                    <div class="fb-comments" data-href="<?php echo the_permalink(); ?>" data-width="100%" data-numposts="5"></div>
+                                </div>
 
                             </article>
 
-                        <?php }
+                            <?php endwhile; ?>
 
-                        // Restore original Post Data
-                        wp_reset_postdata(); 
+                            <?php else: ?>
 
-                    }elseif(is_page('vida gourmet')){
+                            <?php endif; ?>
 
-                        // WP_Query arguments
-                        $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-                        $args = array (
-                            'category_name'          => 'vida-gourmet',
-                            'posts_per_page'         => '10',
-                            'paged'                  => $paged,
-                            'order'                  => 'DESC',
-                            'orderby'                => 'date',
-                        );
-
-                        // The Query
-                        $paginas = new WP_Query( $args );
-
-                        // The Loop
-                        if ( $paginas->have_posts() ) {
-                            while ( $paginas->have_posts() ) {
-                                $paginas->the_post(); ?>
-                                <?php get_template_part('loop-page'); ?>
-                           <?php  }
-                        } else { ?>
-
-                            <article>
-
-                                <h2><?php _e( 'Sorry, nothing to display.', 'html5blank' ); ?></h2>
-
-                            </article>
-
-                        <?php }
-
-                        // Restore original Post Data
-                        wp_reset_postdata(); 
+                       <?php
 
                     }
                 ?> 
@@ -223,6 +182,7 @@
                         <?php html5wp_pagination(); ?>
                     </div>
                 </div>
+
 			</div>
 
 			<div class="sidebar">

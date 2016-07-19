@@ -1,5 +1,3 @@
-<?php query_posts('posts_per_page=21'); if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-
 <div class="tags-content">
 		
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -29,7 +27,7 @@
 								</a>
 							</li>
 							<li>
-								<a href="javascript:twShare('<?php echo the_permalink(); ?>', '<?php the_title(); ?> - vía: @revistacosas', 520, 350)">
+								<a href="javascript:twShare('<?php echo the_permalink(); ?>', '<?php the_title(); ?> - vía: @mujerypunto', 520, 350)">
 									<i class="fa fa-twitter"></i> 
 								</a>
 							</li>
@@ -49,13 +47,3 @@
 		</article>
 
 </div>
-
-<?php endwhile; ?>
-
-<?php else: ?>
-
-	<article>
-		<h2><?php _e( 'Sorry, nothing to display.', 'html5blank' ); ?></h2>
-	</article>
-
-<?php endif; ?>

@@ -29,8 +29,31 @@ jQuery(document).ready(function($){
 	$('.lazy').lazyload({
 	    effect : 'fadeIn',
 	   	failure_limit : 5
-	});  
+	});
+    function ingresa_usuario_newsletter(){
+        var nombre= $('#nombre_newsletter').val();
+        var correo= $('#correo_newsletter').val();
+        $.ajax({
+            type: 'POST',
+            url: 'wp-content/themes/mujerypunto/newsletter.php',
+            data: 'nombre='+nombre+'&correo='+correo,
+            success: function(data){
+                if(data==='exito'){
+                    $('.newsletter-footer form').hide().fadeOut(); 
+                    $('.newsletter-footer .bajada-news').replaceWith('<div class="exito-form">¡Gracias por registrarte en Mujer y Punto! Pronto recibirás más información</div>');
+                }else{
+                    $('.newsletter-footer form').hide().fadeOut(); 
+                    $('.newsletter-footer .bajada-news').replaceWith('<div class="exito-form">¡Ha ocurrido un error! vuelve a intentarlo</div>');
+                }
+            }
+        });
+        return false; 
+    }
+    $('#myp-newsletter').on('click',function(){
+        ingresa_usuario_newsletter();
+    });	
 });
+<<<<<<< HEAD
 
 (function(d, s, id) {
 	  var js, fjs = d.getElementsByTagName(s)[0];
@@ -52,6 +75,8 @@ function fbShare(url, title, descr, image, winWidth, winHeight) {
 }
 
 
+=======
+>>>>>>> 35a0160f007cbe6651b50a5005bedcd6b05c5928
 function twShare(url, title, winWidth, winHeight) {
     var winTop = (screen.height / 2) - (winHeight / 2);
     var winLeft = (screen.width / 2) - (winWidth / 2);

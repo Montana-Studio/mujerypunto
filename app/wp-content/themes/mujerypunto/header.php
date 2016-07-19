@@ -11,18 +11,40 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<?php wp_head(); ?>
+		<style>
+			.wp-caption{
+				width:100% !important;
+			}
+		</style>
 	</head>
 	<body <?php body_class(); ?>>
 
 	<div id="fb-root"></div>
-	<script>(function(d, s, id) {
-	  var js, fjs = d.getElementsByTagName(s)[0];
-	  if (d.getElementById(id)) return;
-	  js = d.createElement(s); js.id = id;
-	  js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.6&appId=828462330630430";
-	  fjs.parentNode.insertBefore(js, fjs);
-	}(document, 'script', 'facebook-jssdk'));
-	</script> 
+	<script>
+	    window.fbAsyncInit = function() {
+	        FB.init({
+	          appId      : '889409131204632',
+	          xfbml      : true,
+	          version    : 'v2.6'
+	        });
+	      };
+	    (function(d, s, id) {
+	      var js, fjs = d.getElementsByTagName(s)[0];
+	      if (d.getElementById(id)) return;
+	      js = d.createElement(s); js.id = id;
+	      js.src = "//connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v2.6";
+	      fjs.parentNode.insertBefore(js, fjs);
+	    }(document, 'script', 'facebook-jssdk'));
+	    function fbShare(url, title, descr, image, winWidth, winHeight) {
+	        var winTop = (screen.height / 2) - (winHeight / 2);    
+	        var winLeft = (screen.width / 2) - (winWidth / 2); 
+	        FB.ui({
+	            method: 'share',
+	            mobile_iframe: true,
+	            href: url,
+	          }, function(response){});
+	    }	
+   	</script> 
 		<div class="search-section">
 			<div class="search-content">
 				<form class="search" method="get" action="<?php echo home_url(); ?>" role="search">
@@ -34,27 +56,25 @@
 			</div>
 			<div class="search-bg"></div>
 		</div>
-		<?php  if(wp_is_mobile()){ ?>
-			<div class="menu-mobile-open">
-				<div class="logotipo-mujerypunto">
-					<a href="<?php echo get_site_url(); ?>">
-						<?php 
-							if(is_page('belleza')){
-								echo '<img src="' .get_template_directory_uri(). '/img/myp_logotipo-morado.png" width="150" height="150" alt="Logo mujer y punto" class="logo-mujer-y-punto">';
-							}else {
-								echo '<img src="' .get_template_directory_uri(). '/img/myp_logotipo.png" width="150" height="150" alt="Logo mujer y punto" class="logo-mujer-y-punto">'; 
-							}
-						?>  
-					</a>
-				</div> 
-				<div class="icon-search-menu search-btn">
-					<i class="fa fa-search"></i>
-				</div>
-				<div class="menu-header-mobile">
-					<?php html5blank_nav(); ?>
-				</div>
+		<div class="menu-mobile-open">
+			<div class="logotipo-mujerypunto">
+				<a href="<?php echo get_site_url(); ?>">
+					<?php 
+						if(is_page('belleza')){
+							echo '<img src="' .get_template_directory_uri(). '/img/myp_logotipo-morado.png" width="150" height="150" alt="Logo mujer y punto" class="logo-mujer-y-punto">';
+						}else {
+							echo '<img src="' .get_template_directory_uri(). '/img/myp_logotipo.png" width="150" height="150" alt="Logo mujer y punto" class="logo-mujer-y-punto">'; 
+						}
+					?>  
+				</a>
+			</div> 
+			<div class="icon-search-menu search-btn">
+				<i class="fa fa-search"></i>
 			</div>
-		<?php } ?>
+			<div class="menu-header-mobile">
+				<?php html5blank_nav(); ?>
+			</div>
+		</div>
 		<div class="wrapper move-content-out">
 
 			<header class="header clear">
@@ -95,6 +115,13 @@
 					</nav>
 
 			</header>
+			
+			<div class="header_728x90">
 
+				<ins data-revive-zoneid="5" data-revive-target="_blank" data-revive-ct0="{clickurl_enc}" data-revive-id="bc4ce818c158f7a81a7acefab7a0e36a"></ins>
+				<script async src="//bloques.mujerypunto.com/activos/www/mtnetd/asyncjs.php"></script>
+				
+			</div>
+			
 			<div class="wrapper-focus-out"></div> 
 					

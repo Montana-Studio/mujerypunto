@@ -37,9 +37,9 @@
 								<div class="footer-tags">
 									<h1><i class="fa fa-circle"></i> Mujer y Punto</h1> 
 									<ul class="list-pages"> 
-										<li><a href="#">Sobre Mujer & Punto</a></li>
-										<li><a href="#">Contacto Editorial</a></li>
-										<li><a href="#">Contacto Publicitario</a></li>
+										<li><a href="/quienes-somos">Sobre Mujer & Punto</a></li>
+										<li><a href="mailto:contacto@mujerypunto.com">Contacto Editorial</a></li>
+										<li><a href="mailto:aseulveda@mediatrends.cl?subject=Contacto comercial MyP&cc=hugo@mediatrends.cl">Contacto Publicitario</a></li>
 									</ul>
 								</div>
 							</li>
@@ -95,9 +95,27 @@
 
 		</div>
 		<!-- /wrapper -->
+        <?php 
+			if(!in_category('sexualidad')){
+		?>
+			<div style="max-width:320px;margin:0 auto;position:fixed;bottom:0;z-index:9999;left:0;right:0;">
 
+				<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+				<!-- mujer y punto mobile -->
+				<ins class="adsbygoogle"
+					 style="display:inline-block;width:320px;height:100px"
+					 data-ad-client="ca-pub-9947251232337904"
+					 data-ad-slot="3806437879"></ins>
+				<script>
+				(adsbygoogle = window.adsbygoogle || []).push({});
+				</script>
+
+			</div>
+		<?php } ?>
+        
 		<?php wp_footer(); ?>
-		<script> 
+		<script>
+            
 		    var gallerySliders = new Swiper('.swiper-gallery', {
 		        nextButton: '.next-gallery',
 		        prevButton: '.prev-gallery',
@@ -128,44 +146,17 @@
 
 			}); 
 		</script>
-		<!-- analytics -->
-		<script>
-		(function(f,i,r,e,s,h,l){i['GoogleAnalyticsObject']=s;f[s]=f[s]||function(){
-		(f[s].q=f[s].q||[]).push(arguments)},f[s].l=1*new Date();h=i.createElement(r),
-		l=i.getElementsByTagName(r)[0];h.async=1;h.src=e;l.parentNode.insertBefore(h,l)
-		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-		ga('create', 'UA-XXXXXXXX-XX', 'yourdomain.com');
-		ga('send', 'pageview');
-		</script>
+            
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-		<script>
-		jQuery(document).ready(function($){
-            
-            function ingresa_usuario_newsletter(){
-                var nombre= $('#nombre_newsletter').val();
-				var correo= $('#correo_newsletter').val();
-				$.ajax({
-					type: 'POST',
-					url: '<?php echo get_template_directory_uri(); ?>/newsletter.php',
-					data: 'nombre='+nombre+'&correo='+correo,
-					success: function(data){
-						if(data=='exito'){
-							$('.newsletter-footer form').hide().fadeOut(); 
-							$('.newsletter-footer .bajada-news').replaceWith('<div class="exito-form">¡Gracias por registrarte en Mujer y Punto! Pronto recibirás más información</div>');
-                        }else{
-							$('.newsletter-footer form').hide().fadeOut(); 
-							$('.newsletter-footer .bajada-news').replaceWith('<div class="exito-form">¡Ha ocurrido un error! vuelve a intentarlo</div>');
-						}
-					}
-				});
-				return false; 
-            }
-			$('#myp-newsletter').on('click',function(){
-				ingresa_usuario_newsletter();
-			});	
-            
-		});
-		</script>
+          ga('create', 'UA-66760107-1', 'auto');
+          ga('send', 'pageview');
+
+        </script>
 
 	</body>
 </html>

@@ -1,6 +1,25 @@
 <!-- sidebar -->
 <aside class="sidebar-content">
+    <div class="sidebar_300x250">
+		<ins data-revive-zoneid="6" data-revive-target="_blank" data-revive-ct0="{clickurl_enc}" data-revive-id="bc4ce818c158f7a81a7acefab7a0e36a"></ins>
+		<script async src="//bloques.mujerypunto.com/activos/www/mtnetd/asyncjs.php"></script>
+	</div>
+    <?php if(is_single()&&!in_category('sexualidad')){ ?> 
+        <div class="sidebar_300x250">
 
+			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+			<!-- mujer y punto interior 1 final -->
+			<ins class="adsbygoogle"
+				 style="display:inline-block;width:300px;height:250px"
+				 data-ad-client="ca-pub-9947251232337904"
+				 data-ad-slot="5997850272"></ins>
+			<script>
+			(adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
+            
+        </div>
+    <?php } ?>
+    
 	<div class="box-sidebar">
 		<div class="title-sidebar"><i class="fa fa-star-o"></i> Lo más popular</div>
 		<div class="content-sidebar">
