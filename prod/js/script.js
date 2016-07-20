@@ -53,7 +53,7 @@ jQuery(document).ready(function($){
         ingresa_usuario_newsletter();
     });	
 });
-<<<<<<< HEAD
+
 
 (function(d, s, id) {
 	  var js, fjs = d.getElementsByTagName(s)[0];
@@ -74,9 +74,6 @@ function fbShare(url, title, descr, image, winWidth, winHeight) {
 	  }, function(response){});
 }
 
-
-=======
->>>>>>> 35a0160f007cbe6651b50a5005bedcd6b05c5928
 function twShare(url, title, winWidth, winHeight) {
     var winTop = (screen.height / 2) - (winHeight / 2);
     var winLeft = (screen.width / 2) - (winWidth / 2);

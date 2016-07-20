@@ -1,46 +1,5 @@
 <?php
-/*
-<div id="post-<?php the_ID(); ?>" <?php post_class('post-video-principal'); ?>>
-    <div> 
-        <div class="embeVideo" data-id="<?php the_excerpt(); ?>">
-
-        </div>
-        <div class="content-post">
-            <div class="post-inside">
-                <div class="video-info">
-                    <div class="vistas-principal"><i class="fa fa-clock-o"></i> <?php the_time('j F Y'); ?></div>
-                </div>
-                <div class="social-share">
-                    <ul>
-                        <li><a href="javascript:fbShare('<?php echo the_permalink(); ?>', '<?php the_title(); ?>', '<?php the_title(); ?>', '<?php echo the_permalink(); ?>', 520, 350)"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="javascript:twShare('<?php echo the_permalink(); ?>', '<?php the_title(); ?> - vía: @mujerypunto', 520, 350)"><i class="fa fa-twitter"></i></a></li>
-                        <li><a target="_blank" href="https://plus.google.com/share?url=<?php the_permalink(); ?>" onclick="window.open('https://plus.google.com/share?url=<?php the_permalink(); ?>','gplusshare','width=600,height=400,left='+(screen.availWidth/2-225)+',top='+(screen.availHeight/2-150)+'');return false;"><i class="fa fa-google-plus"></i></a></li>
-                        <li class="whatsapp">
-                            <?php $title = strtolower(str_replace(' ', '-', the_title('', '', false))) ?>
-                            <a href="whatsapp://send?text=<?php echo $title; ?>-<?php urlencode(the_permalink()); ?>" data-action="share/whatsapp/share" data-href="http://69.64.43.207/~mujerypunto"><i class="fa fa-whatsapp"></i></a>
-                        </li>
-                    </ul>
-                </div>
-                <a href="<?php the_permalink(); ?>">
-                    <h2 class="titulo-principal">
-                        <?php 
-                            if (strlen($post->post_title) > 55) {
-
-                                echo substr(the_title($before = '', $after = '', FALSE), 0, 35) . '...';
-
-                            } else {
-                                the_title();
-                        }?>
-                    </h2>
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-<?php
+//Loop Video 1 (incluye los tres siguientes posts)
 class  YoutubeVideos{
     var $url_api_v3 = 'https://www.googleapis.com/youtube/v3/';
     var $videos = array();
@@ -87,58 +46,98 @@ class  YoutubeVideos{
         }
     }
 }
- 
     //configuracion
     $key = 'AIzaSyDBMZsybp7GcJdmqdhgGDn-jRkGo9jyD-c';
     $channelId = 'UC5BJDXtQyzTZzkOXfTzPgrQ';
      
     $misVideos = new YoutubeVideos;
-    $videos= $misVideos->getChannelVideos($key,$channelId );
-     
-    //echo '<pre>';
+    $videos= $misVideos->getChannelVideos($key,$channelId ); 
     $contador = 0;
-    foreach ($videos as $video) {
+    foreach ($videos as $video) { 
       $contador++;
-      if($contador==1){?>
-      <div class="post-video-principal">
+      $url = 'https://www.youtube.com/watch?v='.$video[0];
+      if($contador==1){
+      $dia = substr($video[4], 8,2);
+      $anio = substr($video[4], 0,4);
+      $mes = substr($video[4], 5,2);
+      $fecha = $dia."-".$mes."-".$anio;
+      $titulo = trim($video[1]);
+      ?>
+      <div id="<?php echo $video[0]; ?>" class="post-video-principal" >
         <div> 
-            <div class="embeVideo" data-id="<?php the_excerpt(); ?>">
-
-            </div>
+            <div class="embeVideo" data-id="<?php echo $video[0]; ?>"></div>
             <div class="content-post">
                 <div class="post-inside">
                     <div class="video-info">
-                        <div class="vistas-principal"><i class="fa fa-clock-o"></i> <?php echo substr($video[4], 0, 10) ?></div>
+                        <div class="vistas-principal"><i class="fa fa-clock-o"></i> <?php echo $fecha; ?></div>
                     </div>
                     <div class="social-share">
                         <ul>
-                            <li><a href="javascript:fbShare('<?php echo the_permalink(); ?>', '<?php echo $video[1]; ?>', '<?php echo $video[1]; ?>', '<?php echo the_permalink(); ?>', 520, 350)"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="javascript:twShare('<?php echo the_permalink(); ?>', '<?php echo $video[1]; ?> - vía: @mujerypunto', 520, 350)"><i class="fa fa-twitter"></i></a></li>
-                            <li><a target="_blank" href="https://plus.google.com/share?url=<?php the_permalink(); ?>" onclick="window.open('https://plus.google.com/share?url=<?php the_permalink(); ?>','gplusshare','width=600,height=400,left='+(screen.availWidth/2-225)+',top='+(screen.availHeight/2-150)+'');return false;"><i class="fa fa-google-plus"></i></a></li>
+                            <li><a href="javascript:fbShare('<?php echo $url; ?>', '<?php echo $titulo; ?>', '<?php echo $titulo; ?>', '<?php echo $url; ?>', 520, 350)"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="javascript:twShare('<?php echo $url; ?>', '<?php echo $titulo; ?> - vía: @mujerypunto', 520, 350)"><i class="fa fa-twitter"></i></a></li>
+                            <li><a target="_blank" href="https://plus.google.com/share?url=<?php echo $url; ?>" onclick="window.open('https://plus.google.com/share?url=<?php $url; ?>','gplusshare','width=600,height=400,left='+(screen.availWidth/2-225)+',top='+(screen.availHeight/2-150)+'');return false;"><i class="fa fa-google-plus"></i></a></li>
                             <li class="whatsapp">
-                                <?php $title = strtolower(str_replace(' ', '-', the_title('', '', false))) ?>
-                                <a href="whatsapp://send?text=<?php echo $title; ?>-<?php urlencode(the_permalink()); ?>" data-action="share/whatsapp/share" data-href="http://69.64.43.207/~mujerypunto"><i class="fa fa-whatsapp"></i></a>
+                                <?php $title = strtolower(str_replace(' ', '-', trim($titulo))) ?>
+                                <a href="whatsapp://send?text=<?php echo $title; ?>-<?php urlencode($url); ?>" data-action="share/whatsapp/share" data-href="http://69.64.43.207/~mujerypunto"><i class="fa fa-whatsapp"></i></a>
                             </li>
                         </ul>
                     </div>
-                    <a href="<?php the_permalink(); ?>">
+                    <?php /*<a href="<?php echo $url ?>"> */?>
                         <h2 class="titulo-principal">
-                            <?php 
-                                if (strlen($post->post_title) > 55) {
 
-                                    echo substr(the_title($before = '', $after = '', FALSE), 0, 35) . '...';
-
-                                } else {
-                                   echo $video[1];
-                            }?>
+                            <?php echo $titulo; ?>
                         </h2>
                     </a>
                 </div>
             </div>
+             
         </div>
     </div>
   
-<?php }
+ <?php }else{ 
+            if($contador<5){
+
+                  $dia = substr($video[4], 8,2);
+                  $anio = substr($video[4], 0,4);
+                  $mes = substr($video[4], 5,2);
+                  $fecha = $dia."-".$mes."-".$anio;
+                  $titulo = trim($video[1]);
+              ?>
+                <div class="post-list">
+                    <div id="<?php echo $video[0]; ?>" class="post-video video-galeria type-video-galeria status-publish hentry" onclick="loadVideo('<?php echo $video[0]; ?>')">
+                        <div class="content-img"> 
+                            <img src="<?php echo $video[3]['url']; ?>">
+                        </div>
+                        <div class="content-post">
+                            <div class="post-inside">
+                                <div class="video-info">
+                                    <div class="video_url">
+                                        <p value="http://img.youtube.com/vi/<?php echo $video[0]; ?>/0.jpg"></p>
+                                    </div>
+                                    <div class="vistas"><i class="fa fa-clock-o"></i><?php echo $fecha; ?></div>
+                                    <div class="social-share">
+                                        <ul>
+                                            <li><a href="javascript:fbShare('<?php echo $url; ?>', '<?php echo $titulo; ?>', '<?php echo $titulo; ?>', '<?php echo $url; ?>', 520, 350)"><i class="fa fa-facebook"></i></a></li>
+                                            <li><a href="javascript:twShare('<?php echo $url; ?>', '<?php echo $titulo; ?> - vía: @mujerypunto', 520, 350)"><i class="fa fa-twitter"></i></a></li>
+                                            <li><a target="_blank" href="https://plus.google.com/share?url=<?php echo $url; ?>" onclick="window.open('https://plus.google.com/share?url=<?php $url; ?>','gplusshare','width=600,height=400,left='+(screen.availWidth/2-225)+',top='+(screen.availHeight/2-150)+'');return false;"><i class="fa fa-google-plus"></i></a></li>
+                                            <li class="whatsapp">
+                                                <?php $title = strtolower(str_replace(' ', '-', trim($titulo))) ?>
+                                                <a href="whatsapp://send?text=<?php echo $title; ?>-<?php urlencode($url); ?>" data-action="share/whatsapp/share" data-href="http://69.64.43.207/~mujerypunto"><i class="fa fa-whatsapp"></i></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <h2 class="title-post">
+                                    <?php echo $video[1]; ?>
+                                </h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+    
+<?php    }
+    }
     }
 ?>
-*/ ?>
