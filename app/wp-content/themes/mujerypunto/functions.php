@@ -594,7 +594,7 @@ add_action( 'wp_head', 'wpb_track_post_views');
 // POST POR BUSQUEDA: 12
 function limit_posts_per_archive_page() {
     if ( is_search() ) {
-        set_query_var('posts_per_archive_page', 18);
+        set_query_var('posts_per_archive_page', 12);
     }
 }
 add_filter('pre_get_posts', 'limit_posts_per_archive_page');
@@ -637,15 +637,19 @@ function kriesi_pagination($pages = '', $range = 4)
      }
 }
 
-add_filter('pre_get_posts', 'posts_in_category');
+
+
+
 
 function posts_in_category($query){
-    if ($query->is_category) {
+    if ($query->is_category()) {
         if (is_category()) {
             $query->set('posts_per_archive_page', 12);
         }
     }
-} 
+}
+
+add_filter('pre_get_posts', 'posts_in_category');
 
 /*add_filter('the_content', 'put_thumbnail_in_posting');
 function put_thumbnail_in_posting($content) {

@@ -121,7 +121,7 @@
 			@include omega();
 			font:{family:$second_font;size:14px;}
 			line-height: 23px;
-			text:{align:left;}
+			//text:{align:left;}
 			color:$gray_2;
 			@include media($notebook) {
 				padding:0;
@@ -149,7 +149,7 @@
 			img {
 				max-width: 100%;
 				height: auto;
-				display: block;
+				//display: block;
 			}
 			iframe{
 				max-width: 100%;
