@@ -53,6 +53,27 @@ jQuery(document).ready(function($){
         ingresa_usuario_newsletter();
     });	
 });
+
+
+(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.5&appId=932994110103491";
+	  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+
+
+function fbShare(url, title, descr, image, winWidth, winHeight) {
+	var winTop = (screen.height / 2) - (winHeight / 2);    
+	var winLeft = (screen.width / 2) - (winWidth / 2); 
+    FB.ui({
+	    method: 'share',
+	    mobile_iframe: true,
+	    href: 'https://www.facebook.com/dialog/share?s=100&app_id=932994110103491&display=popup&title='+title+'&summary='+title+'&href='+url+'&pimages[0]='+image+'',
+	  }, function(response){});
+}
+
 function twShare(url, title, winWidth, winHeight) {
     var winTop = (screen.height / 2) - (winHeight / 2);
     var winLeft = (screen.width / 2) - (winWidth / 2);

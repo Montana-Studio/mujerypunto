@@ -77,56 +77,21 @@
 				    	</div>
 			    	</div>
 			    </div>
-				<?php /* 
+
 			    <div class="secction-videos">
 			    	<div class="title-bg"><div class="line-bg"></div><h2 class="title-section">Videos</h2></div>
-
-                    <?php 
-                        $args = array (
-                            'post_type'              => 'video-galeria',
-                            'order'                  => 'DESC',
-                            'orderby'                => 'date',
-                        );
-                        $args2 = array (
-                            'post_type'              => 'video-galeria',
-                            'order'                  => 'DESC',
-                            'orderby'                => 'date',
-                        );
-                        // The Query
-                        $videos = new WP_Query( $args );
-                        $videos2 = new WP_Query( $args2 );
-                        // The Loop
-                        if ( $videos->have_posts() ) {
-                            $cantidad_videos =$videos->post_count;
-                            $cantidad_videos_loop = $cantidad_videos - 1; 
-                            $var=0;
-                            while ( $videos->have_posts() ) {
-                                $videos->the_post();
-                                if($var==0){
-                                     get_template_part('loop-video1');
-                                }else{
-                                    if($var==1){?>
-                                        <div class="post-list">
-                                    <?  get_template_part('loop-video2');
-	                                    }else if($var < $cantidad_videos_loop){
-	                                        get_template_part('loop-video2');
-	                                    }else if($var == $cantidad_videos_loop){
-	                                        get_template_part('loop-video2'); ?>
-	                                    </div>
-	                                <? }  
-                                }
-                               $var++;
-                                
-                            }
-                        } else {
-                            // no posts found
-                        }
-                        // Restore original Post Data
-                        wp_reset_postdata();
-	                ?>
+                    <?php                get_template_part('loop-video1'); ?>
+                    <?php//                get_template_part('loop-video1'); ?>
+					
+                    
                 </div>  
 
 	            <script type="text/javascript">
+
+	            	function ytapiAdd() {
+					    if (!window['YT']) {var YT = {loading: 0,loaded: 0};}if (!window['YTConfig']) {var YTConfig = {'host': 'http://www.youtube.com'};}if (!YT.loading) {YT.loading = 1;(function(){var l = [];YT.ready = function(f) {if (YT.loaded) {f();} else {l.push(f);}};window.onYTReady = function() {YT.loaded = 1;for (var i = 0; i < l.length; i++) {try {l[i]();} catch (e) {}}};YT.setConfig = function(c) {for (var k in c) {if (c.hasOwnProperty(k)) {YTConfig[k] = c[k];}}};var a = document.createElement('script');a.type = 'text/javascript';a.id = 'www-widgetapi-script';a.src = 'https:' + '//s.ytimg.com/yts/jsbin/www-widgetapi-vfl9y3wzY/www-widgetapi.js';a.async = true;var b = document.getElementsByTagName('script')[0];b.parentNode.insertBefore(a, b);})();}
+					}
+
 					var playerss;
 					function onYouTubePlayerAPIReady() {
 						var players = document.querySelectorAll('.embeVideo');
@@ -139,15 +104,13 @@
 								videoId: players[i].dataset.id
 							});
 						}
-					}
 
-					function loadVideo(videoID) {
-						if(playerss) { 
+						if(playerss) {  
 							jQuery(document).ready(function($){
 								$.ajaxSetup({cache:false});
 
 									$(".post-video").click(function(){
-
+										
 										//Obtengo url de imagen, fecha y titulo desde el click
 										var fecha = $(this).find('.vistas').html();
 										var titulo = $(this).find('.title-post').text();
@@ -159,9 +122,8 @@
 										//Agrego datos en principal
 										$(".titulo-principal").html(titulo);
 										$(".vistas-principal").html(fecha);
-
-										playerss.loadVideoById(videoID);
-										return false;
+										 										
+										//return false;
 									});
 
 
@@ -169,16 +131,25 @@
 						}
 					}
 
+					function loadVideo(videoID) {
+						playerss.loadVideoById(videoID);
+					}
+
+
 					function onPlayerStateChange(event) {
 						if(event.data === 1){          
-
+							
 						}else if(event.data === 2||event.data === 0 ){
+							
 
 						}
 
 					}
+
+					ytapiAdd();
+					//onYouTubePlayerAPIReady();
                 </script>
-				*/?>
+				
 		</section>
 		<!-- /section -->
 	</main>
