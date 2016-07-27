@@ -1,6 +1,7 @@
 <?php get_header(); ?>
 
 	<main role="main">
+		<!-- section -->
 		<section class="contentAll">
 
 			<div class="header-page">
@@ -9,18 +10,15 @@
 			</div>
 
 			<div class="body-sidebar">
-
 				<?php get_template_part('loop-tags'); ?>
 
 				<?php get_template_part('pagination'); ?>
-
 			</div>
 
 			<div class="sidebar">	
 				<?php get_sidebar(); ?>
 			</div>
-
 		</section>
+		<!-- /section -->
 	</main>
-
 <?php get_footer(); ?>

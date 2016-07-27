@@ -12,11 +12,9 @@
 
 				<?php get_template_part('loop-search'); ?> 
 
-				<div class="custom-pagination">
-                     <?php kriesi_pagination(); ?> 
-                </div>
-
-				<?php //get_template_part('pagination'); ?>
+				<div class="pagination">
+					<?php get_template_part('pagination'); ?>
+				</div>
 
 			</div>
 

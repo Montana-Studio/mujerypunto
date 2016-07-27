@@ -1,6 +1,7 @@
 <div class="tags-content content-search">
 
-	<?php if (have_posts()): while (have_posts()) : the_post(); ?>
+	 <?php $query = new WP_Query( 'posts_per_page=12' ); ?>
+ 	<?php if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
 
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
