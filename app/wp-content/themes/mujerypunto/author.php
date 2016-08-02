@@ -2,76 +2,98 @@
 
 	<main role="main">
 		<!-- section -->
-		<section>
+		<section class="contentAll">
 
-		<?php if (have_posts()): the_post(); ?>
+			<div class="header-page">
+				<div class="title-bg"><div class="line-bg"></div><h1 class="title-section"><?php _e( 'Archives', 'html5blank' ); ?></h1></div>
+				<div class="categoria-title">Archive</div>
+			</div>
 
-			<h1><?php _e( 'Author Archives for ', 'html5blank' ); echo get_the_author(); ?></h1>
+			<div class="body-sidebar">
+				
+				
+				<?php if (have_posts()): the_post(); ?>
 
-		<?php if ( get_the_author_meta('description')) : ?>
+					<h1><?php _e( 'Author Archives for ', 'html5blank' ); echo get_the_author(); ?></h1>
 
-		<?php echo get_avatar(get_the_author_meta('user_email')); ?>
+				<?php if ( get_the_author_meta('description')) : ?>
 
-			<h2><?php _e( 'About ', 'html5blank' ); echo get_the_author() ; ?></h2>
+				<?php echo get_avatar(get_the_author_meta('user_email')); ?>
 
-			<?php echo wpautop( get_the_author_meta('description') ); ?>
+					<h2><?php _e( 'About ', 'html5blank' ); echo get_the_author() ; ?></h2>
 
-		<?php endif; ?>
+					<?php echo wpautop( get_the_author_meta('description') ); ?>
 
-		<?php rewind_posts(); while (have_posts()) : the_post(); ?>
-
-			<!-- article -->
-			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
-				<!-- post thumbnail -->
-				<?php if ( has_post_thumbnail()) : // Check if Thumbnail exists ?>
-					<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-						<?php the_post_thumbnail(array(120,120)); // Declare pixel size you need inside the array ?>
-					</a>
 				<?php endif; ?>
-				<!-- /post thumbnail -->
 
-				<!-- post title -->
-				<h2>
-					<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
-				</h2>
-				<!-- /Post title -->
+				<?php rewind_posts(); while (have_posts()) : the_post(); ?>
+					<div class="tags-content">
+						<!-- article -->
+						<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-				<!-- post details -->
-				<span class="date"><?php the_time('F j, Y'); ?> <?php the_time('g:i a'); ?></span>
-				<span class="author"><?php _e( 'Published by', 'html5blank' ); ?> <?php the_author_posts_link(); ?></span>
-				<span class="comments"><?php comments_popup_link( __( 'Leave your thoughts', 'html5blank' ), __( '1 Comment', 'html5blank' ), __( '% Comments', 'html5blank' )); ?></span>
-				<!-- /post details -->
+							<div class="imagen-contentpost">
+								<a href="<?php the_permalink(); ?>">
+								<div class="lazy imagen-post" data-original="<?php the_post_thumbnail_url(300,300); ?>" style="background-image: url('<?php echo get_bloginfo('template_directory');?>/img/grey.gif');">
+									<div class="bg-contentpost"></div>
+								</div>	
+								</a>
+							</div>
+							<div class="content-post">
+								<div class="post-inside">
+									<div class="category-post"><?php foreach((get_the_category()) as $category) { echo $category->cat_name . ' / '; } ?></div>
+									<span class="date-post"><?php the_time('l, j F Y'); ?></span>
+									<a href="<?php the_permalink(); ?>"><h2 class="title-post"><?php $thetitle = $post->post_title; $getlength = strlen($thetitle); $thelength = 40;
+										echo substr($thetitle, 0, $thelength);
+										if ($getlength > $thelength) echo "...";
+										?></h2></a> 
+									<div class="btn-read-green"><a href="<?php the_permalink(); ?>">Seguir Leyendo</a></div>
+									<div class="social-share">
+										<ul>
+											<li>
+												<a href="javascript:fbShare('<?php echo the_permalink(); ?>', '<?php the_title(); ?>', '<?php the_title(); ?>', '<?php echo the_permalink(); ?>', 520, 350)">
+													<i class="fa fa-facebook"></i> 
+												</a>
+											</li>
+											<li>
+												<a href="javascript:twShare('<?php echo the_permalink(); ?>', '<?php the_title(); ?> - vía: @mujerypunto', 520, 350)">
+													<i class="fa fa-twitter"></i> 
+												</a>
+											</li>
+											<li><a target="_blank" href="https://plus.google.com/share?url=<?php the_permalink(); ?>" onclick="window.open('https://plus.google.com/share?url=<?php the_permalink(); ?>','gplusshare','width=600,height=400,left='+(screen.availWidth/2-225)+',top='+(screen.availHeight/2-150)+'');return false;">
+													<i class="fa fa-google-plus"></i> 
+												</a>
+											</li>
+											<li class="whatsapp">
+												<?php $title = strtolower(str_replace(' ', '-', the_title('', '', false))) ?>
+												<a href="whatsapp://send?text=<?php echo $title; ?>-<?php urlencode(the_permalink()); ?>" data-action="share/whatsapp/share" data-href="http://69.64.43.207/~mujerypunto"><i class="fa fa-whatsapp"></i></a>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
 
-				<?php html5wp_excerpt('html5wp_index'); // Build your custom callback length in functions.php ?>
+						</article>
+						<!-- /article -->
+					</div>
+				<?php endwhile; ?>
+				
+				<?php else: ?>
 
-				<br class="clear">
+					<!-- article -->
+					<article>
+						<h2><?php _e( 'Sorry, nothing to display.', 'html5blank' ); ?></h2>
+					</article>
+					<!-- /article -->
 
-				<?php edit_post_link(); ?>
+				<?php endif; ?>
 
-			</article>
-			<!-- /article -->
+				<?php get_template_part('pagination'); ?>
+			</div>
 
-		<?php endwhile; ?>
-
-		<?php else: ?>
-
-			<!-- article -->
-			<article>
-
-				<h2><?php _e( 'Sorry, nothing to display.', 'html5blank' ); ?></h2>
-
-			</article>
-			<!-- /article -->
-
-		<?php endif; ?>
-
-			<?php get_template_part('pagination'); ?>
-
+			<div class="sidebar">	
+				<?php get_sidebar(); ?>
+			</div>
 		</section>
 		<!-- /section -->
 	</main>
-
-<?php get_sidebar(); ?>
-
 <?php get_footer(); ?>
