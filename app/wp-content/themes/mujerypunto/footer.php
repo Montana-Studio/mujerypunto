@@ -106,7 +106,6 @@
 		<?php } ?>
         
 		<?php wp_footer(); ?>
-		
 		<?php 
 			if(is_single()&&!in_category('sexualidad')){
 		?>
@@ -174,7 +173,6 @@
 
 			}); 
 		</script>
-
 		<?php 
 			if(wp_is_mobile()){
 		?>

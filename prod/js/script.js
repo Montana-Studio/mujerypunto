@@ -52,6 +52,11 @@ jQuery(document).ready(function($){
     $('#myp-newsletter').on('click',function(){
         ingresa_usuario_newsletter();
     });	
+	
+	window.addEventListener('load', function(){
+		$('#tw-timeline').load('wp-content/themes/mujerypunto/tw-timeline.html',function(){});
+		$('#fb-timeline').load('wp-content/themes/mujerypunto/fb-timeline.html',function(){});
+	});
 });
 
 

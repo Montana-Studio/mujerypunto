@@ -40,9 +40,9 @@
 				display: inline-block;
 			}
 			.fb-page {
-				@include span-columns(12);
-				@include omega();
-				text-align: center;
+				margin: 0 auto;
+				width:300px;
+				display: block;
 			}
 		}
 		.title-sidebar {

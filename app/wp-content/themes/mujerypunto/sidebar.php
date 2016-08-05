@@ -22,23 +22,22 @@
 				if(is_page('belleza')){
 					echo 'belleza';
 				}else {
-					echo '<div class="fb-page" data-href="https://www.facebook.com/mujerypunto" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"></div>';
+					echo '<div id="fb-timeline"></div>';
 				}
 			?> 	 
 		</div>
+		<?php /*
 		<div class="box-sidebar twitter">
 			<div class="title-sidebar"><i class="fa fa-twitter"></i> Tweets</div>
-			<div class="content-tweet">
-				<a class="twitter-timeline"  href="https://twitter.com/mujerypunto" data-chrome="nofooter noheader" height="400"></a>
-	            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-			</div>
+			<div id="tw-timeline" class="content-tweet"></div>
 		</div>
+		*/ ?>
 
 		<div class="box-sidebar instagram">
 			<div class="title-sidebar"><i class="fa fa-instagram"></i> Instagram</div>
 			<div class="list-instagram ">
 				<ul>
-					<?php //get_template_part('instagram'); ?> 
+					<?php get_template_part('instagram'); ?> 
 				</ul>
 			</div>	 
 		</div>
