@@ -39,7 +39,7 @@
 									<ul class="list-pages"> 
 										<li><a href="<?php echo site_url(); ?>/quienes-somos">Sobre Mujer & Punto</a></li>
 										<li><a href="mailto:contacto@mujerypunto.com">Contacto Editorial</a></li>
-										<li><a href="mailto:aseulveda@mediatrends.cl?subject=Contacto comercial MyP&cc=hugo@mediatrends.cl">Contacto Publicitario</a></li>
+										<li><a href="mailto:asepulveda@mediatrends.cl?subject=Contacto comercial MyP&cc=hugo@mediatrends.cl">Contacto Publicitario</a></li>
 									</ul>
 								</div>
 							</li>
@@ -184,6 +184,5 @@
 		<?php		
 			}
 		?>
-		
 	</body>
 </html>

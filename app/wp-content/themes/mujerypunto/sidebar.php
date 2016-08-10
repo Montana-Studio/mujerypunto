@@ -18,6 +18,8 @@
 		</div>
 
 		<div class="facebook-sidebar">
+			
+		
 			<?php 
 				if(is_page('belleza')){
 					echo 'belleza';
@@ -25,6 +27,14 @@
 					echo '<div id="fb-timeline"></div>';
 				}
 			?> 	 
+			
+			<script>
+				jQuery(document).ready(function($){
+					window.addEventListener('load', function(){
+						$('#fb-timeline').load('<?php echo get_template_directory_uri(); ?>/fb-timeline.html',function(){});
+					});
+				});
+			</script>
 		</div>
 		<?php /*
 		<div class="box-sidebar twitter">
@@ -68,31 +78,31 @@
 			<script async src="//bloques.mujerypunto.com/activos/www/mtnetd/asyncjs.php"></script>
 			
 		</div>
-<?php /*
-		<div class="sidebar-box-one contacto-banner ">
+
+		<div class="sidebar-box-one contacto-banner">
 			<div class="inside-contact contacto-editorial">
 				<div class="title-contact">
 					<div class="title-one">Contacto</div>
 					<div class="title-two">Editorial</div>
 				</div>
 				<div class="button-contact">
-					<a href="mailto:contacto@mujerypunto.com">Contacto</a>
+					<a href="mailto:contacto@mujerypunto.com">contacto@mujerypunto.com</a>
 				</div>
 			</div>	
 		</div>
 
-		<div class="sidebar-box-one contacto-banner ">
+		<div class="sidebar-box-one contacto-banner">
 			<div class="inside-contact contacto-publicitario">
-				<div class="button-contact">
-					<a href="mailto:aseulveda@mediatrends.cl?subject=Contacto comercial MyP&cc=hugo@mediatrends.cl">Contacto</a>
-				</div>
 				<div class="title-contact">
 					<div class="title-one">Contacto</div>
 					<div class="title-two">Publicitario</div>
-				</div>	
+				</div>
+				<div class="button-contact">
+					<a href="mailto:asepulveda@mediatrends.cl?subject=Contacto comercial MyP&cc=hugo@mediatrends.cl">asepulveda@mediatrends.cl</a>
+				</div>
 			</div>
 		</div>
-*/ ?>
+
    <?php } ?>
     
 </aside>

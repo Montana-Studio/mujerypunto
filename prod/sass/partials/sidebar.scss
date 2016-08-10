@@ -189,19 +189,17 @@
 				@include span-columns(12);
 				@include omega();
 				.inside-contact {
-					width: 300px;
+					width:100%;
 					height: 90px; 
 					display: table;
-					margin:{left:auto;right:auto;}
+					@include pad(10px 20px);
 					.title-contact {
-						@include span-columns(6);
-						@include omega();
-						padding:{left:20px;}
 						color:$white;
 						font:{size:1.2em;}
 						display: table-cell;
 						vertical-align: middle;
 						float: initial;
+						margin:{bottom:5px;}
 						.title-one {
 							font:{family:$second_font;weight:bold;}
 							text:{transform:uppercase;}
@@ -210,17 +208,17 @@
 							font:{family:$regular_font;size:0.8em;}
 							letter-spacing: 1px;
 						}
+						@include media($mobile){
+							@include span-columns(12);
+						}
 					}
 					.button-contact {
-						@include span-columns(6);
-						@include omega();
 						display: table-cell;
 						vertical-align: middle;
 						float: initial;
 						text:{align:center;}
-						padding:{left:10px;right:10px;}
 						a {
-							font:{family:$second_font;size:0.9em;}
+							font:{family:$second_font;size:em(13px);}
 							color:$white;
 							border:1px solid $white;
 							padding:6px 15px;
@@ -231,15 +229,35 @@
 								color:$green-logo;
 							}
 						}
+						@include media($mobile){
+							@include span-columns(12);
+						}
 					}	
 					&.contacto-editorial {
-						background:url('../img/banner-contacto-editorial.jpg');
+						background:{image:url('../img/banner-contacto-editorial.jpg');size:cover;}
+						.title-contact{
+							@include direction-context(left-to-right){
+								@include span-columns(12);								
+							}
+						}
+						.button-contact{
+							@include direction-context(left-to-right){
+								@include span-columns(12);								
+							}
+						}
 					}	
 					&.contacto-publicitario {
-						background:url('../img/banner-contacto-publicitario.jpg');
-						.title-contact {
+						background:{image:url('../img/banner-contacto-publicitario.jpg');size:cover;}
+						.title-contact{
 							text:{align:right;}
-							padding:{left:0;right:20px;}
+							@include direction-context(right-to-left){
+								@include span-columns(12);								
+							}
+						}
+						.button-contact{
+							@include direction-context(right-to-left){
+								@include span-columns(12);								
+							}
 						}
 					}
 				}
