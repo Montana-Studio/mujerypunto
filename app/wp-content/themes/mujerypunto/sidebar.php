@@ -47,7 +47,7 @@
 			<div class="title-sidebar"><i class="fa fa-instagram"></i> Instagram</div>
 			<div class="list-instagram ">
 				<ul>
-					<?php get_template_part('instagram'); ?> 
+					<?php //get_template_part('instagram'); ?> 
 				</ul>
 			</div>	 
 		</div>

@@ -54,6 +54,11 @@
 					<?php
 						the_content();
 					?>
+					<div class="degradeload">
+						
+						<div class="btn-readcontiniuos" id="readMorebtn" onClick="ga('send', 'event', 'Botón', 'click');">Leer articulo completo</div>
+						
+					</div>
 				</div>
 				
 				<div class="comments-facebook">

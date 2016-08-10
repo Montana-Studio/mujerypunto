@@ -53,6 +53,15 @@ jQuery(document).ready(function($){
         ingresa_usuario_newsletter();
     });	
 	
+	$('#readMorebtn').on('click', function(){
+		
+		$('#loadAdsContent').css({
+			'max-height':'inherit',
+			'overflow':'inherit'
+		});
+		$('#loadAdsContent .degradeload').hide();
+	});
+	
 });
 
 
