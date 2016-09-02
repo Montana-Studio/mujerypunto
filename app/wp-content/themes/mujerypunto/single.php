@@ -29,22 +29,22 @@
 					<ul>
 						<li>
 							<div class="btn-share-single">
-								<a href="javascript:fbShare('<?php echo the_permalink(); ?>', '<?php the_title(); ?>', '<?php the_title(); ?>', '<?php echo the_permalink(); ?>', 520, 350)"><i class="fa fa-facebook"></i> Facebook</a>
+								<a href="javascript:fbShare('<?php echo the_permalink(); ?>', '<?php the_title(); ?>', '<?php the_title(); ?>', '<?php echo the_permalink(); ?>', 520, 350)" onClick="ga('send', 'event', 'facebook', 'share');"><i class="fa fa-facebook"></i> Facebook</a>
 							</div>
 						</li>
 						<li>
 							<div class="btn-share-single">
-								<a href="javascript:twShare('<?php echo the_permalink(); ?>', '<?php the_title(); ?> - vía: @mujerypunto', 520, 350)"><i class="fa fa-twitter"></i> twitter</a>
+								<a href="javascript:twShare('<?php echo the_permalink(); ?>', '<?php the_title(); ?> - vía: @mujerypunto', 520, 350)" onClick="ga('send', 'event', 'twitter', 'share');"><i class="fa fa-twitter"></i> twitter</a>
 							</div>
 						</li>
 						<li>
 							<div class="btn-share-single">
-								<a target="_blank" href="https://plus.google.com/share?url=<?php the_permalink(); ?>" onclick="window.open('https://plus.google.com/share?url=<?php the_permalink(); ?>','gplusshare','width=600,height=400,left='+(screen.availWidth/2-225)+',top='+(screen.availHeight/2-150)+'');return false;"><i class="fa fa-google-plus"></i> google plus</a>
+								<a target="_blank" href="https://plus.google.com/share?url=<?php the_permalink(); ?>" onclick="ga('send', 'event', 'google+', 'share');window.open('https://plus.google.com/share?url=<?php the_permalink(); ?>','gplusshare','width=600,height=400,left='+(screen.availWidth/2-225)+',top='+(screen.availHeight/2-150)+'');return false;"><i class="fa fa-google-plus"></i> google plus</a>
 							</div>
 						</li>
 						<li class="whatsapp">
 							<div class="btn-share-single">
-								<a href="whatsapp://send?text=<?php the_title(); ?> – <?php urlencode(the_permalink()); ?>" data-action="share/whatsapp/share"><i class="fa fa-whatsapp"></i> whatsapp</a>
+								<a href="whatsapp://send?text=<?php the_title(); ?> – <?php urlencode(the_permalink()); ?>" data-action="share/whatsapp/share" onClick="ga('send', 'event', 'whatsapp', 'share');"><i class="fa fa-whatsapp"></i> whatsapp</a>
 							</div>
 						</li>
 					</ul>

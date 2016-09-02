@@ -73,21 +73,19 @@ class  YoutubeVideos{
                     </div>
                     <div class="social-share">
                         <ul>
-                            <li><a href="javascript:fbShare('<?php echo $url; ?>', '<?php echo $titulo; ?>', '<?php echo $titulo; ?>', '<?php echo $url; ?>', 520, 350)"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="javascript:twShare('<?php echo $url; ?>', '<?php echo $titulo; ?> - vía: @mujerypunto', 520, 350)"><i class="fa fa-twitter"></i></a></li>
-                            <li><a target="_blank" href="https://plus.google.com/share?url=<?php echo $url; ?>" onclick="window.open('https://plus.google.com/share?url=<?php $url; ?>','gplusshare','width=600,height=400,left='+(screen.availWidth/2-225)+',top='+(screen.availHeight/2-150)+'');return false;"><i class="fa fa-google-plus"></i></a></li>
+                            <li><a href="javascript:fbShare('<?php echo $url; ?>', '<?php echo $titulo; ?>', '<?php echo $titulo; ?>', '<?php echo $url; ?>', 520, 350)" onClick="ga('send', 'event', 'facebook', 'share');"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="javascript:twShare('<?php echo $url; ?>', '<?php echo $titulo; ?> - vía: @mujerypunto', 520, 350)" onClick="ga('send', 'event', 'twitter', 'share');"><i class="fa fa-twitter"></i></a></li>
+                            <li><a target="_blank" href="https://plus.google.com/share?url=<?php echo $url; ?>" onclick="window.open('https://plus.google.com/share?url=<?php $url; ?>','gplusshare','width=600,height=400,left='+(screen.availWidth/2-225)+',top='+(screen.availHeight/2-150)+'');return false;"><i class="fa fa-google-plus" onClick="ga('send', 'event', 'google+', 'share');"></i></a></li>
                             <li class="whatsapp">
                                 <?php $title = strtolower(str_replace(' ', '-', trim($titulo))) ?>
-                                <a href="whatsapp://send?text=<?php echo $title; ?>-<?php urlencode($url); ?>" data-action="share/whatsapp/share" data-href="http://69.64.43.207/~mujerypunto"><i class="fa fa-whatsapp"></i></a>
+                                <a href="whatsapp://send?text=<?php echo $title; ?>-<?php urlencode($url); ?>" data-action="share/whatsapp/share" data-href="http://69.64.43.207/~mujerypunto" onClick="ga('send', 'event', 'whatsapp', 'share');"><i class="fa fa-whatsapp"></i></a>
                             </li>
                         </ul>
                     </div>
-                    <?php /*<a href="<?php echo $url ?>"> */?>
-                        <h2 class="titulo-principal">
+					<h2 class="titulo-principal">
 
-                            <?php echo $titulo; ?>
-                        </h2>
-                    </a>
+						<?php echo $titulo; ?>
+					</h2>
                 </div>
             </div>
              
@@ -114,23 +112,24 @@ class  YoutubeVideos{
                                     <div class="video_url">
                                         <p value="http://img.youtube.com/vi/<?php echo $video[0]; ?>/0.jpg"></p>
                                     </div>
-                                    <div class="vistas"><i class="fa fa-clock-o"></i><?php echo $fecha; ?></div>
+                                    <div class="vistas"><i class="fa fa-clock-o"></i> <?php echo $fecha; ?></div>
+                                    
+									<h2 class="title-post">
+										<?php echo $video[1]; ?>
+									</h2>
+                                    
                                     <div class="social-share">
                                         <ul>
-                                            <li><a href="javascript:fbShare('<?php echo $url; ?>', '<?php echo $titulo; ?>', '<?php echo $titulo; ?>', '<?php echo $url; ?>', 520, 350)"><i class="fa fa-facebook"></i></a></li>
-                                            <li><a href="javascript:twShare('<?php echo $url; ?>', '<?php echo $titulo; ?> - vía: @mujerypunto', 520, 350)"><i class="fa fa-twitter"></i></a></li>
-                                            <li><a target="_blank" href="https://plus.google.com/share?url=<?php echo $url; ?>" onclick="window.open('https://plus.google.com/share?url=<?php $url; ?>','gplusshare','width=600,height=400,left='+(screen.availWidth/2-225)+',top='+(screen.availHeight/2-150)+'');return false;"><i class="fa fa-google-plus"></i></a></li>
+                                            <li><a href="javascript:fbShare('<?php echo $url; ?>', '<?php echo $titulo; ?>', '<?php echo $titulo; ?>', '<?php echo $url; ?>', 520, 350)" onClick="ga('send', 'event', 'facebook', 'share');"><i class="fa fa-facebook"></i></a></li>
+                                            <li><a href="javascript:twShare('<?php echo $url; ?>', '<?php echo $titulo; ?> - vía: @mujerypunto', 520, 350)" onClick="ga('send', 'event', 'twitter', 'share');"><i class="fa fa-twitter"></i></a></li>
+                                            <li><a target="_blank" href="https://plus.google.com/share?url=<?php echo $url; ?>" onclick="ga('send', 'event', 'google+', 'share');window.open('https://plus.google.com/share?url=<?php $url; ?>','gplusshare','width=600,height=400,left='+(screen.availWidth/2-225)+',top='+(screen.availHeight/2-150)+'');return false;"><i class="fa fa-google-plus"></i></a></li>
                                             <li class="whatsapp">
                                                 <?php $title = strtolower(str_replace(' ', '-', trim($titulo))) ?>
-                                                <a href="whatsapp://send?text=<?php echo $title; ?>-<?php urlencode($url); ?>" data-action="share/whatsapp/share" data-href="http://69.64.43.207/~mujerypunto"><i class="fa fa-whatsapp"></i></a>
+                                                <a href="whatsapp://send?text=<?php echo $title; ?>-<?php urlencode($url); ?>" data-action="share/whatsapp/share" data-href="http://69.64.43.207/~mujerypunto" onClick="ga('send', 'event', 'whatsapp', 'share');"><i class="fa fa-whatsapp"></i></a>
                                             </li>
                                         </ul>
                                     </div>
                                 </div>
-                                
-                                <h2 class="title-post">
-                                    <?php echo $video[1]; ?>
-                                </h2>
                             </div>
                         </div>
                     </div>
