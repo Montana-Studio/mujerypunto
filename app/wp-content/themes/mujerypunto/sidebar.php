@@ -2,11 +2,15 @@
 <aside class="sidebar-content">
 
     <?php if(is_single()&&wp_is_mobile()) { ?>
-			
+
     <?php }else { ?>
-    
 		<div class="sidebar_300x250">
 			<ins data-revive-zoneid="6" data-revive-target="_blank" data-revive-ct0="{clickurl_enc}" data-revive-id="bc4ce818c158f7a81a7acefab7a0e36a"></ins>
+			<script async src="//bloques.mujerypunto.com/activos/www/mtnetd/asyncjs.php"></script>
+		</div>
+		
+		<div class="sidebar_300x250">
+			<ins data-revive-zoneid="13" data-revive-target="_blank" data-revive-ct0="{clickurl_enc}" data-revive-id="bc4ce818c158f7a81a7acefab7a0e36a"></ins>
 			<script async src="//bloques.mujerypunto.com/activos/www/mtnetd/asyncjs.php"></script>
 		</div>
 		
@@ -47,7 +51,7 @@
 			<div class="title-sidebar"><i class="fa fa-instagram"></i> Instagram</div>
 			<div class="list-instagram ">
 				<ul>
-					<?php //get_template_part('instagram'); ?> 
+					<?php get_template_part('instagram'); ?> 
 				</ul>
 			</div>	 
 		</div>
