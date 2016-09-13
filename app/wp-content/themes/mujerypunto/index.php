@@ -80,8 +80,7 @@
 
 			    <div class="secction-videos">
 			    	<div class="title-bg"><div class="line-bg"></div><h2 class="title-section">Videos</h2></div>
-                    <?php                get_template_part('loop-video1'); ?>
-                    <?php//                get_template_part('loop-video1'); ?>
+                    <?php get_template_part('loop-video1'); ?>
 					
                     
                 </div>  
@@ -147,7 +146,6 @@
 					}
 
 					ytapiAdd();
-					//onYouTubePlayerAPIReady();
                 </script>
 				
 		</section>

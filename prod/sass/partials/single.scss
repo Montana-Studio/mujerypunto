@@ -123,8 +123,13 @@
 			line-height: 23px;
 			//text:{align:left;}
 			color:$gray_2;
+			position: relative;
+			overflow: hidden;
+			max-height: 300px;
 			@include media($notebook) {
 				padding:0;
+				max-height: inherit;
+				overflow: inherit;
 			}
 			h2 {
 				font:{family:$regular_font;}
@@ -223,6 +228,31 @@
                     }
                 }
             }
+			.degradeload{
+				position: absolute;
+				width: 100%;
+				min-height:300px;
+				bottom: 0;
+				left:0;
+				right:0;
+				@include linear-gradient(transparent, $white);
+				.btn-readcontiniuos{
+					background:{color:$green-logo;}
+					color:$white;
+					@include pad(5px 10px);
+					position: absolute;
+					bottom: 10px;
+					left:0;
+					right:0;
+					margin: 0 auto;
+					font:{size:em(14px);}
+					text:{transform:uppercase;}
+					width:60%;
+				}
+				@include media($notebook){
+					display: none;
+				}
+			}
 		}
 		.title-insidepost {
 			font:{family:$regular_font;weight:800;style:italic;size:1.2em;}

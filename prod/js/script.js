@@ -53,18 +53,23 @@ jQuery(document).ready(function($){
         ingresa_usuario_newsletter();
     });	
 	
-	window.addEventListener('load', function(){
-		$('#tw-timeline').load('wp-content/themes/mujerypunto/tw-timeline.html',function(){});
-		$('#fb-timeline').load('wp-content/themes/mujerypunto/fb-timeline.html',function(){});
+	$('#readMorebtn').on('click', function(){
+		
+		$('#loadAdsContent').css({
+			'max-height':'inherit',
+			'overflow':'inherit'
+		});
+		$('#loadAdsContent .degradeload').hide();
 	});
+	
 });
 
 
 (function(d, s, id) {
 	  var js, fjs = d.getElementsByTagName(s)[0];
-	  if (d.getElementById(id)) return;
+	  if (d.getElementById(id)){ return; }
 	  js = d.createElement(s); js.id = id;
-	  js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.5&appId=932994110103491";
+	  js.src = '//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.5&appId=932994110103491';
 	  fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
 
@@ -72,11 +77,13 @@ jQuery(document).ready(function($){
 function fbShare(url, title, descr, image, winWidth, winHeight) {
 	var winTop = (screen.height / 2) - (winHeight / 2);    
 	var winLeft = (screen.width / 2) - (winWidth / 2); 
+	/* jshint ignore:start */
     FB.ui({
-	    method: 'share',
-	    mobile_iframe: true,
-	    href: 'https://www.facebook.com/dialog/share?s=100&app_id=932994110103491&display=popup&title='+title+'&summary='+title+'&href='+url+'&pimages[0]='+image+'',
+		method: 'share',
+		mobile_iframe: true,
+		href: 'https://www.facebook.com/dialog/share?s=100&app_id=932994110103491&display=popup&title='+title+'&summary='+title+'&href='+url+'&pimages[0]='+image+'',
 	  }, function(response){});
+	/* jshint ignore:end */
 }
 
 function twShare(url, title, winWidth, winHeight) {
