@@ -176,11 +176,8 @@
 		<?php 
 			if(wp_is_mobile()){
 		?>
-			<script type='text/javascript'><!--//<![CDATA[
-			   var ox_u = 'http://bloques.mujerypunto.com/activos/www/mtnetd/al.php?zoneid=9&target=_blank&cb={random}&ct0={clickurl_enc}&layerstyle=simple&align=center&valign=middle&padding=0&padding=0&shifth=0&shiftv=0&closebutton=f&nobg=t&noborder=t';
-			   if (document.context) ox_u += '&context=' + escape(document.context);
-			   document.write('<scr'+'ipt type="text/javascript" src="' + ox_u + '"></scr'+'ipt>');
-			//]]>--></script>
+			<ins data-revive-zoneid="9" data-revive-target="_blank" data-revive-ct0="{clickurl_enc}" data-revive-id="bc4ce818c158f7a81a7acefab7a0e36a"></ins>
+			<script async src="//bloques.mujerypunto.com/activos/www/mtnetd/asyncjs.php"></script>
 		<?php		
 			}
 		?>

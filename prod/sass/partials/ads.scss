@@ -20,3 +20,8 @@
 	max-width:300px;
 	margin:{bottom:10px;}
 }
+.header_970x250{
+	@extend .header_728x90;
+	max-width:970px;
+	padding:{top:10px;}
+}

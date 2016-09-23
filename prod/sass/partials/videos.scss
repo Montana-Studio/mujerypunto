@@ -126,7 +126,7 @@
 					display: table-cell;
 					vertical-align: middle;
 					.video-info {
-						@include span-columns(6);
+						@include span-columns(12);
 						@include omega();
 						color:$gray_1;
 						font:{size:0.8em;} 

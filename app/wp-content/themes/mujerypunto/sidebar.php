@@ -3,7 +3,7 @@
 
     <?php if(is_single()&&wp_is_mobile()) { ?>
 			
-    <?php }else { ?>
+    <?php }else{ ?>
     
 		<div class="sidebar_300x250">
 			<ins data-revive-zoneid="6" data-revive-target="_blank" data-revive-ct0="{clickurl_enc}" data-revive-id="bc4ce818c158f7a81a7acefab7a0e36a"></ins>
@@ -19,14 +19,7 @@
 
 		<div class="facebook-sidebar">
 			
-		
-			<?php 
-				if(is_page('belleza')){
-					echo 'belleza';
-				}else {
-					echo '<div id="fb-timeline"></div>';
-				}
-			?> 	 
+			<div id="fb-timeline"></div>
 			
 			<script>
 				jQuery(document).ready(function($){
@@ -36,18 +29,12 @@
 				});
 			</script>
 		</div>
-		<?php /*
-		<div class="box-sidebar twitter">
-			<div class="title-sidebar"><i class="fa fa-twitter"></i> Tweets</div>
-			<div id="tw-timeline" class="content-tweet"></div>
-		</div>
-		*/ ?>
 
 		<div class="box-sidebar instagram">
 			<div class="title-sidebar"><i class="fa fa-instagram"></i> Instagram</div>
 			<div class="list-instagram ">
 				<ul>
-					<?php //get_template_part('instagram'); ?> 
+					<?php get_template_part('instagram'); ?> 
 				</ul>
 			</div>	 
 		</div>
@@ -64,14 +51,7 @@
 			<div class="content-sidebar">
 	    		<?php get_template_part('loop-sidebar-two'); ?> 
 	    	</div> 
-		</div> 
-<?php /*
-		<div class="sidebar-box-one">
-			<a href="<?php echo get_site_url(); ?>/category/radio-mujer-y-punto/">
-				<img src="<?php echo get_template_directory_uri();?>/img/banner-podcast.gif" alt="podcast mujer y punto">
-			</a>
 		</div>
-*/ ?>
 		<div class="sidebar_300x250">
 
 			<ins data-revive-zoneid="8" data-revive-target="_blank" data-revive-ct0="{clickurl_enc}" data-revive-id="bc4ce818c158f7a81a7acefab7a0e36a"></ins>
