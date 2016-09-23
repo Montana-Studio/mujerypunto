@@ -2,11 +2,16 @@
 <aside class="sidebar-content">
 
     <?php if(is_single()&&wp_is_mobile()) { ?>
-			
+		
     <?php }else{ ?>
     
 		<div class="sidebar_300x250">
 			<ins data-revive-zoneid="6" data-revive-target="_blank" data-revive-ct0="{clickurl_enc}" data-revive-id="bc4ce818c158f7a81a7acefab7a0e36a"></ins>
+			<script async src="//bloques.mujerypunto.com/activos/www/mtnetd/asyncjs.php"></script>
+		</div>
+		
+		<div class="sidebar_300x250">
+			<ins data-revive-zoneid="13" data-revive-target="_blank" data-revive-ct0="{clickurl_enc}" data-revive-id="bc4ce818c158f7a81a7acefab7a0e36a"></ins>
 			<script async src="//bloques.mujerypunto.com/activos/www/mtnetd/asyncjs.php"></script>
 		</div>
 		
