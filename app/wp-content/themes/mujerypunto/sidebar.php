@@ -26,7 +26,7 @@
 			
 			<div id="fb-timeline"></div>
 			
-			<script>
+			<script async>
 				jQuery(document).ready(function($){
 					window.addEventListener('load', function(){
 						$('#fb-timeline').load('<?php echo get_template_directory_uri(); ?>/fb-timeline.html',function(){});
