@@ -30,28 +30,7 @@ jQuery(document).ready(function($){
 	    effect : 'fadeIn',
 	   	failure_limit : 5
 	});
-    function ingresa_usuario_newsletter(){
-        var nombre= $('#nombre_newsletter').val();
-        var correo= $('#correo_newsletter').val();
-        $.ajax({
-            type: 'POST',
-            url: 'wp-content/themes/mujerypunto/newsletter.php',
-            data: 'nombre='+nombre+'&correo='+correo,
-            success: function(data){
-                if(data==='exito'){
-                    $('.newsletter-footer form').hide().fadeOut(); 
-                    $('.newsletter-footer .bajada-news').replaceWith('<div class="exito-form">¡Gracias por registrarte en Mujer y Punto! Pronto recibirás más información</div>');
-                }else{
-                    $('.newsletter-footer form').hide().fadeOut(); 
-                    $('.newsletter-footer .bajada-news').replaceWith('<div class="exito-form">¡Ha ocurrido un error! vuelve a intentarlo</div>');
-                }
-            }
-        });
-        return false; 
-    }
-    $('#myp-newsletter').on('click',function(){
-        ingresa_usuario_newsletter();
-    });	
+    
 	
 	$('#readMorebtn').on('click', function(){
 		
