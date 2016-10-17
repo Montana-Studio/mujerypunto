@@ -29,15 +29,7 @@
           ga('send', 'pageview');
 
         </script>
-		<script type="text/javascript" async>
-			(function () {
-			var tagjs = document.createElement("script");
-			var s = document.getElementsByTagName("script")[0];
-			tagjs.async = true;
-			tagjs.src = "//dataxpand.script.ag/tag.js#site=63UCMvc";
-			s.parentNode.insertBefore(tagjs, s);
-			}());
-		</script>
+
 	</head>
 	<body <?php body_class(); ?>>
 
