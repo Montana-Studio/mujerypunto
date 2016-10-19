@@ -5,7 +5,7 @@ module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('Mujerypunto.json'),
 
-        www: 'app/wp-content/themes/mujerypunto',  
+        www: 'app/wp-content/themes/myp-19102016',  
         dist: 'prod',
         
         jsout:'js/mujerypunto.min.js',
