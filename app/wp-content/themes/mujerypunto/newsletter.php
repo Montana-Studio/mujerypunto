@@ -1,16 +1,23 @@
 <?php
+require_once 'mysqli-login.php';
 
-$nombre = $_POST['nombre'];
-$correo = $_POST['correo'];
-$mysqli = mysqli_connect('localhost','mujerypu_ntouser', 'K?h@GRng*~3;', 'mujerypu_ntoresp');
-$query = 'INSERT INTO newsletter (nombre, correo) VALUES ("'.$nombre.'", "'.$correo.'")';
-$result = $mysqli->query('INSERT INTO newsletter (nombre, correo) VALUES ("'.$nombre.'", "'.$correo.'")');
-if (!$mysqli) {
-    echo "Error: No se pudo conectar a MySQL." . PHP_EOL;
-    echo "errno de depuración: " . mysqli_connect_errno() . PHP_EOL;
-    echo "error de depuración: " . mysqli_connect_error() . PHP_EOL;
-}else{
-	echo 'exito';
+try {
+   $conn = mysqli_connect($hostname, $username, $password,  $database);
+	mysqli_set_charset($conn, "utf8");
+	$correo=$_POST['correo'];
+	$clase=$_POST['clase'];
+	$sql = "SELECT correo FROM newsletter WHERE correo='".$correo."'";
+	$resultado = $conn->query($sql);
+	$resultado->num_rows;
+	if($resultado->num_rows<1){
+		$sql = "INSERT INTO newsletter (nombre, correo) VALUES ('".$nombre."', '".$correo."')";
+		$resultado = $conn->query($sql);
+		mysqli_close($conn);
+		echo 'exito';
+	}else{
+		echo 'exito'; // caso correo exito
+	}
+} catch (Exception $e) {
+    echo 'conexion';
 }
-
 ?>

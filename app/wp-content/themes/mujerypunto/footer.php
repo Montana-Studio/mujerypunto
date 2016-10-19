@@ -12,7 +12,7 @@
 							<input type="email" name="correo" placeholder="Correo electrónico" id="correo_newsletter">
 						</div>
 						<div class="input-form">
-                            <div id="myp-newsletter" >Enviar</div>
+                            <div id="myp-newsletter" onclick="ingresa_usuario_newsletter()">Enviar</div>
 						</div> 
 					</form>
 				</div>
@@ -136,6 +136,10 @@
 					var banner2 = '<div class="content_300x250"><ins data-revive-zoneid="2" data-revive-target="_blank" data-revive-ct0="{clickurl_enc}" data-revive-id="bc4ce818c158f7a81a7acefab7a0e36a"></ins><scr'+'ipt async src="//bloques.mujerypunto.com/activos/www/mtnetd/asyncjs.php"></scr'+'ipt></div>';
 					var banner3 = '<div class="bottom_728x90"><ins data-revive-zoneid="3" data-revive-target="_blank" data-revive-ct0="{clickurl_enc}" data-revive-id="bc4ce818c158f7a81a7acefab7a0e36a"></ins><scr'+'ipt async src="//bloques.mujerypunto.com/activos/www/mtnetd/asyncjs.php"></scr'+'ipt></div>';
 					 window.onload =inserta_banners(banner1,banner2,banner3);
+
+
+					
+
 			</script>
 		<?php
 			}
@@ -169,10 +173,33 @@
 				  spaceBetweenSlides:0
 				}
 				}
-
 			}); 
+
+			
+			function ingresa_usuario_newsletter(){
+		        var nombre= $('#nombre_newsletter').val();
+		        var correo= $('#correo_newsletter').val();
+		        $.ajax({
+		            type: 'POST',
+		            url: '<?php echo get_template_directory_uri(); ?>/newsletter.php',
+		            data: 'nombre='+nombre+'&correo='+correo,
+		            success: function(data){
+		            	console.log(data);
+		                if(data==='exito'){
+		                    $('.newsletter-footer form').hide().fadeOut(); 
+		                    $('.newsletter-footer .bajada-news').replaceWith('<div class="exito-form">¡Gracias por registrarte en Mujer y Punto! Pronto recibirás más información</div>');
+		                }else{
+		                    $('.newsletter-footer form').hide().fadeOut(); 
+		                    $('.newsletter-footer .bajada-news').replaceWith('<div class="exito-form">¡Ha ocurrido un error! vuelve a intentarlo</div>');
+		                }
+		            }
+		        });
+		        return false; 
+		    }
+			
 		</script>
 		<?php 
+
 			if(wp_is_mobile()){
 		?>
 			<ins data-revive-zoneid="9" data-revive-target="_blank" data-revive-ct0="{clickurl_enc}" data-revive-id="bc4ce818c158f7a81a7acefab7a0e36a"></ins>
