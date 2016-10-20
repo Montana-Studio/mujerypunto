@@ -1,24 +1,21 @@
 <?php get_header(); ?>
 
 	<main role="main">
-		<!-- section -->
-		<section>
+		<section class="contentAll">
 
-			<!-- article -->
-			<article id="post-404">
+			<div class="header-page">
+				<div class="title-bg"><div class="line-bg"></div><h1 class="title-section"><?php _e( 'Page not found', 'html5blank' ); ?></h1></div>
+			</div>
 
-				<h1><?php _e( 'Page not found', 'html5blank' ); ?></h1>
+			<div class="error-page">
+
 				<h2>
-					<a href="<?php echo home_url(); ?>"><?php _e( 'Return home?', 'html5blank' ); ?></a>
+					<a href="<?php echo home_url(); ?>"><?php _e( 'Return home?', 'html5blank' ); ?></a> 
 				</h2>
 
-			</article>
-			<!-- /article -->
+			</div>
 
 		</section>
-		<!-- /section -->
 	</main>
-
-<?php get_sidebar(); ?>
 
 <?php get_footer(); ?>

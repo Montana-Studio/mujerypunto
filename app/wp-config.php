@@ -4,7 +4,7 @@
 // ** MySQL settings ** //
 /** The name of the database for WordPress */
 
-define('DB_NAME', 'mujerypunto_v1');
+define('DB_NAME', 'mujerypu_newclean');
 
 /** MySQL database username */
 define('DB_USER', 'root');

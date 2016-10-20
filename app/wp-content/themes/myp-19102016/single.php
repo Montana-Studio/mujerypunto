@@ -158,11 +158,11 @@
 
 		<?php endif; ?>
 		</div>
+		<div class="sidebar">
+			<?php get_sidebar(); ?>
+		</div>
 	</section>
 	<!-- /section -->
-	<div class="sidebar">
-		<?php get_sidebar(); ?>
-	</div>
 	</main>
 
 <?php get_footer(); ?>

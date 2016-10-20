@@ -41,6 +41,38 @@ jQuery(document).ready(function($){
 		$('#loadAdsContent .degradeload').hide();
 	});
 	
+	/* jshint ignore:start */
+	var gallerySliders = new Swiper('.swiper-gallery', {
+		nextButton: '.next-gallery',
+		prevButton: '.prev-gallery',
+		slidesPerView: 3,
+		spaceBetween:0,
+		breakpoints: {
+		780: {
+		  slidesPerView: 1,
+		  spaceBetweenSlides:0
+		}
+		}
+	});
+
+	var mySwiper = new Swiper('.swiper-container', {
+		pagination: '.swiper-pagination',
+		paginationType: 'bullets',
+		paginationClickable: true,
+		autoplay: 4000,
+		loop: true,
+		slidesPerView: 3,
+		spaceBetween:0,
+		breakpoints: {
+			780: {
+			  slidesPerView: 1,
+			  spaceBetweenSlides:0
+			}
+		}
+
+	}); 
+	/* jshint ignore:end */
+	
 });
 
 

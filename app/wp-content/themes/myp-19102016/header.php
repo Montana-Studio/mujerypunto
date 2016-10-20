@@ -32,7 +32,6 @@
 
 	</head>
 	<body <?php body_class(); ?>>
-		<?php if(wp_is_mobile()){ ?>
 		<div class="search-section">
 			<div class="search-content">
 				<form class="search" method="get" action="<?php echo home_url(); ?>" role="search">
@@ -44,6 +43,7 @@
 			</div>
 			<div class="search-bg"></div>
 		</div>
+		<?php if(wp_is_mobile()){ ?>
 		<div class="menu-mobile-open">
 			<div class="logotipo-mujerypunto">
 				<a href="<?php echo get_site_url(); ?>">
@@ -111,5 +111,10 @@
 					</nav>
 
 			</header>
-			
+			<div class="header_728x90">
+
+				<ins data-revive-zoneid="5" data-revive-target="_blank" data-revive-ct0="{clickurl_enc}" data-revive-id="bc4ce818c158f7a81a7acefab7a0e36a"></ins>
+				<script async src="//bloques.mujerypunto.com/activos/www/mtnetd/asyncjs.php"></script>
+				
+			</div>
 			<div class="wrapper-focus-out"></div>

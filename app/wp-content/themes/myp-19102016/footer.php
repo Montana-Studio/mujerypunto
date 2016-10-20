@@ -2,7 +2,7 @@
 
 				<div class="newsletter-footer">
 					<div class="title-bg"><div class="line-bg"></div><h2 class="title-section">Newsletter</h2></div>
-					<div class="bajada-news">Nos gustaría compartir las últimas noticias de Mujer &amp; Punto</div>
+					<div class="bajada-news">Nos gustaría compartir las últimas noticias de Mujer & Punto</div>
 					<form>
 						<div class="input-form">
 							<input type="text" name="name" placeholder="Nombre" id="nombre_newsletter">
@@ -11,7 +11,7 @@
 							<input type="email" name="correo" placeholder="Correo electrónico" id="correo_newsletter">
 						</div>
 						<div class="input-form">
-                            <div id="myp-newsletter" >Enviar</div>
+                            <div id="myp-newsletter" onclick="ingresa_usuario_newsletter()">Enviar</div>
 						</div> 
 					</form>
 				</div>
@@ -36,7 +36,7 @@
 								<div class="footer-tags">
 									<h1><i class="fa fa-circle"></i> Mujer y Punto</h1> 
 									<ul class="list-pages"> 
-										<li><a href="<?php echo site_url(); ?>/quienes-somos">Sobre Mujer &amp; Punto</a></li>
+										<li><a href="<?php echo site_url(); ?>/quienes-somos">Sobre Mujer & Punto</a></li>
 										<li><a href="mailto:contacto@mujerypunto.com">Contacto Editorial</a></li>
 										<li><a href="mailto:asepulveda@mediatrends.cl?subject=Contacto comercial MyP&cc=hugo@mediatrends.cl">Contacto Publicitario</a></li>
 									</ul>
@@ -103,71 +103,59 @@
 		<?php } ?>
 		
 		<?php wp_footer(); ?>
-		
+			<script>
+				function ingresa_usuario_newsletter(){
+					var nombre= $('#nombre_newsletter').val();
+					var correo= $('#correo_newsletter').val();
+					$.ajax({
+						type: 'POST',
+						url: '<?php echo get_template_directory_uri(); ?>/newsletter.php',
+						data: 'nombre='+nombre+'&correo='+correo,
+						success: function(data){
+							console.log(data);
+							if(data==='exito'){
+								$('.newsletter-footer form').hide().fadeOut(); 
+								$('.newsletter-footer .bajada-news').replaceWith('<div class="exito-form">¡Gracias por registrarte en Mujer y Punto! Pronto recibirás más información</div>');
+							}else{
+								$('.newsletter-footer form').hide().fadeOut(); 
+								$('.newsletter-footer .bajada-news').replaceWith('<div class="exito-form">¡Ha ocurrido un error! vuelve a intentarlo</div>');
+							}
+						}
+					});
+					return false; 
+				}
+			</script>
 		<?php if(is_single()&&!in_category('sexualidad')){ ?>
 			<script>
-					function inserta_banners(banner1,banner2,banner3){
-						var count = $("#loadAdsContent").find("p").length;
-						var cantidad_minima_posts_para_tres_banners = 6;
-						var cantidad_maxima_posts_para_un_banner = 3;
-						var medio = parseInt(count/2);
-						
-						if(count>6){
-							
-							$( "#loadAdsContent>p:first-child" ).append( banner1 );
-							$( "#loadAdsContent>p:nth-child("+medio+")" ).append( banner2 );
-							$( "#loadAdsContent>p:last-child" ).append( banner3 );
-						}else{
-							if(count<3){
-								$( "#loadAdsContent>p:first-child" ).append( banner1 );
+				function inserta_banners(banner1,banner2,banner3){
+					var count = $("#loadAdsContent").find("p").length;
+					var cantidad_minima_posts_para_tres_banners = 6;
+					var cantidad_maxima_posts_para_un_banner = 3;
+					var medio = parseInt(count/2);
 
-							}else if(count<=6 && count >= 3){
-							$( "#loadAdsContent>p:first-child" ).append( banner1 );
-							$( "#loadAdsContent>p:last-child" ).append( banner3 );
+					if(count>6){
 
-							}	
-						} 
-					}
-					var banner1 = '<ins data-revive-zoneid="14" data-revive-target="_blank" data-revive-ct0="{clickurl_enc}" data-revive-id="bc4ce818c158f7a81a7acefab7a0e36a"></ins><scr'+'ipt async src="//bloques.mujerypunto.com/activos/www/mtnetd/asyncjs.php"></scr'+'ipt><div class="content_300x250"><ins data-revive-zoneid="1" data-revive-target="_blank" data-revive-ct0="{clickurl_enc}" data-revive-id="bc4ce818c158f7a81a7acefab7a0e36a"></ins><scr'+'ipt async src="//bloques.mujerypunto.com/activos/www/mtnetd/asyncjs.php"></scr'+'ipt></div>';
-					var banner2 = '<div class="content_300x250"><ins data-revive-zoneid="2" data-revive-target="_blank" data-revive-ct0="{clickurl_enc}" data-revive-id="bc4ce818c158f7a81a7acefab7a0e36a"></ins><scr'+'ipt async src="//bloques.mujerypunto.com/activos/www/mtnetd/asyncjs.php"></scr'+'ipt></div>';
-					var banner3 = '<div class="bottom_728x90"><ins data-revive-zoneid="3" data-revive-target="_blank" data-revive-ct0="{clickurl_enc}" data-revive-id="bc4ce818c158f7a81a7acefab7a0e36a"></ins><scr'+'ipt async src="//bloques.mujerypunto.com/activos/www/mtnetd/asyncjs.php"></scr'+'ipt></div>';
-					 window.onload =inserta_banners(banner1,banner2,banner3);
+						$( "#loadAdsContent>p:first-child" ).append( banner1 );
+						$( "#loadAdsContent>p:nth-child("+medio+")" ).append( banner2 );
+						$( "#loadAdsContent>p:last-child" ).append( banner3 );
+					}else{
+						if(count<3){
+							$( "#loadAdsContent>p:first-child" ).append( banner1 );
+
+						}else if(count<=6 && count >= 3){
+						$( "#loadAdsContent>p:first-child" ).append( banner1 );
+						$( "#loadAdsContent>p:last-child" ).append( banner3 );
+
+						}	
+					} 
+				}
+				var banner1 = '<ins data-revive-zoneid="14" data-revive-target="_blank" data-revive-ct0="{clickurl_enc}" data-revive-id="bc4ce818c158f7a81a7acefab7a0e36a"></ins><scr'+'ipt async src="//bloques.mujerypunto.com/activos/www/mtnetd/asyncjs.php"></scr'+'ipt><div class="content_300x250"><ins data-revive-zoneid="1" data-revive-target="_blank" data-revive-ct0="{clickurl_enc}" data-revive-id="bc4ce818c158f7a81a7acefab7a0e36a"></ins><scr'+'ipt async src="//bloques.mujerypunto.com/activos/www/mtnetd/asyncjs.php"></scr'+'ipt></div>';
+				var banner2 = '<div class="content_300x250"><ins data-revive-zoneid="2" data-revive-target="_blank" data-revive-ct0="{clickurl_enc}" data-revive-id="bc4ce818c158f7a81a7acefab7a0e36a"></ins><scr'+'ipt async src="//bloques.mujerypunto.com/activos/www/mtnetd/asyncjs.php"></scr'+'ipt></div>';
+				var banner3 = '<div class="bottom_728x90"><ins data-revive-zoneid="3" data-revive-target="_blank" data-revive-ct0="{clickurl_enc}" data-revive-id="bc4ce818c158f7a81a7acefab7a0e36a"></ins><scr'+'ipt async src="//bloques.mujerypunto.com/activos/www/mtnetd/asyncjs.php"></scr'+'ipt></div>';
+				window.onload =inserta_banners(banner1,banner2,banner3);
 			</script>
-		<?php } ?>
-		<script defer>
-            
-		    var gallerySliders = new Swiper('.swiper-gallery', {
-		        nextButton: '.next-gallery',
-		        prevButton: '.prev-gallery',
-		        slidesPerView: 3,
-		        spaceBetween:0,
-		       	breakpoints: {
-				780: {
-				  slidesPerView: 1,
-				  spaceBetweenSlides:0
-				}
-				}
-		    });
-		    
-			var mySwiper = new Swiper('.swiper-container', {
-				pagination: '.swiper-pagination',
-				paginationType: 'bullets',
-				paginationClickable: true,
-				autoplay: 4000,
-				loop: true,
-				slidesPerView: 3,
-				spaceBetween:0,
-				breakpoints: {
-					780: {
-					  slidesPerView: 1,
-					  spaceBetweenSlides:0
-					}
-				}
-
-			}); 
-		</script>
-		
 		<?php 
+			} 
 			if(wp_is_mobile()){
 		?>
 			<ins data-revive-zoneid="9" data-revive-target="_blank" data-revive-ct0="{clickurl_enc}" data-revive-id="bc4ce818c158f7a81a7acefab7a0e36a"></ins>

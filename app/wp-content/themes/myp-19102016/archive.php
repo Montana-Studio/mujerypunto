@@ -2,18 +2,23 @@
 
 	<main role="main">
 		<!-- section -->
-		<section>
+		<section class="contentAll">
 
-			<h1><?php _e( 'Archives', 'html5blank' ); ?></h1>
+			<div class="header-page">
+				<div class="title-bg"><div class="line-bg"></div><h1 class="title-section"><?php _e( 'Archives', 'html5blank' ); ?></h1></div>
+				<div class="categoria-title">Archive</div>
+			</div>
 
-			<?php get_template_part('loop'); ?>
+			<div class="body-sidebar">
+				<?php get_template_part('partials/loop-tags'); ?>
 
-			<?php get_template_part('pagination'); ?>
+				<?php get_template_part('pagination'); ?>
+			</div>
 
+			<div class="sidebar">	
+				<?php get_sidebar(); ?>
+			</div>
 		</section>
 		<!-- /section -->
 	</main>
-
-<?php get_sidebar(); ?>
-
 <?php get_footer(); ?>
