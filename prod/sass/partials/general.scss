@@ -103,6 +103,7 @@ body {
 		@include transition(all 1s ease-in-out);
 		height: 100%;
 		position: absolute;
+		top:0;
 		opacity: 0.2;
 		background: $black;
 		z-index: 11;

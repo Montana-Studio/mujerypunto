@@ -169,5 +169,9 @@
 			<script async src="//bloques.mujerypunto.com/activos/www/mtnetd/asyncjs.php"></script>
 			
 		</div>
+		
+		<ins data-revive-zoneid="16" data-revive-ct0="{clickurl_enc}" data-revive-id="bc4ce818c158f7a81a7acefab7a0e36a"></ins>
+		<script async src="//bloques.mujerypunto.com/activos/www/mtnetd/asyncjs.php"></script>
+		
 	</body>
 </html>
