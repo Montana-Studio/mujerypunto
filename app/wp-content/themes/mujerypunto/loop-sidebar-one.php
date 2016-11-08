@@ -41,11 +41,9 @@
 				<div class="social-share">
 					<ul>
 						<li>
-							<!-- href="javascript:fbShare('<?php //echo the_permalink(); ?>', '<?php the_title(); ?>', '<?php the_title(); ?>', '<?php echo the_permalink(); ?>', 520, 350)"-->
 							<a class="facebook_share_sidebar1">
 								<i class="fa fa-facebook"></i> 
 							</a>
-							<!--/a-->
 						</li>
 						<li>
 							<a class="twitter_share_sidebar1">
