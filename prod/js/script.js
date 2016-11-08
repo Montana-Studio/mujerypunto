@@ -72,6 +72,11 @@ jQuery(document).ready(function($){
 
 	}); 
 	/* jshint ignore:end */
+
+
+	
+
+
 	
 });
 
@@ -84,18 +89,6 @@ jQuery(document).ready(function($){
 	  fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
 
-
-function fbShare(url, title, descr, image, winWidth, winHeight) {
-	var winTop = (screen.height / 2) - (winHeight / 2);    
-	var winLeft = (screen.width / 2) - (winWidth / 2); 
-	/* jshint ignore:start */
-    FB.ui({
-		method: 'share',
-		mobile_iframe: true,
-		href: 'https://www.facebook.com/dialog/share?s=100&app_id=932994110103491&display=popup&title='+title+'&summary='+title+'&href='+url+'&pimages[0]='+image+'',
-	  }, function(response){});
-	/* jshint ignore:end */
-}
 
 function twShare(url, title, winWidth, winHeight) {
     var winTop = (screen.height / 2) - (winHeight / 2);

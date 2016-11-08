@@ -5,7 +5,7 @@ try {
    $conn = mysqli_connect($hostname, $username, $password,  $database);
 	mysqli_set_charset($conn, "utf8");
 	$correo=$_POST['correo'];
-	$clase=$_POST['clase'];
+	$nombre=$_POST['nombre'];
 	$sql = "SELECT correo FROM newsletter WHERE correo='".$correo."'";
 	$resultado = $conn->query($sql);
 	$resultado->num_rows;

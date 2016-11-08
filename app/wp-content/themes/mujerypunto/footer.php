@@ -12,7 +12,7 @@
 							<input type="email" name="correo" placeholder="Correo electrónico" id="correo_newsletter">
 						</div>
 						<div class="input-form">
-                            <div id="myp-newsletter" onclick="ingresa_usuario_newsletter()">Enviar</div>
+                            <div id="myp-newsletter" onclick="ingresa_usuario_newsletter(); ga('send', 'event', 'Registro', 'click');">Enviar</div>
 						</div> 
 					</form>
 				</div>
@@ -110,6 +110,9 @@
 			if(is_single()&&!in_category('sexualidad')){
 		?>
 			<script>
+
+		
+
 					function inserta_banners(banner1,banner2,banner3){
 						var count = $("#loadAdsContent").find("p").length;
 						var cantidad_minima_posts_para_tres_banners = 6;
@@ -196,6 +199,288 @@
 		        });
 		        return false; 
 		    }
+
+
+		jQuery.urlShortener.settings.apiKey='AIzaSyDBMZsybp7GcJdmqdhgGDn-jRkGo9jyD-c';
+
+		$('.facebook_single_1').click(function(){
+			var sitio = 'Mujer y Punto';							
+			var texto = $(this).parent().parent().parent().parent().siblings('.title-post').children('a').text();
+			var imagen = $(this).parent().parent().parent().parent().siblings('.imagen-post').attr('data-img');
+			jQuery.urlShortener({
+			    longUrl: $(this).parent().parent().parent().parent().siblings('.title-post').attr('data-url'),
+			    success: function (shortUrl) {
+			        var link =  shortUrl;
+					console.log('sitio ='+sitio);
+					console.log('texto ='+texto);
+					console.log('link ='+link);
+					console.log('imagen ='+imagen);
+			    },
+			    error: function(err)
+			    {
+			        console.log(JSON.stringify(err));
+			    }
+			});
+		});
+
+		$('.twitter_single_1').click(function(){
+			var hashtags = 'mujerypunto';							
+			var texto = $(this).parent().parent().parent().parent().siblings('.title-post').children('a').text();
+			jQuery.urlShortener({
+			    longUrl: $(this).parent().parent().parent().parent().siblings('.title-post').attr('data-url'),
+			    success: function (shortUrl) {
+			        var link =  shortUrl;
+			        window.location.href="http://twitter.com/intent/tweet?text="+texto+"&hashtags="+hashtags+"&url="+encodeURI(shortUrl);
+					console.log('sitio ='+sitio);
+					console.log('texto ='+texto);
+					console.log('link ='+link);
+					console.log('imagen ='+imagen);
+			    },
+			    error: function(err)
+			    {
+			        console.log(JSON.stringify(err));
+			    }
+			});
+		});
+
+		$('.plus_single_1').click(function(){
+			var url = $(this).parent().parent().parent().parent().siblings('.title-post').attr('data-url');
+			window.location.href="https://plus.google.com/share?url="+encodeURI(url);
+		});
+
+		$('.facebook_relacionados_1').click(function(){
+			var sitio = 'Mujer y Punto';							
+			var texto = $(this).parent().parent().parent().siblings('.title-post').text();
+			var imagen = $(this).attr('data-img');
+			jQuery.urlShortener({
+			    longUrl: $(this).parent().parent().parent().siblings('.btn-read-green').children('a').attr('href'),
+			    success: function (shortUrl) {
+			        var link =  shortUrl;
+					console.log('sitio ='+sitio);
+					console.log('texto ='+texto);
+					console.log('link ='+link);
+					console.log('imagen ='+imagen);
+			    },
+			    error: function(err)
+			    {
+			        console.log(JSON.stringify(err));
+			    }
+			});
+		});
+
+		$('.twitter_relacionados_1').click(function(){
+			var hashtags = 'mujerypunto';							
+			var texto = $(this).parent().parent().parent().siblings('.title-post').text();
+			jQuery.urlShortener({
+			    longUrl: $(this).parent().parent().parent().siblings('.btn-read-green').children('a').attr('href'),
+			    success: function (shortUrl) {
+			        var link =  shortUrl;
+			        window.location.href="http://twitter.com/intent/tweet?text="+texto+"&hashtags="+hashtags+"&url="+encodeURI(shortUrl);
+			    },
+			    error: function(err)
+			    {
+			        console.log(JSON.stringify(err));
+			    }
+			});
+		});
+
+		$('.plus_relacionados_1').click(function(){						
+			var url = $(this).parent().parent().parent().siblings('.btn-read-green').children('a').attr('href');
+			window.location.href="https://plus.google.com/share?url="+encodeURI(url);
+		});
+
+		$('.facebook_share_1').click(function(){
+			var sitio = 'Mujer y Punto';							
+			var texto = $(this).parent().parent().parent().siblings('.title-post').children('a').text();
+			
+			var imagen = $(this).parent().parent().parent().parent().parent().siblings('.imagen-contentpost').find('.imagen-post').attr('data-original');
+			jQuery.urlShortener({
+			    longUrl: $(this).parent().parent().parent().siblings('.title-post').children('a').attr('href'),
+			    success: function (shortUrl) {
+			        var link =  shortUrl;
+					console.log('sitio ='+sitio);
+					console.log('texto ='+texto);
+					console.log('link ='+link);
+					console.log('imagen ='+imagen);
+			    },
+			    error: function(err)
+			    {
+			        console.log(JSON.stringify(err));
+			    }
+			});
+		});
+
+		$('.twitter_share_1').click(function(){
+			var texto = $(this).parent().parent().parent().siblings('.title-post').children('a').text();
+			var hashtags = 'mujerypunto'	
+			texto= texto + '...';
+			jQuery.urlShortener({
+			    longUrl: $(this).parent().parent().parent().siblings('.title-post').children('a').attr('href'),
+			    success: function (shortUrl) {
+			        
+					window.location.href="http://twitter.com/intent/tweet?text="+texto+"&hashtags="+hashtags+"&url="+encodeURI(shortUrl);
+			    },
+			    error: function(err)
+			    {
+			        console.log(JSON.stringify(err));
+			    }
+			});
+		});
+
+		$('.plus_share_1').click(function(){
+			var url = $(this).parent().parent().parent().siblings('.title-post').children('a').attr('href')
+			window.location.href="https://plus.google.com/share?url="+encodeURI(url);
+		});
+
+
+		$('.facebook_share_sidebar1').click(function(){
+			var sitio = 'Mujer y Punto';							
+			var texto = $(this).parent().parent().parent().siblings('a').children('.title-post').text();
+			var imagen = $(this).parent().parent().parent().parent().parent().siblings('.imagen-contentpost').find('.imagen-post').attr('data-original');
+		
+			jQuery.urlShortener({
+			    longUrl:$(this).parent().parent().parent().siblings('.btn-read-green').children('a').attr('href'),
+			    success: function (shortUrl) {
+			        
+		            var link = shortUrl;
+
+		            console.log('sitio = '+sitio);
+		            console.log('texto = '+texto);
+		            console.log('imagen = '+imagen);
+		            console.log('link = '+link);
+			    },
+			    error: function(err)
+			    {
+			        console.log(JSON.stringify(err));
+			    }
+			});
+			//window.location.href="https://www.facebook.com/dialog/feed?app_id=259189257792642&link="+link+"&picture="+imagen+"&name="+seccion+"%20-%20"+sitio+"&caption=%20&description="+texto+"&redirect_uri=http%3A%2F%2Fmujerypunto.com%2F";
+		});
+
+		$('.twitter_share_sidebar1').click(function(){
+			var sitio = 'Mujer y Punto';							
+			var texto = $(this).parent().parent().parent().siblings('a').children('.title-post').text();
+			var imagen = $(this).parent().parent().parent().parent().parent().siblings('.imagen-contentpost').find('.imagen-post').attr('data-original');
+		
+			jQuery.urlShortener({
+			    longUrl:$(this).parent().parent().parent().siblings('.btn-read-green').children('a').attr('href'),
+			    success: function (shortUrl) {
+			    	var hashtags = 'mujerypunto';
+					window.location.href="http://twitter.com/intent/tweet?text="+texto+"&hashtags="+hashtags+"&url="+encodeURI(shortUrl);
+
+			    },
+			    error: function(err)
+			    {
+			        console.log(JSON.stringify(err));
+			    }
+			});
+			//window.location.href="https://www.facebook.com/dialog/feed?app_id=259189257792642&link="+link+"&picture="+imagen+"&name="+seccion+"%20-%20"+sitio+"&caption=%20&description="+texto+"&redirect_uri=http%3A%2F%2Fmujerypunto.com%2F";
+		});
+
+		$('.plus_share_sidebar1').click(function(){
+			var url = $(this).parent().parent().parent().siblings('.btn-read-green').children('a').attr('href');
+			window.location.href="https://plus.google.com/share?url="+encodeURI(url);
+		});
+
+
+		$('.facebook_share_page_recientes').click(function(){
+			var sitio = 'Mujer y Punto';                            
+            var texto = $(this).parent().parent().parent().siblings('a').children('.title-post').text();
+            var imagen = $(this).parent().parent().parent().parent().parent().siblings('.imagen-contentpost').find('.imagen-post').attr('data-original');
+			jQuery.urlShortener({
+			    longUrl: $(this).parent().parent().parent().siblings('.btn-read-green').children('a').attr('href'),
+			    success: function (shortUrl) {
+			        
+		            var link = shortUrl;
+
+		            console.log('sitio = '+sitio);
+		            console.log('texto = '+texto);
+		            console.log('imagen = '+imagen);
+		            console.log('link = '+link);
+			    },
+			    error: function(err)
+			    {
+			        console.log(JSON.stringify(err));
+			    }
+			});
+            
+            
+            //window.location.href="https://www.facebook.com/dialog/feed?app_id=259189257792642&link="+link+"&picture="+imagen+"&name="+seccion+"%20-%20"+sitio+"&caption=%20&description="+texto+"&redirect_uri=http%3A%2F%2Fmujerypunto.com%2F";
+        });
+
+        $('.twitter_share_page_recientes').click(function(){
+			var sitio = 'Mujer y Punto';                            
+            var texto = $(this).parent().parent().parent().siblings('a').children('.title-post').text();
+            var imagen = $(this).parent().parent().parent().parent().parent().siblings('.imagen-contentpost').find('.imagen-post').attr('data-original');
+			jQuery.urlShortener({
+			    longUrl: $(this).parent().parent().parent().siblings('.btn-read-green').children('a').attr('href'),
+			    success: function (shortUrl) {
+		            var hashtags = 'mujerypunto';
+		            window.location.href="http://twitter.com/intent/tweet?text="+texto+"&hashtags="+hashtags+"&url="+encodeURI(shortUrl);
+			    },
+			    error: function(err)
+			    {
+			        console.log(JSON.stringify(err));
+			    }
+			});
+        });
+
+        $('.plus_share_page_recientes').click(function(){
+			var url = $(this).parent().parent().parent().siblings('.btn-read-green').children('a').attr('href');                          
+			window.location.href="https://plus.google.com/share?url="+encodeURI(url);
+        });
+
+        $('.facebook_share_page').click(function(){
+            var sitio = 'Mujer y Punto';                            
+            var texto = $(this).parent().parent().parent().parent().siblings('.content-post').text();
+            texto = texto.substring(0, 200) + '...';
+            var imagen = 'http://localhost/Repositorios/mujerypunto/app/wp-content/themes/mujerypunto/img/icons/touch.png';
+           
+            jQuery.urlShortener({
+			    longUrl: $(this).attr('data-url'),
+			    success: function (shortUrl) {
+		            var link = shortUrl;
+		            console.log('sitio = '+sitio);
+		            console.log('texto = '+texto);
+		            console.log('imagen = '+imagen);
+		            console.log('link = '+link);
+			    },
+			    error: function(err)
+			    {
+			        console.log(JSON.stringify(err));
+			    }
+			});
+            
+            //window.location.href="https://www.facebook.com/dialog/feed?app_id=259189257792642&link="+link+"&picture="+imagen+"&name="+seccion+"%20-%20"+sitio+"&caption=%20&description="+texto+"&redirect_uri=http%3A%2F%2Fmujerypunto.com%2F";
+        });
+
+
+        $('.twitter_share_page').click(function(){
+            var sitio = 'Mujer y Punto';                            
+            var texto = $(this).parent().parent().parent().parent().siblings('.content-post').text();
+            texto = texto.substring(0, 200) + '...';
+            var imagen = 'http://localhost/Repositorios/mujerypunto/app/wp-content/themes/mujerypunto/img/icons/touch.png';
+           
+            jQuery.urlShortener({
+			    longUrl: $(this).attr('data-url'),
+			    success: function (shortUrl) {
+		            var hashtags = 'mujerypunto';
+		            window.location.href="http://twitter.com/intent/tweet?text="+texto+"&hashtags="+hashtags+"&url="+encodeURI(shortUrl);
+			    },
+			    error: function(err)
+			    {
+			        console.log(JSON.stringify(err));
+			    }
+			});
+        });
+
+
+        $('.plus_share_page').click(function(){
+            var url = $(this).attr('data-url');                         
+			window.location.href="https://plus.google.com/share?url="+encodeURI(url);
+        });
+
+
 			
 		</script>
 		<?php 
