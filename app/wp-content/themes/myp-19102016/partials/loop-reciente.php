@@ -31,17 +31,17 @@
 										<div class="social-share">
 											<ul>
 												<li>
-													<a class="facebook_share_1">
+													<a class="facebook_share_page_recientes">
 														<i class="fa fa-facebook"></i> 
 													</a>
 												</li>
 												<li>
-													<a class="twitter_share_1">
+													<a class="twitter_share_page_recientes">
 														<i class="fa fa-twitter"></i> 
 													</a>
 												</li>
 												<li>
-													<a class="plus_share_1">
+													<a class="plus_share_page_recientes">
 														<i class="fa fa-google-plus"></i> 
 													</a>
 												</li>
@@ -73,17 +73,17 @@
 										<div class="social-share">
 											<ul>
 												<li>
-													<a class="facebook_share_1">
+													<a class="facebook_share_page_recientes">
 														<i class="fa fa-facebook"></i> 
 													</a>
 												</li>
 												<li>
-													<a class="twitter_share_1">
+													<a class="twitter_share_page_recientes">
 														<i class="fa fa-twitter"></i> 
 													</a>
 												</li>
 												<li>
-													<a class="plus_share_1">
+													<a class="plus_share_page_recientes">
 														<i class="fa fa-google-plus"></i> 
 													</a>
 												</li>
@@ -116,17 +116,17 @@
 											<div class="social-share">
 												<ul>
 													<li>
-													<a class="facebook_share_1">
+													<a class="facebook_share_page_recientes">
 														<i class="fa fa-facebook"></i> 
 													</a>
 												</li>
 												<li>
-													<a class="twitter_share_1">
+													<a class="twitter_share_page_recientes">
 														<i class="fa fa-twitter"></i> 
 													</a>
 												</li>
 												<li>
-													<a class="plus_share_1">
+													<a class="plus_share_page_recientes">
 														<i class="fa fa-google-plus"></i> 
 													</a>
 												</li>
